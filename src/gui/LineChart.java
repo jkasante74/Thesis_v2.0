@@ -34,10 +34,7 @@ package gui;
  * @since   12-07-2016 
  */
 
-import historicalInformationManager.HIM;
-
 import java.awt.Color;
-
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
@@ -110,7 +107,7 @@ public class LineChart extends JFrame {
 		dataset.clear();
 
 		// Query HIM to submit data for line chart display 
-		HIM.getDataset(expNum);
+	//	HIM.getDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}

@@ -1,6 +1,7 @@
 package gui;
 
-import historicalInformationManager.HIM;
+import settings.InputValidator;
+import settings.SetupManager;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -22,8 +23,11 @@ import java.awt.Font;
 import java.awt.SystemColor;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -31,10 +35,6 @@ import javax.swing.JSlider;
 import javax.swing.JRadioButton;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
-
-import setupManager.ParamConfigMgr;
-import setupManager.StrategySetupManager;
-
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JScrollPane;
@@ -59,10 +59,16 @@ public class GUI {
 	private JTextField txtCNum;
 	private JTextField txtDNum;
 	private JTextField txtAdvancedCNum;
-	private JTextField txtAdvancedDNum;
+	private JTextField txtAdvancedExpNum;
 	private static boolean startSimulation = false;
 	private static JTextArea txtLeaderBoard = new JTextArea();
 	private static final JTextArea txtStats = new JTextArea();
+	private JRadioButton rdbtnRandom;
+	private JSlider slider;
+	private JTextField txtAdvancedDNum;
+	private JLabel lblUncertainties; 
+	private String SETUP_LOCATION = "SR/SetupFile.csv";
+	protected static GUI_Simulation simLog;
 
 	/**
 	 * Main method that creates Application frame,
@@ -82,7 +88,8 @@ public class GUI {
 					window.frame.setVisible(true);
 					UIManager.setLookAndFeel(UIManager
 							.getSystemLookAndFeelClassName());
-					GUI_Simulation.main(null);
+					simLog = new GUI_Simulation();
+					simLog.frmSimulation.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -116,36 +123,34 @@ public class GUI {
 		JButton btnStart = new JButton("Start");
 		final JRadioButton rdbtnLoadSetup = new JRadioButton(
 				"Load Experiment Setup");
-		final JRadioButton rdbtnLoadAg = new JRadioButton(
-				"Load agents Strategies");
-		final JLabel lblUncertainties = new JLabel("1.0");
+		lblUncertainties = new JLabel("1.0");
 		final JRadioButton rdbtnAssign = new JRadioButton("Assign");
 		final JComboBox<String> cmbInfoReqApproach = new JComboBox<String>();
 
 		btnStart.addActionListener(new ActionListener() {
+		
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
+				
+				
 				// Initialize parameters to be loaded into Setup reopsitory
-				String[] param = new String[8];
-				String[] agentNum = new String[5];
+				String[] param = new String[14];
 				
 				// Reset for next experiment
 				startSimulation = true;
 				GUI.cmbExpSel.removeAllItems();
-				ParamConfigMgr.experimentCounter = 0;
 				
 				// Request to clean charts file
-				try {
-					HIM.clearChartInfo();
-				} catch (FileNotFoundException e2) {
-					e2.printStackTrace();
-				}
+			//	try {
+				//	HIM.clearChartInfo();
+			//	} catch (FileNotFoundException e2) {
+			//		e2.printStackTrace();
+			//	}
 
 				// Check if we are not loading setup from batch file 
 				if (!rdbtnLoadSetup.isSelected()) {
-
-					if (rdbtnAssign.isSelected())
+					
 						// check if request limits textbox are empty 
 						if ((txtAdvancedDLimit.getText().isEmpty())
 								|| (txtAdvanceCLimit.getText().isEmpty())
@@ -154,6 +159,7 @@ public class GUI {
 									"Request Limits must be entered");
 							return;
 						}
+				else{
 
 					// Store inputs of SetUp as an array 
 					param[0] = (txtTemptation.getText());
@@ -164,46 +170,31 @@ public class GUI {
 					param[5] = (lblUncertainties.getText());
 					param[6] = (txtAdvanceCLimit.getText());
 					param[7] = (txtAdvancedDLimit.getText());
+					param[8] = (txtCNum.getText());
+					param[9] = (txtDNum.getText());
+					param[10] = (txtAdvancedCNum.getText());
+					param[11] = (txtAdvancedDNum.getText());
+					param[12] = (txtAdvancedExpNum.getText());
+					param[13] = String.valueOf((cmbInfoReqApproach.getSelectedIndex()));
+
 
 					// Store agents SetUp array in the setup repository 
 					try {
-						String FileHeading = "T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit";
-						writeFile("SR/SetupParam.csv", FileHeading, param);
+						String FileHeading = "T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD,AdvancedExp, infoRequestApproach";
+						writeFile(SETUP_LOCATION, FileHeading, param);
 					} catch (IOException e1) {
 
 						e1.printStackTrace();
 					}
 				}
-
-				// Store inputs of agents Straategies Number as an array 
-				if (!rdbtnLoadAg.isSelected()) {
-					agentNum[0] = (txtCNum.getText());
-					agentNum[1] = (txtDNum.getText());
-					agentNum[2] = (txtAdvancedCNum.getText());
-					agentNum[3] = (txtAdvancedDNum.getText());
-					agentNum[4] = String.valueOf((cmbInfoReqApproach
-							.getSelectedIndex()));
-
-					
-					 // Store number of agents Straategies in the setup repository
-					 
-					try {
-						String FileHeading = "NaiveC,NaiveD,AdvancedC,AdvancedD,infoRequestApproach";
-						writeFile("SR/AgentNum.csv", FileHeading, agentNum);
-					} catch (IOException e1) {
-
-						e1.printStackTrace();
-					}
-
-				}
-
-				try {
-					StrategySetupManager.main(null);
-				} catch (IOException e1) {
-
-					e1.printStackTrace();
-				}
-			}
+			}		
+				// Initialize Validator and Setup Manager
+				InputValidator input = new InputValidator(); 
+				
+				SetupManager setup = new SetupManager(input, simLog);
+				
+				
+		}
 
 			/**
 			 * writeFile method picks up the experimenter's simulation inputs
@@ -233,21 +224,67 @@ public class GUI {
 				outputWriter.close();
 			}
 		});
-		btnStart.setBounds(16, 6, 99, 32);
+		btnStart.setBounds(6, 6, 99, 32);
 		panel.add(btnStart);
 
-		JButton btnPause = new JButton("Pause");
-		btnPause.addActionListener(new ActionListener() {
-			@Override
+		JButton btnStop = new JButton("Stop / Exit");
+		btnStop.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
 			}
 		});
-		btnPause.setBounds(151, 6, 99, 32);
-		panel.add(btnPause);
-
-		JButton btnStop = new JButton("Stop");
-		btnStop.setBounds(288, 6, 99, 32);
+		btnStop.setBounds(312, 6, 99, 32);
 		panel.add(btnStop);
+		final JButton btnDefault = new JButton("Default");
+		btnDefault.setBounds(117, 8, 90, 29);
+		panel.add(btnDefault);
+		final JButton btnClear = new JButton("Clear");
+		btnClear.setBounds(208, 8, 90, 29);
+		panel.add(btnClear);
+		
+				btnClear.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						txtTemptation.setText("");
+						txtPunishment.setText("");
+						txtReward.setText("");
+						txtSucker.setText("");
+						txtTournNum.setText("");
+						txtAdvanceCLimit.setText("");
+						txtAdvancedDLimit.setText("");
+						rdbtnRandom.setSelected(false);
+						rdbtnAssign.setSelected(false);
+						rdbtnLoadSetup.setSelected(false);
+						txtCNum.setText("");
+						txtDNum.setText("");
+						txtAdvancedCNum.setText("");
+						txtAdvancedDNum.setText("");
+						txtAdvancedExpNum.setText("");
+		
+					}
+				});
+		
+				btnDefault.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						txtTemptation.setText("5");
+						txtPunishment.setText("1");
+						txtReward.setText("3");
+						txtSucker.setText("0");
+						txtTournNum.setText("1");
+						txtAdvanceCLimit.setText("100");
+						txtAdvancedDLimit.setText("100");
+						rdbtnRandom.setSelected(true);
+						rdbtnAssign.setSelected(false);
+						rdbtnLoadSetup.setSelected(false);
+						slider.setValue(100);
+						txtCNum.setText("10");
+						txtDNum.setText("10");
+						txtAdvancedCNum.setText("10");
+						txtAdvancedExpNum.setText("10");
+		
+					}
+				});
 
 		final JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
 		tabbedPane.setBounds(6, 6, 438, 411);
@@ -323,7 +360,7 @@ public class GUI {
 		txtPunishment.setBounds(227, 72, 146, 28);
 		panel_1.add(txtPunishment);
 
-		final JRadioButton rdbtnRandom = new JRadioButton("Random");
+		rdbtnRandom = new JRadioButton("Random");
 		rdbtnRandom.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -352,9 +389,7 @@ public class GUI {
 
 			}
 		});
-		final JSlider slider = new JSlider();
-		final JButton btnDefault = new JButton("Default");
-		final JButton btnClear = new JButton("Clear");
+		slider = new JSlider();
 
 		rdbtnLoadSetup.addActionListener(new ActionListener() {
 			@Override
@@ -372,6 +407,13 @@ public class GUI {
 					slider.setEnabled(false);
 					btnDefault.setEnabled(false);
 					btnClear.setEnabled(false);
+					txtCNum.setEnabled(false);
+					txtDNum.setEnabled(false);
+					txtAdvancedCNum.setEnabled(false);
+					txtAdvancedExpNum.setEnabled(false);
+					txtAdvancedDNum.setEnabled(false);
+
+					cmbInfoReqApproach.setEnabled(false);
 
 				} else {
 					txtTemptation.setEnabled(true);
@@ -379,7 +421,6 @@ public class GUI {
 					txtReward.setEnabled(true);
 					txtSucker.setEnabled(true);
 					txtTournNum.setEnabled(true);
-					;
 					txtAdvanceCLimit.setEnabled(true);
 					txtAdvancedDLimit.setEnabled(true);
 					rdbtnRandom.setEnabled(true);
@@ -387,6 +428,12 @@ public class GUI {
 					slider.setEnabled(true);
 					btnDefault.setEnabled(true);
 					btnClear.setEnabled(true);
+					txtCNum.setEnabled(true);
+					txtDNum.setEnabled(true);
+					txtAdvancedCNum.setEnabled(true);
+					txtAdvancedDNum.setEnabled(true);
+					txtAdvancedExpNum.setEnabled(true);
+					cmbInfoReqApproach.setEnabled(true);
 
 				}
 
@@ -407,45 +454,6 @@ public class GUI {
 				lblUncertainties.setText(ticker.substring(0, 3));
 			}
 		});
-
-		btnDefault.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				txtTemptation.setText("5");
-				txtPunishment.setText("1");
-				txtReward.setText("3");
-				txtSucker.setText("0");
-				txtTournNum.setText("1");
-				txtAdvanceCLimit.setText("100");
-				txtAdvancedDLimit.setText("100");
-				rdbtnRandom.setSelected(true);
-				rdbtnAssign.setSelected(false);
-				rdbtnLoadSetup.setSelected(false);
-				slider.setValue(100);
-
-			}
-		});
-		btnDefault.setBounds(214, 6, 90, 29);
-		tbSetUp.add(btnDefault);
-
-		btnClear.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				txtTemptation.setText("");
-				txtPunishment.setText("");
-				txtReward.setText("");
-				txtSucker.setText("");
-				txtTournNum.setText("");
-				txtAdvanceCLimit.setText("");
-				txtAdvancedDLimit.setText("");
-				rdbtnRandom.setSelected(false);
-				rdbtnAssign.setSelected(false);
-				rdbtnLoadSetup.setSelected(false);
-
-			}
-		});
-		btnClear.setBounds(308, 6, 90, 29);
-		tbSetUp.add(btnClear);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
@@ -531,132 +539,85 @@ public class GUI {
 		tabbedPane.addTab("Agents", null, tbModel, null);
 		tbModel.setLayout(null);
 
-		final JButton btnAgentDefault = new JButton("Default");
-		final JButton btnAgentClear = new JButton("Clear");
-
-		rdbtnLoadAg.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (rdbtnLoadAg.isSelected()) {
-					txtCNum.setEnabled(false);
-					txtDNum.setEnabled(false);
-					txtAdvancedCNum.setEnabled(false);
-					txtAdvancedDNum.setEnabled(false);
-					btnAgentDefault.setEnabled(false);
-					btnAgentClear.setEnabled(false);
-					cmbInfoReqApproach.setEnabled(false);
-				} else {
-					txtCNum.setEnabled(true);
-					txtDNum.setEnabled(true);
-					txtAdvancedCNum.setEnabled(true);
-					txtAdvancedDNum.setEnabled(true);
-					btnAgentDefault.setEnabled(true);
-					btnAgentClear.setEnabled(true);
-					cmbInfoReqApproach.setEnabled(true);
-				}
-
-			}
-		});
-
-		rdbtnLoadAg.setForeground(Color.RED);
-		rdbtnLoadAg.setBounds(16, 18, 183, 23);
-		tbModel.add(rdbtnLoadAg);
-
-		btnAgentDefault.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				txtCNum.setText("10");
-				txtDNum.setText("10");
-				txtAdvancedCNum.setText("10");
-				txtAdvancedDNum.setText("10");
-				rdbtnLoadAg.setSelected(false);
-			}
-		});
-		btnAgentDefault.setBounds(211, 17, 90, 29);
-		tbModel.add(btnAgentDefault);
-
-		btnAgentClear.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				txtCNum.setText("");
-				txtDNum.setText("");
-				txtAdvancedCNum.setText("");
-				txtAdvancedDNum.setText("");
-				rdbtnLoadAg.setSelected(false);
-
-			}
-		});
-		btnAgentClear.setBounds(305, 17, 90, 29);
-		tbModel.add(btnAgentClear);
-
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
 		panel_4.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_4.setBounds(26, 66, 358, 189);
+		panel_4.setBounds(26, 19, 358, 236);
 		tbModel.add(panel_4);
 
 		JLabel lblCooperateall = new JLabel("Naive_Cooperator");
 		lblCooperateall.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCooperateall.setForeground(SystemColor.controlShadow);
-		lblCooperateall.setBounds(16, 50, 188, 16);
+		lblCooperateall.setBounds(16, 49, 188, 16);
 		panel_4.add(lblCooperateall);
 
 		JLabel lblDefectall = new JLabel("Naive_Defector");
 		lblDefectall.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDefectall.setForeground(SystemColor.controlShadow);
-		lblDefectall.setBounds(16, 84, 188, 16);
+		lblDefectall.setBounds(16, 89, 188, 16);
 		panel_4.add(lblDefectall);
 
-		JLabel lblAdvanced = new JLabel("Advanced_D");
-		lblAdvanced.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAdvanced.setForeground(SystemColor.controlShadow);
-		lblAdvanced.setBounds(16, 151, 188, 16);
-		panel_4.add(lblAdvanced);
+		JLabel lblAdvancedExp = new JLabel("Advanced_Exploiters");
+		lblAdvancedExp.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblAdvancedExp.setForeground(SystemColor.controlShadow);
+		lblAdvancedExp.setBounds(16, 203, 188, 16);
+		panel_4.add(lblAdvancedExp);
 
 		JLabel lblAdvancedd_1 = new JLabel("Advanced_C");
 		lblAdvancedd_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAdvancedd_1.setForeground(SystemColor.controlShadow);
-		lblAdvancedd_1.setBounds(16, 118, 188, 16);
+		lblAdvancedd_1.setBounds(16, 123, 188, 16);
 		panel_4.add(lblAdvancedd_1);
 
 		txtCNum = new JTextField();
 		txtCNum.setText("1");
 		txtCNum.setColumns(10);
-		txtCNum.setBounds(231, 44, 119, 28);
+		txtCNum.setBounds(231, 43, 119, 28);
 		panel_4.add(txtCNum);
 
 		txtDNum = new JTextField();
 		txtDNum.setText("1");
 		txtDNum.setColumns(10);
-		txtDNum.setBounds(231, 78, 119, 28);
+		txtDNum.setBounds(231, 83, 119, 28);
 		panel_4.add(txtDNum);
 
 		txtAdvancedCNum = new JTextField();
 		txtAdvancedCNum.setText("2");
 		txtAdvancedCNum.setColumns(10);
-		txtAdvancedCNum.setBounds(231, 112, 119, 28);
+		txtAdvancedCNum.setBounds(231, 117, 119, 28);
 		panel_4.add(txtAdvancedCNum);
 
-		txtAdvancedDNum = new JTextField();
-		txtAdvancedDNum.setText("2");
-		txtAdvancedDNum.setColumns(10);
-		txtAdvancedDNum.setBounds(231, 147, 119, 28);
-		panel_4.add(txtAdvancedDNum);
+		txtAdvancedExpNum = new JTextField();
+		txtAdvancedExpNum.setText("2");
+		txtAdvancedExpNum.setColumns(10);
+		txtAdvancedExpNum.setBounds(231, 197, 119, 28);
+		panel_4.add(txtAdvancedExpNum);
 
 		JLabel lblStrategies = new JLabel("Strategies");
 		lblStrategies.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
 		lblStrategies.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblStrategies.setForeground(new Color(199, 21, 133));
-		lblStrategies.setBounds(16, 6, 188, 16);
+		lblStrategies.setBounds(16, 21, 188, 16);
 		panel_4.add(lblStrategies);
 
 		JLabel lblNumofplayers = new JLabel("Num Of Players");
 		lblNumofplayers.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNumofplayers.setForeground(new Color(199, 21, 133));
 		lblNumofplayers.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
-		lblNumofplayers.setBounds(234, 6, 116, 16);
+		lblNumofplayers.setBounds(234, 21, 116, 16);
 		panel_4.add(lblNumofplayers);
+		
+		txtAdvancedDNum = new JTextField();
+		txtAdvancedDNum.setText("2");
+		txtAdvancedDNum.setColumns(10);
+		txtAdvancedDNum.setBounds(231, 157, 119, 28);
+		panel_4.add(txtAdvancedDNum);
+		
+		JLabel label_2 = new JLabel("Advanced_D");
+		label_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_2.setForeground(SystemColor.controlShadow);
+		label_2.setBounds(16, 161, 188, 16);
+		panel_4.add(label_2);
 
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(26, 273, 358, 75);
@@ -799,8 +760,8 @@ public class GUI {
 																	// Index 2 =
 																	// Tab3
 							{
-								info = HIM.getExperimentResults(tabbedPane_1
-										.getSelectedIndex());
+							//	info = HIM.getExperimentResults(tabbedPane_1
+								//		.getSelectedIndex());
 								txtLeaderBoard.setText(info);
 							}
 						}
@@ -818,15 +779,15 @@ public class GUI {
 							{
 								// print agents final scores
 
-								info = HIM.getExperimentResults(tabbedPane_1
-										.getSelectedIndex());
+						//		info = HIM.getExperimentResults(tabbedPane_1
+							//			.getSelectedIndex());
 								txtLeaderBoard.setText(info);
 							}
 
 							// Get tournament Statistics
 							if (tabbedPane_1.getSelectedIndex() == 1) {
-								info = HIM.getExperimentResults(tabbedPane_1
-										.getSelectedIndex());
+							//	info = HIM.getExperimentResults(tabbedPane_1
+							//			.getSelectedIndex());
 								txtStats.setText(info);
 
 							}

@@ -7,9 +7,6 @@ package gui;
  */
 
 
-
-import historicalInformationManager.HIM;
-
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
@@ -133,7 +130,7 @@ public class BarChart3DDemo4 extends JFrame {
 	   dataset.clear();
 		
 	   // Query HIM to submit data for bar chart display 
-		HIM.getDataset(expNum);
+		// HIM.getDataset(expNum);
 		return dataset;
      }
 

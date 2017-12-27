@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JTextArea;
@@ -10,26 +11,10 @@ import java.awt.Color;
 public class GUI_Simulation {
 
 	// Parameter variables 
-	private JFrame frmSimulation;
-	public static JTextArea txtSim = new JTextArea();
+	JFrame frmSimulation;
+	public JTextArea txtSim = new JTextArea();
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					GUI_Simulation window = new GUI_Simulation();
-					window.frmSimulation.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
 	/**
 	 * Create the application.
 	 */
@@ -59,4 +44,6 @@ public class GUI_Simulation {
 
 		scrollPane.setViewportView(txtSim);
 	}
+	
+	
 }

@@ -42,8 +42,6 @@ package gui;
  *
  */
 
-import historicalInformationManager.HIM;
-
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -121,7 +119,7 @@ public class AreaChart extends JFrame {
 		dataset.clear();
 
 		/* Query HIM to submit data for area chart display */
-		HIM.getDataset(expNum);
+	//	HIM.getDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}

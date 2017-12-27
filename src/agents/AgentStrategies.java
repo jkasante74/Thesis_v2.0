@@ -1,24 +1,24 @@
+
+
 package agents;
 
 import javax.swing.JOptionPane;
 
-import historicalInformationManager.HIM;
-
-public class AgentStrategies {
+public class AgentStrategies extends Agent {
 
 	// Parameters for Agent strategies
 	public static boolean infoAcquired = false;
 
 	// Private Variables
-	private static final char COOPERATE = 'C';
-	private static final char DEFECT = 'D';
-	private static float TEMPT;
-	private static float REWARD;
-	private static float PUNISH;
+	private final char COOPERATE = 'C';
+	private final char DEFECT = 'D';
+	private float TEMPT;
+	private float REWARD;
+	private float PUNISH;
 	private static String opponentFirstAct;
 	@SuppressWarnings("unused")
-	private static float SUCKER;
-	private static double ALPHA = 0.5, BETA = 0.5,DISCOUNTFACTOR = 0.9;
+	private float SUCKER;
+	private double ALPHA = 0.5, BETA = 0.5,DISCOUNTFACTOR = 0.9;
 	
 	/**
 	 * DefectAll strategy defects at all times no matter what the opponent does
@@ -30,7 +30,8 @@ public class AgentStrategies {
 	 *         http://www.prisoners-dilemma.com/java/ipdlx/ipdlx_javadocs/
 	 * 
 	 */
-	static char defectAll() {
+	@Override
+	char defectAll() {
 
 		return DEFECT;
 	}
@@ -46,7 +47,8 @@ public class AgentStrategies {
 	 *         http://www.prisoners-dilemma.com/java/ipdlx/ipdlx_javadocs/
 	 * 
 	 */
-	static char cooperateAll() {
+	@Override
+	char cooperateAll() {
 
 		return COOPERATE;
 	}
@@ -58,14 +60,14 @@ public class AgentStrategies {
 	 * @return matchAction : Action taken after strategic decision
 	 * 
 	 */
-
-	protected static char advanceCooperator(int requestingAgentID,
+	@Override
+	char advanceCooperator(int requestingAgentID,
 			int opponentID, int currentTournament, int currentRound) {
 
 		char matchAction = COOPERATE; // Set default action
 
 		// First action in a new experiment
-		if (((currentTournament == 0) && (currentRound == 0))||(Agent.agentStrategies[opponentID].equalsIgnoreCase("Dummy"))) {
+		if (((currentTournament == 0) && (currentRound == 0))) {
 			matchAction = COOPERATE;
 		}
 
@@ -74,11 +76,14 @@ public class AgentStrategies {
 
 			double opponentCooperateRatio = getOpponentPastInfo(requestingAgentID,
 					opponentID);
-			if(Agent.agentStrategies[opponentID]=="Naive_C")
-				System.out.println("Agent : "+ opponentID+ "    Opponent Ratio : "+ opponentCooperateRatio +"     Strategy : "+Agent.agentStrategies[opponentID]);
+			if(agentStrategies[opponentID]=="Naive_C")
+				System.out.println("Agent : "+ opponentID+ "    Opponent Ratio : "+ opponentCooperateRatio +"     Strategy : "+ agentStrategies[opponentID]);
 
 			updateBelief(requestingAgentID, opponentID, opponentCooperateRatio);
-			double opponentCooperatingRating = Agent.readOpponentRating(requestingAgentID, opponentID);
+			
+			// Get opponent updated cooperating ratio
+			double opponentCooperatingRating =agentBeliefs[requestingAgentID][opponentID];
+			
 			
 			// Promote cooperation
 			if (opponentCooperatingRating >= 0.9){
@@ -88,6 +93,8 @@ public class AgentStrategies {
 			else if(opponentCooperatingRating <= 0.1){
 				matchAction = DEFECT;
 			}
+			
+			
 			// Make strategic decision if agent is advanced
 			else
 			//	matchAction = reciprocityAction(opponentCooperateRatio,requestingAgentID, opponentID);
@@ -107,13 +114,14 @@ public class AgentStrategies {
 	 * @return matchAction : Action taken after strategic decision
 	 * 
 	 */
-	static char advanceDefector(int requestingAgentID, int opponentID,
+	@Override
+	char advanceDefector(int requestingAgentID, int opponentID,
 			int currentTournament, int currentRound) {
 
 		char matchAction = DEFECT; // Set default action
 
 		// First action in a new experiment
-		if (((currentTournament == 0) && (currentRound == 0))||(Agent.agentStrategies[opponentID].equalsIgnoreCase("Dummy"))) {
+		if (((currentTournament == 0) && (currentRound == 0))) {
 			matchAction = DEFECT;
 		}
 
@@ -122,11 +130,11 @@ public class AgentStrategies {
 			double opponentCooperateRatio = getOpponentPastInfo(requestingAgentID,
 					opponentID);
 
-			updateBelief(requestingAgentID, opponentID, opponentCooperateRatio);
+			agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;
 
 			// Exploit naive cooperators and protect from defectors
-			if ((Agent.readOpponentRating(requestingAgentID, opponentID) <= 0.1)
-					|| (Agent.readOpponentRating(requestingAgentID, opponentID) >= 0.9)) {
+			if (((agentBeliefs[requestingAgentID][opponentID]) <= 0.1)
+					|| ((agentBeliefs[requestingAgentID][opponentID]) >= 0.9)) {
 				matchAction = DEFECT;
 			}
 			
@@ -139,7 +147,7 @@ public class AgentStrategies {
 	}
 
 	
-	private static char superRationalWithDiscountFactor(double opponentCooperateRatio) {
+	private char superRationalWithDiscountFactor(double opponentCooperateRatio) {
 		char matchAction; // Set default action
 
 		if(opponentFirstAct != "D")
@@ -170,26 +178,7 @@ public class AgentStrategies {
 	}
 
 	
-	/**
-	 * returnAltruisticReciprocityAction method returns the action based on altruism reciprocity
-	 * such that the agent cooperate only when the opponent has a higher cooperating index else it defects
-	 * 
-	 * @param opponentCooperateRatio
-	 * @param requestingAgentID
-	 * @param opponentID
-	 * @return
-	 */
-	private static char reciprocityAction(
-			double opponentCooperateRatio, int requestingAgentID, int opponentID) {
-		
-		char matchAction;
-		if(opponentCooperateRatio >= 0.5)
-			matchAction = COOPERATE;
-		else
-			matchAction = DEFECT;
-			
-		return matchAction;
-	}
+	
 	
 	/**
 	 * dummy strategy returns a non-computable strategy 'A'
@@ -198,7 +187,7 @@ public class AgentStrategies {
 	 * 
 	
 	 */
-	static char dummy() {
+	char dummy() {
 
 		return 'A';
 	}
@@ -217,20 +206,21 @@ public class AgentStrategies {
 	 * 
 	 * 
 	 */
-	private static double getOpponentPastInfo(int requestingAgentID,
+	private double getOpponentPastInfo(int requestingAgentID,
 			int opponentID) {
 
 		String opponentInformation = "";
-		int pastInfoTypeIndex = Agent.expInfoRequestOption;
+		
 		double opponentCooperateRatio = 0;
 
-		switch (pastInfoTypeIndex) {
+		JOptionPane.showMessageDialog(null, opponentInformation);
+
+		switch (infoRequestOption) {
 
 		// Get opponent's first action
 		case 0:
-			opponentInformation = HIM.requestOppPastInfo(requestingAgentID,
-					opponentID, pastInfoTypeIndex);
-			
+			opponentInformation = him.requestOppPastInfo(requestingAgentID,
+					opponentID, infoRequestOption);
 			if (infoAcquired) {
 				if (opponentInformation.equalsIgnoreCase("D"))
 					opponentCooperateRatio = 0.0;
@@ -242,8 +232,8 @@ public class AgentStrategies {
 
 		// Get opponent's first defection
 		case 1:
-			opponentInformation = HIM.requestOppPastInfo(requestingAgentID,
-					opponentID, pastInfoTypeIndex);
+			opponentInformation = him.requestOppPastInfo(requestingAgentID,
+					opponentID, infoRequestOption);
 			if (infoAcquired) {
 				int pastInfo = Integer.parseInt(opponentInformation);
 				opponentCooperateRatio = pastInfo / 10;
@@ -252,8 +242,8 @@ public class AgentStrategies {
 
 		// Request all opponent's past actions
 		case 2:
-			opponentInformation = HIM.requestOppPastInfo(requestingAgentID,
-					opponentID, pastInfoTypeIndex);
+			opponentInformation = him.requestOppPastInfo(requestingAgentID,
+					opponentID, infoRequestOption);
 			
 			if ((infoAcquired)||((opponentInformation != null)&&(!opponentInformation.isEmpty()))){
 				opponentCooperateRatio = calcOppRating(opponentInformation);
@@ -264,8 +254,8 @@ public class AgentStrategies {
 
 		// Request all opponent's past actions from a random tournament
 		case 3:
-			opponentInformation = HIM.requestOppPastInfo(requestingAgentID,
-					opponentID, pastInfoTypeIndex);
+			opponentInformation = him.requestOppPastInfo(requestingAgentID,
+					opponentID, infoRequestOption);
 			if (infoAcquired) {
 				opponentCooperateRatio = calcOppRating(opponentInformation);
 				opponentFirstAct = opponentInformation.substring(0, 1);
@@ -274,8 +264,8 @@ public class AgentStrategies {
 
 		// Request past actions of those who played against opponent
 		case 4:
-			opponentInformation = HIM.requestOppPastInfo(requestingAgentID,
-					opponentID, pastInfoTypeIndex);
+			opponentInformation = him.requestOppPastInfo(requestingAgentID,
+					opponentID, infoRequestOption);
 			if (infoAcquired)
 				opponentCooperateRatio = calcOppRating(opponentInformation);
 			break;
@@ -293,7 +283,7 @@ public class AgentStrategies {
 	 * @return opponentCooperateRatio : agent's calculated rating of the opponent.
 	 * 
 	 */
-	private static double calcOppRating(String opponentInformation) {
+	private double calcOppRating(String opponentInformation) {
 
 		double numOfCooperations = 0.0, numOfDefections = 0.0;
 		double opponentCooperateRatio = 0.0;
@@ -328,17 +318,17 @@ public class AgentStrategies {
 	 *            : agent's calculated rating of the opponent.
 	 * 
 	 */
-	private static void updateBelief(int requestingAgentID, int opponentID,
+	private void updateBelief(int requestingAgentID, int opponentID,
 			double opponentCooperateRatio) {
 
-		Agent.agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;
+		agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;
 	}
 
 	
 	
 	
 	
-	public static void setPayOffValues(int[] currentSetupValues) {
+	public void setPayOffValues(int[] currentSetupValues) {
 		
 		TEMPT = currentSetupValues[0];
 		REWARD = currentSetupValues[1];

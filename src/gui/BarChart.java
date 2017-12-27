@@ -45,7 +45,6 @@ package gui;
  */
 
 import gui.BarChart3DDemo4.CustomBarRenderer3D;
-import historicalInformationManager.HIM;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -182,7 +181,7 @@ public class BarChart extends JFrame {
 		dataset.clear();
 		
 		// Query HIM to submit data for bar chart display 
-		HIM.getDataset(expNum);
+//		HIM.getDataset(expNum);
 		//JOptionPane.showMessageDialog(null, agentStrategies);
 
 		return dataset; // add the data point (y-value, variable, x-value)

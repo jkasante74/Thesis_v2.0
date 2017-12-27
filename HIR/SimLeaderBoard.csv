@@ -10,15 +10,15 @@ Request Limit : ,Assigned
 
 
  Agent_ID, Strategy , Pay_Off , Cooperations , Defections 
-Agent 1,Advanced_C,45.0,10,10
+Agent 5,Advanced_D,57.0,10,10
  
-Agent 6,Advanced_D,40.0,0,20
+Agent 1,Advanced_D,57.0,10,10
  
-Agent 5,Advanced_D,38.0,4,16
+Agent 6,Advanced_C,51.0,15,5
  
-Agent 4,Advanced_C,38.0,9,11
+Agent 2,Advanced_C,51.0,15,5
  
-Agent 2,Naive_D,36.0,0,20
+Agent 4,Naive_D,36.0,0,20
  
 Agent 3,Naive_C,24.0,20,0
  

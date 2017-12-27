@@ -4,11 +4,11 @@ INSTALLING ThesisImplementation
 ======================
 This README file explains how to import and run the ThesisImplementation project developed for the iterated round robin tournament of the Prisoner Dilemma game which is freely available for distribution and experimentation.
 
-The implementation of the simulator is divided into seven main JAVA packages six of which represent the main components of the System's Architecture: GUI, historicalInformationManager, setupManager, simulationManager, tournamentBoard, and agents.
+The implementation of the simulator is divided into seven main JAVA packages six of which represent the main components of the System's Architecture: GUI, historicalInformationManager, settings, simulationManager, tournamentBoard, and agents.
 
 These packages are collections of JAVA programs some of which are adopted from external sources and implemented to provide services such as creating line graph, scheduling of tournaments in Round Robin structure, reading and writing into a file, etc.  
 
-The packages shown in this implementation are described as the main components in the System Architecture section of the Thesis titled ÒDevelopment of Cooperation Among Informed AgentsÓ. 
+The packages shown in this implementation are described as the main components in the System Architecture section of the Thesis titled ï¿½Development of Cooperation Among Informed Agentsï¿½. 
 
 By Jonathan Nyantakyi.
 
@@ -26,7 +26,7 @@ The software requirements
   - Microsoft Excel 2003, Matlab version 6 or higher.
 
 
-I have successfully compiled ÒThesisImplementationÓ project under the following operating systems and compiler versions:
+I have successfully compiled ï¿½ThesisImplementationï¿½ project under the following operating systems and compiler versions:
 
   - Mac OS X with Eclipse IDE and JDK Compliance level 1.6 
 
@@ -40,7 +40,7 @@ I have successfully compiled ÒThesisImplementationÓ project under the following 
 
 To install,
 
-1) Download the compressed archive file ÒThesisImplementationÓ.
+1) Download the compressed archive file ï¿½ThesisImplementationï¿½.
 
 2) Import the compressed file into Eclipse IDE Kepler or above using the steps below:
 
@@ -59,7 +59,7 @@ To install,
 
 To perform a simulation experiment, it is important to ensure that all other required external libraries are first imported
 
-1. Right click on the ÒThesisImplementationÓ project in your package explorer and select "Properties" 
+1. Right click on the ï¿½ThesisImplementationï¿½ project in your package explorer and select "Properties" 
 2. In the Properties dialog, click on "Java Build Path" to show the various imported libraries.
 3. Click on add "External Libraries JARS"
 4. Locate the libraries "jcommon-1.0.23.jar" and "jfreechart-1.0.19,jar" in the externalLibraries package.
@@ -78,8 +78,8 @@ If you want to run the in an IDE, such as Eclipse, follow the instruction
 below;
 
 1. Expand the project "ThesisImplementation". 
-2. Locate the ÒGUI.javaÓ file in the ÒguiÓ package.
-3. Right-Click on the ÒGUI.java"  file
+2. Locate the ï¿½GUI.javaï¿½ file in the ï¿½guiï¿½ package.
+3. Right-Click on the ï¿½GUI.java"  file
 4. Select "Run As" option
 5. Choose "Java Application" to run the program.
 
@@ -89,8 +89,8 @@ below;
 
 If you know how to compile programs on the command line, and if you have
 downloaded the program, you can easily compile and run.
-Just change directory in terminal into ÒThesisImplementationÓ and use
-the command Òjavac GUI.javaÓ to compile.  
+Just change directory in terminal into ï¿½ThesisImplementationï¿½ and use
+the command ï¿½javac GUI.javaï¿½ to compile.  
 As long as your compiler supports Java 7 or higher, there should be no errors.  
 
 
@@ -114,45 +114,45 @@ b. gui/           					--	Holds files with documentation for all GUI subcomponen
 
 	gui/AreaChart					-- 	Creates an Area chart for selected experiment index.
 	gui/BarChart					--  Creates an Bar chart for selected experiment index.
-	gui/LineChart					Ñ-	Creates an Line chart for selected experiment index.
-	gui/GUI_Simulation				Ñ-	Provides a window that displays simulation logs.
-	gui/GUI							Ñ-	Provides application window from which user can setup, display and manipulate experiments.
+	gui/LineChart					ï¿½-	Creates an Line chart for selected experiment index.
+	gui/GUI_Simulation				ï¿½-	Provides a window that displays simulation logs.
+	gui/GUI							ï¿½-	Provides application window from which user can setup, display and manipulate experiments.
 
 
 
 
-c. historicalInformationManager/						Ñ- 	Holds files and folders for managing and storing simulation experiments
+c. historicalInformationManager/						ï¿½- 	Holds files and folders for managing and storing simulation experiments
 	
-	historicalInformationManager/HIM					Ñ-	Manages HIR and answers request for information from Agents. HIM also answers experimenterÕs queries through GUI.
-	historicalInformationManager/HIR					Ñ-	Provides storage for all experimental statistics, leadershipboard and charts	
+	historicalInformationManager/HIM					ï¿½-	Manages HIR and answers request for information from Agents. HIM also answers experimenterï¿½s queries through GUI.
+	historicalInformationManager/HIR					ï¿½-	Provides storage for all experimental statistics, leadershipboard and charts	
 		
 	
 
 
-d. setupManager						Ñ-	Holds files for experimental set up and validations
+d. settings						ï¿½-	Holds files for experimental set up and validations
 	
-	setupManager/ParamConfigMgr			Ñ-	Configures and also validates Experimental set up values  
-	setupManager/StrategySetupManager		Ñ-	Configures and also validates agent strategies set up values
+	settings/ParamConfigMgr			ï¿½-	Configures and also validates Experimental set up values  
+	settings/StrategySetupManager		ï¿½-	Configures and also validates agent strategies set up values
 
 
 
-e. simulationManager						Ñ-	Controls scheduling and manages the simulation process
-	simulationManager/MatchManager				Ñ-	Controls agents activities for every match 
-	simulationManager/RoundManager				Ñ-	Controls agents activities for every round 
-	simulationManager/Scheduler				Ñ-	Schedules and Controls agents activities for every experiment
-	simulationManager/TournamentHandler			Ñ-	Controls agents activities for every tournament
-
-
-
-
-f. tournamentBoard					Ñ- 	Storage where agents in each match encounter write their actions
+e. simulationManager						ï¿½-	Controls scheduling and manages the simulation process
+	simulationManager/MatchManager				ï¿½-	Controls agents activities for every match 
+	simulationManager/RoundManager				ï¿½-	Controls agents activities for every round 
+	simulationManager/Scheduler				ï¿½-	Schedules and Controls agents activities for every experiment
+	simulationManager/TournamentHandler			ï¿½-	Controls agents activities for every tournament
 
 
 
 
-g. agents						-Ñ 	Holds files and folders for managing agents, beliefs, strategies, and actions.
-	agents/agent					Ñ-	Agent component that creates agents and holds their beliefs	
- 	agents/AgentStrategies				Ñ	Stores agents strategies and associated actions.
+f. tournamentBoard					ï¿½- 	Storage where agents in each match encounter write their actions
+
+
+
+
+g. agents						-ï¿½ 	Holds files and folders for managing agents, beliefs, strategies, and actions.
+	agents/agent					ï¿½-	Agent component that creates agents and holds their beliefs	
+ 	agents/AgentStrategies				ï¿½	Stores agents strategies and associated actions.
 
 
 
