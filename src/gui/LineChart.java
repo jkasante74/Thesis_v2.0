@@ -39,6 +39,9 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.ui.RefineryUtilities;
+
+import historicalInfo.HistoricalInfoMgr;
+
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
@@ -103,11 +106,12 @@ public class LineChart extends JFrame {
 	 *         and tournament information.
 	 */
 	private DefaultCategoryDataset createDataset() {
-		// clear dataset 
+		
 		dataset.clear();
+		
+		// Query HIM to submit data for bar chart display 
+		HistoricalInfoMgr.getDataset(expNum);
 
-		// Query HIM to submit data for line chart display 
-	//	HIM.getDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}

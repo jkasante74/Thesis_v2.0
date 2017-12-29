@@ -45,6 +45,7 @@ package gui;
  */
 
 import gui.BarChart3DDemo4.CustomBarRenderer3D;
+import historicalInfo.HistoricalInfoMgr;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -76,7 +77,6 @@ import org.jfree.ui.RefineryUtilities;
 import org.jfree.ui.TextAnchor;
 
 import javax.swing.JLabel;
-
 import java.awt.Font;
 import java.util.ArrayList;
 
@@ -96,7 +96,7 @@ public class BarChart extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private static int expNum; // requested experiment index
 	public static ArrayList<String> agentStrategies = new ArrayList<String>();
-	
+	public HistoricalInfoMgr him;
 	
 	class DifferenceBarRenderer extends BarRenderer {
 		
@@ -168,6 +168,9 @@ public class BarChart extends JFrame {
 
 	}
 
+	
+	
+
 	/**
 	 * createDataset method updates information about the progress of players in
 	 * a specific experiment by retrieving agents' scores for different
@@ -181,8 +184,7 @@ public class BarChart extends JFrame {
 		dataset.clear();
 		
 		// Query HIM to submit data for bar chart display 
-//		HIM.getDataset(expNum);
-		//JOptionPane.showMessageDialog(null, agentStrategies);
+		HistoricalInfoMgr.getDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}

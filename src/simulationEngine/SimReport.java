@@ -25,6 +25,10 @@ public class SimReport {
 	}
 	
 	
+	public SimReport(){
+		
+	}
+	
 	/**
 	 * printExperiment method reports on a statistics of current Experiment
 	 * index agents' payoffs, strategies and positions .
@@ -43,7 +47,7 @@ public class SimReport {
 
 		try {
 			Files.write(Paths.get(TOURNAMENTBOARD), experimentTitle2.getBytes());
-			him.updateLog(experimentTitle2);
+			him.updateLog();
 		//	HIM.startExp(currentExperimentID);
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, FILENOTFOUND);
@@ -69,12 +73,61 @@ public class SimReport {
 		// Store current tournament title in tournament board
 		try {
 			Files.write(Paths.get(TOURNAMENTBOARD), tx.getBytes());
-			him.updateLog(tournamentStats);
+			him.updateLog();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, FILENOTFOUND);
 		}
 
 	}
+	
+	
+	
+	protected void updateExperimentLog(String windowLog, String logMsg) {
+
+		simLog.txtSim.append(windowLog);
+		
+		// Store current tournament title in tournament board
+		try {
+			Files.write(Paths.get(TOURNAMENTBOARD), logMsg.getBytes());
+			him.updateLog();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, FILENOTFOUND);
+		}
+
+	}
+	
+	
+	
+
+	/**
+	 * getExperimentResults accepts display request from the GUI component and
+	 * based on the request returns the appropriate results stored in Historical
+	 * Information Repository
+	 * 
+	 * @param requestOption
+	 *            : Query from GUI component
+	 * 
+	 * @return requestInfo : Response given to GUI component
+	 * 
+	 */
+
+	public String getExperimentResults(int requestOption) {
+		String requestInfo = "";
+
+		switch (requestOption) {
+		case 0:
+			requestInfo = him.experimentLeaderboard;
+			break;
+
+		case 1:
+			requestInfo = him.agentsTournamentStatistics;
+			break;
+		}
+
+		return requestInfo;
+	}
+	
+	
 	
 	
 	

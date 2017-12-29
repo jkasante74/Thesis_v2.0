@@ -97,7 +97,12 @@ public class SimulationManager {
 			// Round Manager
 			roundMgr(currentTournament, totalRounds, matchesPerRound);
 					
-			him.displayAgentsTournamentStats(currentTournament);
+			try {
+				him.displayAgentsTournamentStats(currentTournament);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	
 		}		
 
@@ -136,17 +141,13 @@ public class SimulationManager {
 				awayList.set(match, (away + 1));
 			}
 			
+			// Update round Information
 			String text =  "\n\nRound " + (round + 1) + "\n" + "---------------------------------\n";
 			String textx = "\nRound " + (round + 1) + "\n";
-			simLog.txtSim.append(text);
 			
-			//Store current round title in tournament board
-			try {
-				Files.write(Paths.get(TOURNAMENTBOARD), textx.getBytes());
-				him.updateLog(text);
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, FILENOTFOUND);
-			}
+			report.updateExperimentLog(text, textx);
+
+			
 			
 			// For each round store the agents' IDs and strategies on Tournament Board  
 			for (int j = 0; j < matchesPerRound; j++) {
@@ -159,22 +160,18 @@ public class SimulationManager {
 					
 				if(!opponentStrategy.equalsIgnoreCase(DUMMY_STRATEGY))
 				{	
+
+					// Update matched agent ID in report and log
 					String matchedAgentID =  "Agent " + (agentID + 1) + "\t \t vrs \t Agent " + (opponentID + 1) + "\n";
-					simLog.txtSim.append(matchedAgentID);
 					String matchedAgentID2 = "\nAgent " + homeList.get(j) + "\t \t vrs \t Agent " + awayList.get(j) + "\n";
+					report.updateExperimentLog(matchedAgentID, matchedAgentID2);
+					
+					
+					// Update matched strategies in report and log
 					String matchedAgentStrategies = agentStrategy + "\t \t vrs \t " + opponentStrategy + "\n";
-					simLog.txtSim.append(matchedAgentStrategies);
-	
-					try {
-						Files.write(Paths.get(TOURNAMENTBOARD), matchedAgentID2.getBytes());
-						him.updateLog(matchedAgentID);
-
-						Files.write(Paths.get(TOURNAMENTBOARD), matchedAgentStrategies.getBytes());
-						him.updateLog(matchedAgentStrategies);
-					} catch (IOException e) {
-						JOptionPane.showMessageDialog(null, FILENOTFOUND);
-					  }
-
+					report.updateExperimentLog(matchedAgentStrategies, matchedAgentStrategies);
+				
+					
 					// Transfer control to MatchManager
 					matchMgr(agentStrategy, opponentStrategy, agentID, opponentID, currentTournament, round);
 				}
@@ -210,17 +207,12 @@ public class SimulationManager {
 			agentsAction[0] = agent.getAgentAction(agentID, opponentID,currentTournament, currentRound);
 			agentsAction[1] = agent.getAgentAction(opponentID,agentID, currentTournament, currentRound);
 
+			
+			// Update actions of matched agents
 			String text = agentsAction[0] + "\t \t vrs \t "+ agentsAction[1] + "\n";
-			simLog.txtSim.append(text);
+			report.updateExperimentLog(text, text);
 	
-			// Store matched agents actions in Tournament Board
-			try {
-				Files.write(Paths.get(TOURNAMENTBOARD), text.getBytes());
-				him.updateLog(text);
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, FILENOTFOUND);
-			}
-	
+			
 			float[] matchScores = calcMatchedAgentsScores(agentsAction);
 	
 			him.updateMatchedAgentsScores(agentID, opponentID, matchScores);
@@ -277,19 +269,13 @@ public class SimulationManager {
 
 		if (agentsActions[1] != DUMMY) {
 			String calculatedScores =  matchScores[0] + "\t \t vrs \t " + matchScores[1] + "\n\n";
-			simLog.txtSim.append(calculatedScores);
-
-			// Store calculated actions in tournament board
-			try {
-				Files.write(Paths.get(TOURNAMENTBOARD),
-						calculatedScores.getBytes());
-				him.updateLog(calculatedScores);
-			} catch (IOException e) {
-				JOptionPane.showMessageDialog(null, FILENOTFOUND);
-			}
+			String calculatedScores2 =  matchScores[0] + "\t \t vrs \t " + matchScores[1] + "\n";
+			
+			// Update scores of matched agents
+			report.updateExperimentLog(calculatedScores, calculatedScores2);
 
 		}
-
+		 
 		return matchScores;
 
 	}

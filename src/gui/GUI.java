@@ -2,6 +2,7 @@ package gui;
 
 import settings.InputValidator;
 import settings.SetupManager;
+import simulationEngine.SimReport;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -34,6 +35,9 @@ import javax.swing.JTextField;
 import javax.swing.JSlider;
 import javax.swing.JRadioButton;
 import javax.swing.event.ChangeListener;
+
+import historicalInfo.HistoricalInfoMgr;
+
 import javax.swing.event.ChangeEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -46,6 +50,7 @@ public class GUI {
 	// Parameters of GUI component
 	public static boolean radomRequest = false;
 	public static JComboBox<Object> cmbExpSel;
+	public static SimReport rep;
 
 	// Private variables
 	private JFrame frame;
@@ -60,7 +65,7 @@ public class GUI {
 	private JTextField txtDNum;
 	private JTextField txtAdvancedCNum;
 	private JTextField txtAdvancedExpNum;
-	private static boolean startSimulation = false;
+	private boolean startSimulation = false;
 	private static JTextArea txtLeaderBoard = new JTextArea();
 	private static final JTextArea txtStats = new JTextArea();
 	private JRadioButton rdbtnRandom;
@@ -80,15 +85,18 @@ public class GUI {
 	 *            string passed to this method
 	 */
 	public static void main(String[] args) {
+		
 		EventQueue.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				try {
+					
 					GUI window = new GUI();
 					window.frame.setVisible(true);
 					UIManager.setLookAndFeel(UIManager
 							.getSystemLookAndFeelClassName());
 					simLog = new GUI_Simulation();
+				//	rep = new SimReport();
 					simLog.frmSimulation.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -98,6 +106,7 @@ public class GUI {
 		});
 	}
 
+	
 	/**
 	 * Create the application.
 	 */
@@ -141,12 +150,6 @@ public class GUI {
 				startSimulation = true;
 				GUI.cmbExpSel.removeAllItems();
 				
-				// Request to clean charts file
-			//	try {
-				//	HIM.clearChartInfo();
-			//	} catch (FileNotFoundException e2) {
-			//		e2.printStackTrace();
-			//	}
 
 				// Check if we are not loading setup from batch file 
 				if (!rdbtnLoadSetup.isSelected()) {
@@ -760,9 +763,8 @@ public class GUI {
 																	// Index 2 =
 																	// Tab3
 							{
-							//	info = HIM.getExperimentResults(tabbedPane_1
-								//		.getSelectedIndex());
-								txtLeaderBoard.setText(info);
+							
+								txtLeaderBoard.setText(HistoricalInfoMgr.experimentLeaderboard);
 							}
 						}
 					}
@@ -777,20 +779,16 @@ public class GUI {
 							// Get leader board to observe players performance
 							if (tabbedPane_1.getSelectedIndex() == 0) 
 							{
+								
 								// print agents final scores
-
-						//		info = HIM.getExperimentResults(tabbedPane_1
-							//			.getSelectedIndex());
-								txtLeaderBoard.setText(info);
+								txtLeaderBoard.setText(HistoricalInfoMgr.experimentLeaderboard);
 							}
 
 							// Get tournament Statistics
-							if (tabbedPane_1.getSelectedIndex() == 1) {
-							//	info = HIM.getExperimentResults(tabbedPane_1
-							//			.getSelectedIndex());
-								txtStats.setText(info);
+							if (tabbedPane_1.getSelectedIndex() == 1) 	
+								txtStats.setText(HistoricalInfoMgr.agentsTournamentStatistics);
 
-							}
+							
 
 							// Get players performance as a graph
 							if (tabbedPane_1.getSelectedIndex() == 2) {

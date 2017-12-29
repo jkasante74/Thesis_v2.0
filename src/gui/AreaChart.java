@@ -55,6 +55,8 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.RefineryUtilities;
 
+import historicalInfo.HistoricalInfoMgr;
+
 import javax.swing.JLabel;
 
 import java.awt.Font;
@@ -74,7 +76,8 @@ public class AreaChart extends JFrame {
 	private static final long serialVersionUID = 1L;
 	public static DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	private static int expNum; // requested experiment index
-
+	public HistoricalInfoMgr him;
+	
 	/**
 	 * AreaChart constructor. (For invocation by subclass constructors,
 	 * typically implicit.) Creates an Area chart of agents' pay-offs against
@@ -115,11 +118,11 @@ public class AreaChart extends JFrame {
 	 *         and tournament information.
 	 */
 	private DefaultCategoryDataset createDataset() {
-		/* clear dataset */
+		
 		dataset.clear();
-
-		/* Query HIM to submit data for area chart display */
-	//	HIM.getDataset(expNum);
+		
+		// Query HIM to submit data for bar chart display 
+		HistoricalInfoMgr.getDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}

@@ -3,6 +3,8 @@ package agents;
 import java.util.ArrayList;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import historicalInfo.HistoricalInfoMgr;
 
 
@@ -11,6 +13,7 @@ public class Agent {
 	
 	private String ADVANCE_COOPERATOR = "Advanced_C";
 	private String ADVANCE_DEFECTOR = "Advanced_D";
+	private String ADVANCE_EXPLOITER = "Advanced_E";
 	private String NAIVE_DEFECTOR = "Naive_D";
 	private String NAIVE_COOPERATOR = "Naive_C";
 	private String DUMMY = "Dummy";
@@ -20,25 +23,38 @@ public class Agent {
 	protected String[] agentStrategies;
 	protected int infoRequestOption;
 	private int currentTournament;
-	protected double agentBeliefs[][], gameValue[][];
+	protected float TEMPT;
+	protected float REWARD;
+	protected float PUNISH;
+	protected float SUCKER;
+
+	public double agentBeliefs[][], gameValue[][];
 	public Agent() {
-		
+	
+
 	}
 
 
-	public Agent(ArrayList agents, String[] agentStrategies, int infoRequestOption, int numOfAgents, HistoricalInfoMgr him) {
+	public Agent(ArrayList agents, String[] agentStrategies, int infoRequestOption, int numOfAgents, float []payOff, HistoricalInfoMgr him) {
 		
 		this.agents = agents;
 		this.him = him;
 		this.agentStrategies = agentStrategies;
 		this.infoRequestOption = infoRequestOption;
 		this.numOfAgents = numOfAgents;
-		setAgentsBeliefs(numOfAgents);
-		AgentStrategies ags = new AgentStrategies();
-		
+		setAgentsBeliefs();	
+		this.TEMPT =  payOff[0];
+		this.REWARD = payOff[1];
+		this.PUNISH = payOff[2];
+		this.SUCKER = payOff[3];
+
+	//	AgentStrategies agStrategy = new AgentStrategies();
+				
 	}
 	
 	
+	
+
 	/**
 	 * getMatchedAgentActions method returns the chosen actions of paired agents
 	 * 
@@ -56,9 +72,10 @@ public class Agent {
 	 */
 	public char getAgentAction(int requestingAgentID,
 			int opponentID, int currentTournament, int currentRound) {
-		Agent ags = new AgentStrategies();
+		Agent ags = new AgentStrategies(him, agentBeliefs);
 		char agentAction = 0;
-		
+
+
 		this.currentTournament = currentTournament;
 
 		String agentStrategy = agentStrategies[requestingAgentID];
@@ -70,29 +87,13 @@ public class Agent {
 		if (agentStrategy.equalsIgnoreCase(NAIVE_DEFECTOR))
 			agentAction = ags.defectAll();
 		if (agentStrategy.equalsIgnoreCase(ADVANCE_COOPERATOR))
-			agentAction = ags.advanceCooperator(requestingAgentID,
-					opponentID, currentTournament, currentRound);
-		if (agentStrategy.equalsIgnoreCase(ADVANCE_DEFECTOR))
-			agentAction = ags.advanceDefector(requestingAgentID,
-					opponentID, currentTournament, currentRound);
+			agentAction = ags.advanceCooperator(requestingAgentID,agentStrategy,
+					opponentID, opponentStrategy, currentTournament, currentRound, infoRequestOption);
+		if ((agentStrategy.equalsIgnoreCase(ADVANCE_DEFECTOR))||(agentStrategy.equalsIgnoreCase(ADVANCE_EXPLOITER)))
+			agentAction = ags.advanceDefector(requestingAgentID,agentStrategy,
+					opponentID, opponentStrategy, currentTournament, currentRound, infoRequestOption);
 		if (agentStrategy.equalsIgnoreCase(DUMMY))
 			agentAction = 'A';
-		
-		/*
-		// Get action of opponent
-		if (opponentStrategy.equalsIgnoreCase(NAIVE_COOPERATOR))
-			OpponentAction = ags.cooperateAll();
-		if (opponentStrategy.equalsIgnoreCase(NAIVE_DEFECTOR))
-			OpponentAction = ags.defectAll();
-		if (opponentStrategy.equalsIgnoreCase(ADVANCE_COOPERATOR))
-			OpponentAction = ags.advanceCooperator(opponentID,
-					requestingAgentID, currentTournament, currentRound);
-		if (opponentStrategy.equalsIgnoreCase(ADVANCE_DEFECTOR))
-			OpponentAction = ags.advanceDefector(requestingAgentID,
-					opponentID, currentTournament, currentRound);
-		if (opponentStrategy.equalsIgnoreCase(DUMMY))
-			OpponentAction = 'A';
-*/
 		
 
 		return agentAction;
@@ -100,7 +101,8 @@ public class Agent {
 	}
 	
 	
-	char advanceDefector(int requestingAgentID, int opponentID, int currentTournament, int currentRound) {
+	char advanceDefector(int requestingAgentID, String agentStrategy,
+			int opponentID,String opponentStrategy, int currentTournament, int currentRound, int infoRequestOption) {
 		
 		return 0;
 	}
@@ -116,7 +118,8 @@ public class Agent {
 	}
 
 
-	char advanceCooperator(int requestingAgentID, int opponentID, int currentTournament, int currentRound) {
+	char advanceCooperator(int requestingAgentID, String agentStrategy,
+			int opponentID,String opponentStrategy,  int currentTournament, int currentRound, int infoRequestOption) {
 		return 0;
 	}
 
@@ -129,7 +132,7 @@ public class Agent {
 	 *            : Number of agents in current Experiment
 	 * 
 	 */
-	private void setAgentsBeliefs(int numOfAgents) {
+	protected void setAgentsBeliefs() {
 
 		agentBeliefs = new double[numOfAgents][numOfAgents];
 		gameValue = new double[numOfAgents][numOfAgents];
@@ -145,6 +148,8 @@ public class Agent {
 			}
 
 		}
+		
+		
 	}
 
 	
@@ -163,6 +168,7 @@ public class Agent {
 
 		return randomTournamentNumber;
 	}
+
 
 	
 	

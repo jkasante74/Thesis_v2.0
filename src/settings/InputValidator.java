@@ -271,7 +271,10 @@ public class InputValidator {
 		strategiesNum[3] = Math.round(currentSetup[11]);
 		strategiesNum[4] = Math.round(currentSetup[12]);
 		
-
+		//Reset number of Agents
+		numOfAgents = 0;
+		
+		//Get total number of agents
 		for (int i = 0; i < (strategiesNum.length); i++) 
 			numOfAgents = numOfAgents + (strategiesNum[i]);
 
@@ -354,7 +357,7 @@ public class InputValidator {
 	public int[] setRequestLimit() {
 
 		agentRequestLimit = new int[Math.round(numOfAgents)];
-	//	JOptionPane.showMessageDialog(null, numOfAgents);
+		JOptionPane.showMessageDialog(null, numOfAgents);
 		// Generate random limits for agents if random option is selected
 		if (GUI.radomRequest) {
 			Random r = new Random();

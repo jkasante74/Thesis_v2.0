@@ -38,6 +38,8 @@ import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 import org.jfree.ui.TextAnchor;
 
+import historicalInfo.HistoricalInfoMgr;
+
 /**
  * This chart shows how to override the getItemPaint() method to set a color
  * that depends on the data value.
@@ -129,8 +131,7 @@ public class BarChart3DDemo4 extends JFrame {
      
 	   dataset.clear();
 		
-	   // Query HIM to submit data for bar chart display 
-		// HIM.getDataset(expNum);
+	   HistoricalInfoMgr.getDataset(expNum);
 		return dataset;
      }
 

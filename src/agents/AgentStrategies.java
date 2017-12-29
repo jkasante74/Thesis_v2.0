@@ -4,6 +4,9 @@ package agents;
 
 import javax.swing.JOptionPane;
 
+import historicalInfo.HistoricalInfoMgr;
+
+
 public class AgentStrategies extends Agent {
 
 	// Parameters for Agent strategies
@@ -12,14 +15,22 @@ public class AgentStrategies extends Agent {
 	// Private Variables
 	private final char COOPERATE = 'C';
 	private final char DEFECT = 'D';
-	private float TEMPT;
-	private float REWARD;
-	private float PUNISH;
-	private static String opponentFirstAct;
-	@SuppressWarnings("unused")
-	private float SUCKER;
+	private String opponentFirstAct;
 	private double ALPHA = 0.5, BETA = 0.5,DISCOUNTFACTOR = 0.9;
+	protected double [][] agentBeliefs;
 	
+
+	
+	
+	public AgentStrategies(HistoricalInfoMgr him, double[][] agentBeliefs) {
+		
+		this.him = him;
+		this.agentBeliefs = agentBeliefs;
+		
+	}
+
+
+
 	/**
 	 * DefectAll strategy defects at all times no matter what the opponent does
 	 * 
@@ -36,6 +47,9 @@ public class AgentStrategies extends Agent {
 		return DEFECT;
 	}
 
+	
+	
+	
 	/**
 	 * CooperateAll strategy cooperates at all times no matter what the opponent
 	 * does
@@ -53,6 +67,9 @@ public class AgentStrategies extends Agent {
 		return COOPERATE;
 	}
 
+	
+	
+	
 	/**
 	 * advanceCooeprator strategy cooperates or defect based on acquired past
 	 * information on opponents.
@@ -61,11 +78,11 @@ public class AgentStrategies extends Agent {
 	 * 
 	 */
 	@Override
-	char advanceCooperator(int requestingAgentID,
-			int opponentID, int currentTournament, int currentRound) {
+	char advanceCooperator(int requestingAgentID, String agentStrategy,
+			int opponentID,String opponentStrategy, int currentTournament, int currentRound, int infoRequestOption) {
 
 		char matchAction = COOPERATE; // Set default action
-
+		
 		// First action in a new experiment
 		if (((currentTournament == 0) && (currentRound == 0))) {
 			matchAction = COOPERATE;
@@ -73,32 +90,33 @@ public class AgentStrategies extends Agent {
 
 		// Act based on updated beliefs from past information
 		else {
-
 			double opponentCooperateRatio = getOpponentPastInfo(requestingAgentID,
-					opponentID);
-			if(agentStrategies[opponentID]=="Naive_C")
-				System.out.println("Agent : "+ opponentID+ "    Opponent Ratio : "+ opponentCooperateRatio +"     Strategy : "+ agentStrategies[opponentID]);
+					opponentID, infoRequestOption);
+			
+			
+			//Update agent's belief about opponent cooperating ratio
+			setOpponentCooperateRatio(requestingAgentID,opponentID,opponentCooperateRatio);
 
-			updateBelief(requestingAgentID, opponentID, opponentCooperateRatio);
 			
-			// Get opponent updated cooperating ratio
-			double opponentCooperatingRating =agentBeliefs[requestingAgentID][opponentID];
+			// Get opponent's updated cooperating ratio
+			double opponentCooperatingRating = 	getOpponentCooperateRatio(requestingAgentID,opponentID,opponentCooperateRatio);
+
 			
 			
-			// Promote cooperation
+			// Promote cooperation with Naive Cooperators
 			if (opponentCooperatingRating >= 0.9){
 				matchAction = COOPERATE;
 			}
-			// Protect against exploiters
+			
+			// Protect against Naive exploiters
 			else if(opponentCooperatingRating <= 0.1){
 				matchAction = DEFECT;
 			}
 			
 			
-			// Make strategic decision if agent is advanced
+			// Make strategic decision if agent is advanced 
 			else
-			//	matchAction = reciprocityAction(opponentCooperateRatio,requestingAgentID, opponentID);
-				matchAction = superRationalWithDiscountFactor(opponentCooperateRatio);
+				matchAction = superRationalWithDiscountFactor(opponentCooperateRatio,requestingAgentID,agentStrategy, opponentID);
 		}
 
 		return matchAction;
@@ -115,11 +133,12 @@ public class AgentStrategies extends Agent {
 	 * 
 	 */
 	@Override
-	char advanceDefector(int requestingAgentID, int opponentID,
-			int currentTournament, int currentRound) {
+	char advanceDefector(int requestingAgentID, String agentStrategy,
+			int opponentID,String opponentStrategy,
+			int currentTournament, int currentRound, int infoRequestOption) {
 
 		char matchAction = DEFECT; // Set default action
-
+		
 		// First action in a new experiment
 		if (((currentTournament == 0) && (currentRound == 0))) {
 			matchAction = DEFECT;
@@ -128,30 +147,45 @@ public class AgentStrategies extends Agent {
 		// Act based on updated beliefs from past information
 		else {
 			double opponentCooperateRatio = getOpponentPastInfo(requestingAgentID,
-					opponentID);
+					opponentID, infoRequestOption);
 
-			agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;
+			//Update agent's belief about opponent cooperating ratio
+			setOpponentCooperateRatio(requestingAgentID,opponentID,opponentCooperateRatio);
 
+			
+			// Get opponent's updated cooperating ratio
+			double opponentCooperatingRating = 	getOpponentCooperateRatio(requestingAgentID,opponentID,opponentCooperateRatio);
+
+			
 			// Exploit naive cooperators and protect from defectors
-			if (((agentBeliefs[requestingAgentID][opponentID]) <= 0.1)
-					|| ((agentBeliefs[requestingAgentID][opponentID]) >= 0.9)) {
+			if (((opponentCooperatingRating) <= 0.1)
+					|| ((opponentCooperatingRating) >= 0.9)) {
 				matchAction = DEFECT;
 			}
 			
+			
 			// Decide using returns-based beliefs
 			else
-			//	matchAction = reciprocityAction(opponentCooperateRatio,requestingAgentID, opponentID);
-				matchAction = superRationalWithDiscountFactor(opponentCooperateRatio);
+				matchAction = superRationalWithDiscountFactor(opponentCooperateRatio, requestingAgentID,agentStrategy, opponentID);
 		}
 		return matchAction;
 	}
 
 	
-	private char superRationalWithDiscountFactor(double opponentCooperateRatio) {
+	private char superRationalWithDiscountFactor(double opponentCooperateRatio, int requestingAgentID,String agentStrategy, int opponentID) {
 		char matchAction; // Set default action
 
-		if(opponentFirstAct != "D")
-			matchAction = COOPERATE;
+		if(opponentFirstAct != "D"){
+			//JOptionPane.showMessageDialog(null, agentStrategy);
+
+			if(agentStrategy.equalsIgnoreCase("Advanced_E")){	
+				// Advance Exploiters obstructs cooperation and exploit advance cooperators 
+				matchAction = DEFECT;
+			}
+			else
+				// Advance Cooperators and Advance Defectors promotes cooperation
+				matchAction = COOPERATE;
+		}
 		
 		else{
 		
@@ -165,8 +199,7 @@ public class AgentStrategies extends Agent {
 			//Calculate opponent defect expected function
 			double opponentDefectExpectation = opponentDefectRatio * (TEMPT + ((DISCOUNTFACTOR * PUNISH) / (1 - DISCOUNTFACTOR)));
 		
-			// JOptionPane.showMessageDialog(null, "Opponent Cooperate Expectation : "+opponentCooperateExpectation +"\n"+"Opponent Defect Expectation : "+opponentDefectExpectation);
-		
+				
 			// Make decision based on opponent Expectations
 			if(opponentCooperateExpectation >= opponentDefectExpectation)
 				matchAction = COOPERATE;
@@ -207,13 +240,11 @@ public class AgentStrategies extends Agent {
 	 * 
 	 */
 	private double getOpponentPastInfo(int requestingAgentID,
-			int opponentID) {
+			int opponentID, int infoRequestOption) {
 
 		String opponentInformation = "";
 		
 		double opponentCooperateRatio = 0;
-
-		JOptionPane.showMessageDialog(null, opponentInformation);
 
 		switch (infoRequestOption) {
 
@@ -221,6 +252,7 @@ public class AgentStrategies extends Agent {
 		case 0:
 			opponentInformation = him.requestOppPastInfo(requestingAgentID,
 					opponentID, infoRequestOption);
+			
 			if (infoAcquired) {
 				if (opponentInformation.equalsIgnoreCase("D"))
 					opponentCooperateRatio = 0.0;
@@ -247,7 +279,6 @@ public class AgentStrategies extends Agent {
 			
 			if ((infoAcquired)||((opponentInformation != null)&&(!opponentInformation.isEmpty()))){
 				opponentCooperateRatio = calcOppRating(opponentInformation);
-				
 				opponentFirstAct = opponentInformation.substring(0, 1);
 			}
 			break;
@@ -270,6 +301,7 @@ public class AgentStrategies extends Agent {
 				opponentCooperateRatio = calcOppRating(opponentInformation);
 			break;
 		}
+
 		return opponentCooperateRatio;
 	}
 
@@ -304,37 +336,23 @@ public class AgentStrategies extends Agent {
 		return opponentCooperateRatio;
 	}
 
-	/**
-	 * updateBelief upon invocation by an agent updates the opponent's current
-	 * rating in the requesting agent's belief base
-	 * 
-	 * @param requestingAgentID
-	 *            : Requesting agent ID
-	 * 
-	 * @param opponentID
-	 *            : Opponent ID
-	 * 
-	 * @param opponentCooperateRatio
-	 *            : agent's calculated rating of the opponent.
-	 * 
-	 */
-	private void updateBelief(int requestingAgentID, int opponentID,
-			double opponentCooperateRatio) {
 
-		agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;
+	
+	
+	protected void setOpponentCooperateRatio(int requestingAgentID, int opponentID, double opponentCooperateRatio) {
+		agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;		
 	}
 
-	
-	
-	
-	
-	public void setPayOffValues(int[] currentSetupValues) {
+
+	protected double getOpponentCooperateRatio(int requestingAgentID, int opponentID, double opponentCooperateRatio) {
 		
-		TEMPT = currentSetupValues[0];
-		REWARD = currentSetupValues[1];
-		PUNISH = currentSetupValues[2];
-		SUCKER = currentSetupValues[3];
+		return agentBeliefs[requestingAgentID][opponentID];
 	}
+
+	
+	
+	
+	
 	
 	
 }
