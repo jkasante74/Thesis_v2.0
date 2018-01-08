@@ -1,8 +1,6 @@
 package simulationEngine;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -14,7 +12,7 @@ import settings.InputValidator;
 
 public class SimulationManager {
 	
-	ArrayList agents;
+	ArrayList<Agent> agents;
 	private String [] agentStrategies;
 	private int numOfTournaments;
 	private int numOfAgents;
@@ -25,14 +23,14 @@ public class SimulationManager {
 	private final char DEFECT = 'D';
 	private final char DUMMY = 'A';
 	private String DUMMY_STRATEGY = "Dummy";
-	private String TOURNAMENTBOARD = "TB/TB.csv";
-	private String FILENOTFOUND = "File not found";
 	SimReport report;
 	GUI_Simulation simLog;
 	HistoricalInfoMgr him;
 	Agent agent;
 	ArrayList<Object> homeList = new ArrayList<Object>();
 	ArrayList<Object> awayList = new ArrayList<Object>();
+	
+	
 	
 	public SimulationManager(int currentExperimentID, InputValidator input,GUI_Simulation simLog, ArrayList<Agent> agents, HistoricalInfoMgr him, Agent agent) {
 		
@@ -49,12 +47,9 @@ public class SimulationManager {
 		report = new SimReport(this.simLog, this.him);
 		
 		
-	/*	
-		for(int i=0; i < this.agentStrategies.length; i++){
-			System.out.println(this.agentStrategies[i]);
-		}
-		*/
+	
 	}
+	
 	
 	/**
 	 * scheduler method schedules the agents to begin simulation experiment
@@ -63,6 +58,9 @@ public class SimulationManager {
 	public void runSimulation(){
 		
 		report.printExperiment(currentExperimentID);
+		report.displayAgentsExperimentStats(currentExperimentID);
+		
+		// transfer control to tournament Manager
 		tournamentManager();
 		
 	}
@@ -79,6 +77,7 @@ public class SimulationManager {
 	 *            : Group of Agents that forms the last half
 	 * 
 	 */
+	
 	protected void tournamentManager() {
 		int matchesPerRound = 0;
 		for (int currentTournament = 0; currentTournament < numOfTournaments; currentTournament++) {
@@ -100,13 +99,14 @@ public class SimulationManager {
 			try {
 				him.displayAgentsTournamentStats(currentTournament);
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
 	
 		}		
 
 	}
+	
 	
 	
 	/**
@@ -125,6 +125,7 @@ public class SimulationManager {
 	 *            : Group of Agents that forms the last half
 	 * 
 	 */
+	
 	public void roundMgr(int currentTournament, int totalRounds, int matchesPerRound) {
 
 		for (int round = 0; round < totalRounds; round++) {
@@ -181,6 +182,8 @@ public class SimulationManager {
 		}
 	}
 
+	
+	
 	/**
 	 * matchMgr method initiates the function of managing all agents activities
 	 * in various matches in current round
@@ -198,16 +201,18 @@ public class SimulationManager {
 	 * @param currentRound
 	 *            : Current Round
 	 */
+	
 	protected void matchMgr(String agentStrategy,
 			String opponentStrategy, int agentID, int opponentID,
 			int currentTournament, int currentRound) {
 		agentsAction = new char[2];
-		
+		Agent ic = agents.get(agentID);
+		Agent rc = agents.get(opponentID);
+
 		if(opponentStrategy!= (DUMMY_STRATEGY)){
 			agentsAction[0] = agent.getAgentAction(agentID, opponentID,currentTournament, currentRound);
 			agentsAction[1] = agent.getAgentAction(opponentID,agentID, currentTournament, currentRound);
-
-			
+	
 			// Update actions of matched agents
 			String text = agentsAction[0] + "\t \t vrs \t "+ agentsAction[1] + "\n";
 			report.updateExperimentLog(text, text);

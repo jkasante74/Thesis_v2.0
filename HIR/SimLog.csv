@@ -1,3601 +1,481 @@
-EXPERIMENT 2
+EXPERIMENT 1
 Round-Robin Tournament 1.0
 Round 1
 Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
+Advanced_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
+Agent 2	 	 vrs 	 Agent 7
+Advanced_E	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
 Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
+Naive_C	 	 vrs 	 Advanced_D
 C	 	 vrs 	 D
 0.0	 	 vrs 	 5.0
 Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
+Naive_D	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Round 2
 Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
+Advanced_E	 	 vrs 	 Advanced_C
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
+Naive_C	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 4	 	 vrs 	 Agent 7
+Naive_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
 Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
+Advanced_D	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Round 3
 Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
 Naive_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
+Agent 4	 	 vrs 	 Agent 2
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 1
+Advanced_D	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 6	 	 vrs 	 Agent 7
+Advanced_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Round 4
+Agent 4	 	 vrs 	 Agent 8
+Naive_D	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 3
+Advanced_D	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 6	 	 vrs 	 Agent 2
+Advanced_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 7	 	 vrs 	 Agent 1
+Advanced_E	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Round 5
+Agent 5	 	 vrs 	 Agent 8
 Advanced_D	 	 vrs 	 Advanced_C
 C	 	 vrs 	 D
 0.0	 	 vrs 	 5.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
+Agent 6	 	 vrs 	 Agent 4
+Advanced_D	 	 vrs 	 Naive_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
+Agent 7	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 1	 	 vrs 	 Agent 2
 Advanced_C	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
+Round 6
+Agent 6	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
+Agent 7	 	 vrs 	 Agent 5
+Advanced_E	 	 vrs 	 Advanced_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 1	 	 vrs 	 Agent 4
+Advanced_C	 	 vrs 	 Naive_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 2	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Round 7
+Agent 7	 	 vrs 	 Agent 8
+Advanced_E	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 1	 	 vrs 	 Agent 6
+Advanced_C	 	 vrs 	 Advanced_D
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 2	 	 vrs 	 Agent 5
+Advanced_E	 	 vrs 	 Advanced_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 3	 	 vrs 	 Agent 4
+Naive_C	 	 vrs 	 Naive_D
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
 Round-Robin Tournament 2.0
 Round 1
 Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
+Advanced_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
+Agent 2	 	 vrs 	 Agent 7
+Advanced_E	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
+Agent 3	 	 vrs 	 Agent 6
+Naive_C	 	 vrs 	 Advanced_D
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
 Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
+Naive_D	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Round 2
 Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
+Advanced_E	 	 vrs 	 Advanced_C
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
 Naive_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
+Agent 4	 	 vrs 	 Agent 7
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 6
+Advanced_D	 	 vrs 	 Advanced_D
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Round 3
+Agent 3	 	 vrs 	 Agent 8
+Naive_C	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 4	 	 vrs 	 Agent 2
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 1
 Advanced_D	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
+Agent 6	 	 vrs 	 Agent 7
 Advanced_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
+Round 4
+Agent 4	 	 vrs 	 Agent 8
+Naive_D	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 3
+Advanced_D	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 6	 	 vrs 	 Agent 2
 Advanced_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
+Agent 7	 	 vrs 	 Agent 1
+Advanced_E	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Round 5
+Agent 5	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
+Agent 6	 	 vrs 	 Agent 4
+Advanced_D	 	 vrs 	 Naive_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 7	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 1	 	 vrs 	 Agent 2
 Advanced_C	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
+Round 6
+Agent 6	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 7	 	 vrs 	 Agent 5
+Advanced_E	 	 vrs 	 Advanced_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 1	 	 vrs 	 Agent 4
+Advanced_C	 	 vrs 	 Naive_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 2	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Round 7
+Agent 7	 	 vrs 	 Agent 8
+Advanced_E	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 1	 	 vrs 	 Agent 6
+Advanced_C	 	 vrs 	 Advanced_D
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 2	 	 vrs 	 Agent 5
+Advanced_E	 	 vrs 	 Advanced_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 3	 	 vrs 	 Agent 4
+Naive_C	 	 vrs 	 Naive_D
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
 Round-Robin Tournament 3.0
 Round 1
 Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
+Advanced_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
+Agent 2	 	 vrs 	 Agent 7
+Advanced_E	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
+Agent 3	 	 vrs 	 Agent 6
+Naive_C	 	 vrs 	 Advanced_D
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
 Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
+Naive_D	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Round 2
 Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
+Advanced_E	 	 vrs 	 Advanced_C
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
 Naive_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
+Agent 4	 	 vrs 	 Agent 7
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 6
+Advanced_D	 	 vrs 	 Advanced_D
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Round 3
+Agent 3	 	 vrs 	 Agent 8
+Naive_C	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 4	 	 vrs 	 Agent 2
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 1
 Advanced_D	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
+Agent 6	 	 vrs 	 Agent 7
 Advanced_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
+Round 4
+Agent 4	 	 vrs 	 Agent 8
+Naive_D	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 3
+Advanced_D	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 6	 	 vrs 	 Agent 2
 Advanced_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
+Agent 7	 	 vrs 	 Agent 1
+Advanced_E	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Round 5
+Agent 5	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
+Agent 6	 	 vrs 	 Agent 4
+Advanced_D	 	 vrs 	 Naive_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 7	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 1	 	 vrs 	 Agent 2
 Advanced_C	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
+Round 6
+Agent 6	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 7	 	 vrs 	 Agent 5
+Advanced_E	 	 vrs 	 Advanced_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 1	 	 vrs 	 Agent 4
+Advanced_C	 	 vrs 	 Naive_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 2	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Round 7
+Agent 7	 	 vrs 	 Agent 8
+Advanced_E	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 1	 	 vrs 	 Agent 6
+Advanced_C	 	 vrs 	 Advanced_D
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 2	 	 vrs 	 Agent 5
+Advanced_E	 	 vrs 	 Advanced_D
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 3	 	 vrs 	 Agent 4
+Naive_C	 	 vrs 	 Naive_D
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
 Round-Robin Tournament 4.0
 Round 1
 Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
+Advanced_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
+Agent 2	 	 vrs 	 Agent 7
+Advanced_E	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
+Agent 3	 	 vrs 	 Agent 6
+Naive_C	 	 vrs 	 Advanced_D
+C	 	 vrs 	 D
+0.0	 	 vrs 	 5.0
 Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
+Naive_D	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Round 2
 Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
+Advanced_E	 	 vrs 	 Advanced_C
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
 Naive_C	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
+Agent 4	 	 vrs 	 Agent 7
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 6
+Advanced_D	 	 vrs 	 Advanced_D
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Round 3
+Agent 3	 	 vrs 	 Agent 8
+Naive_C	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 4	 	 vrs 	 Agent 2
+Naive_D	 	 vrs 	 Advanced_E
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 1
 Advanced_D	 	 vrs 	 Advanced_C
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
+Agent 6	 	 vrs 	 Agent 7
 Advanced_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
+Round 4
+Agent 4	 	 vrs 	 Agent 8
+Naive_D	 	 vrs 	 Advanced_C
+D	 	 vrs 	 D
+1.0	 	 vrs 	 1.0
+Agent 5	 	 vrs 	 Agent 3
+Advanced_D	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 6	 	 vrs 	 Agent 2
 Advanced_D	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
+Agent 7	 	 vrs 	 Agent 1
+Advanced_E	 	 vrs 	 Advanced_C
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Round-Robin Tournament 5.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
+Round 5
+Agent 5	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 6	 	 vrs 	 Agent 4
 Advanced_D	 	 vrs 	 Naive_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
+Agent 7	 	 vrs 	 Agent 3
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
+Agent 1	 	 vrs 	 Agent 2
 Advanced_C	 	 vrs 	 Advanced_E
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
+Round 6
+Agent 6	 	 vrs 	 Agent 8
+Advanced_D	 	 vrs 	 Advanced_C
+C	 	 vrs 	 C
+3.0	 	 vrs 	 3.0
+Agent 7	 	 vrs 	 Agent 5
 Advanced_E	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
 Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
+Advanced_C	 	 vrs 	 Naive_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
 Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
+Advanced_E	 	 vrs 	 Naive_C
+D	 	 vrs 	 C
+5.0	 	 vrs 	 0.0
 Round 7
 Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
+Advanced_E	 	 vrs 	 Advanced_C
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
+Agent 1	 	 vrs 	 Agent 6
 Advanced_C	 	 vrs 	 Advanced_D
 C	 	 vrs 	 C
 3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 6.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
+Agent 2	 	 vrs 	 Agent 5
 Advanced_E	 	 vrs 	 Advanced_D
 D	 	 vrs 	 D
 1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
+Agent 3	 	 vrs 	 Agent 4
 Naive_C	 	 vrs 	 Naive_D
 C	 	 vrs 	 D
 0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 7.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 8.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 9.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 10.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 11.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 12.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 13.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 14.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 15.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 16.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 17.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 18.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 19.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 20.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 21.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 22.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 23.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 24.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 25.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 26.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 27.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 28.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 29.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round-Robin Tournament 30.0
-Round 1
-Agent 1	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 7
-Advanced_C	 	 vrs 	 Naive_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 6
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 5
-Advanced_E	 	 vrs 	 Advanced_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 2
-Agent 2	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 3	 	 vrs 	 Agent 1
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 4	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Agent 5	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Round 3
-Agent 3	 	 vrs 	 Agent 8
-Advanced_C	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 4	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 1
-Advanced_D	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 7
-Advanced_E	 	 vrs 	 Naive_C
-D	 	 vrs 	 C
-5.0	 	 vrs 	 0.0
-Round 4
-Agent 4	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 5	 	 vrs 	 Agent 3
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 6	 	 vrs 	 Agent 2
-Advanced_E	 	 vrs 	 Advanced_C
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 1
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Round 5
-Agent 5	 	 vrs 	 Agent 8
-Advanced_D	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 6	 	 vrs 	 Agent 4
-Advanced_E	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 3
-Naive_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 1	 	 vrs 	 Agent 2
-Advanced_D	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 6
-Agent 6	 	 vrs 	 Agent 8
-Advanced_E	 	 vrs 	 Naive_D
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 7	 	 vrs 	 Agent 5
-Naive_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 4
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 3
-Advanced_C	 	 vrs 	 Advanced_C
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Round 7
-Agent 7	 	 vrs 	 Agent 8
-Naive_C	 	 vrs 	 Naive_D
-C	 	 vrs 	 D
-0.0	 	 vrs 	 5.0
-Agent 1	 	 vrs 	 Agent 6
-Advanced_D	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0
-Agent 2	 	 vrs 	 Agent 5
-Advanced_C	 	 vrs 	 Advanced_D
-C	 	 vrs 	 C
-3.0	 	 vrs 	 3.0
-Agent 3	 	 vrs 	 Agent 4
-Advanced_C	 	 vrs 	 Advanced_E
-D	 	 vrs 	 D
-1.0	 	 vrs 	 1.0

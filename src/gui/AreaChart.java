@@ -61,6 +61,7 @@ import javax.swing.JLabel;
 
 import java.awt.Font;
 
+
 /**
  * AreaChart class creates and displays an area chart depending on selected
  * experiment number and using data from experimental results stored in HIR by
@@ -70,13 +71,16 @@ import java.awt.Font;
  * the displayed chart
  * 
  */
+
 public class AreaChart extends JFrame {
 
-	/* Variables Declaration and initialization */
+	// Variables Declaration and initialization 
 	private static final long serialVersionUID = 1L;
 	public static DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	private static int expNum; // requested experiment index
 	public HistoricalInfoMgr him;
+	
+	
 	
 	/**
 	 * AreaChart constructor. (For invocation by subclass constructors,
@@ -90,6 +94,7 @@ public class AreaChart extends JFrame {
 	 *            Title for the tournament chart
 	 * 
 	 */
+	
 	public AreaChart(String frameTitle, String chartTitle) {
 
 		super(frameTitle); // Display frame title
@@ -109,6 +114,8 @@ public class AreaChart extends JFrame {
 
 	}
 
+
+	
 	/**
 	 * createDataset method updates information about the progress of players in
 	 * a specific experiment by retrieving agents' scores for different
@@ -127,6 +134,8 @@ public class AreaChart extends JFrame {
 		return dataset; // add the data point (y-value, variable, x-value)
 	}
 
+	
+	
 	/**
 	 * Main method that creates Application frame, centers it on the screen, and
 	 * makes the chart visible.
@@ -138,6 +147,7 @@ public class AreaChart extends JFrame {
 	 *            string passed to this method
 	 * 
 	 */
+	
 	public static void main(final String[] args) {
 		expNum = Integer.parseInt(args[0]);
 		AreaChart chart = new AreaChart(

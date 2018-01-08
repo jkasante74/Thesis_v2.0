@@ -5,17 +5,12 @@ package gui;
  * (C) Copyright 2005-2008, by Object Refinery Limited.
  *
  */
-
-
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Paint;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import org.jfree.chart.ChartFactory;
@@ -30,11 +25,11 @@ import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.ValueMarker;
+import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.BarRenderer3D;
+import org.jfree.chart.title.LegendTitle;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 import org.jfree.ui.TextAnchor;
 
@@ -57,7 +52,7 @@ public class BarChart3DDemo4 extends JFrame {
      * A custom renderer that returns a different color for each item in a
      * single series.
      */
-    static class CustomBarRenderer3D extends BarRenderer3D {
+    class CustomBarRenderer3D extends BarRenderer3D {
 
         /**
 		 * 
@@ -70,41 +65,7 @@ public class BarChart3DDemo4 extends JFrame {
         public CustomBarRenderer3D() {
         }
 
-        /**
-         * Returns the paint for an item.  Overrides the default behaviour
-         * inherited from AbstractSeriesRenderer.
-         *
-         * @param row  the series.
-         * @param column  the category.
-         *
-         * @return The item color.
-         */
-        public Paint getItemPaint(int row, int column) {
-          	String s = dataset.getRowKey(row).toString();
-            int agentId = Integer.parseInt(s.substring(6,7));
-            Color color = new Color(79, 129, 189);
-            
-            switch(agentStrategies.get(agentId-1)){	
-	        	case "Advanced_C": 
-	            	color = new Color(248,171,38);
-	            	break;
-	        	
-	        	case "Naive_C": 
-	            	color = new Color(252,197,90);
-	            	break;
-	            	
-	        	case "Naive_D": 
-	            	color = new Color(254,251,188);
-	            	break;
-	            	
-	        	case "Advanced_D": 
-	            	color = new Color(30,104,94);
-	            	break;
-	        }
-			return color;
-        
-        }
-    }
+     }
     
     
     
@@ -131,8 +92,10 @@ public class BarChart3DDemo4 extends JFrame {
      
 	   dataset.clear();
 		
+	   // Query HIM to submit data for bar chart display 
 	   HistoricalInfoMgr.getDataset(expNum);
 		return dataset;
+
      }
 
     /**
@@ -154,35 +117,64 @@ public class BarChart3DDemo4 extends JFrame {
             true,                     // tooltips
             false                     // urls
         );
-
-        CategoryPlot plot = (CategoryPlot) chart.getPlot();
-        CustomBarRenderer3D renderer = new CustomBarRenderer3D();
+        LegendTitle legend = chart.getLegend();
+        Font labelFont = new Font("Arial", Font.BOLD, 12);
+        legend.setItemFont(labelFont);
+        CategoryPlot plot = chart.getCategoryPlot();
+        BarRenderer renderer = (BarRenderer) plot.getRenderer();
+        
         renderer.setBaseItemLabelGenerator(
                 new StandardCategoryItemLabelGenerator());
         renderer.setBaseItemLabelsVisible(true);
         renderer.setItemLabelAnchorOffset(10.0);
         renderer.setBasePositiveItemLabelPosition(new ItemLabelPosition(
                 ItemLabelAnchor.OUTSIDE12, TextAnchor.BASELINE_LEFT));
-        plot.setRenderer(renderer);
-        renderer.setBaseItemLabelsVisible(true);
-        renderer.setMaximumBarWidth(0.05);
+     //   plot.setRenderer(renderer);
+      //  renderer.setBaseItemLabelsVisible(true);
+//        renderer.setMaximumBarWidth(0.05);
 
-        // couldn't get the label above to appear in front, so using an
-        // annotation instead...
-        CategoryTextAnnotation a = new CategoryTextAnnotation(
-                "Minimum grade to pass", "Robert", 0.71);
-        a.setCategoryAnchor(CategoryAnchor.START);
-        a.setFont(new Font("SansSerif", Font.PLAIN, 12));
-        a.setTextAnchor(TextAnchor.BOTTOM_LEFT);
-        plot.addAnnotation(a);
-
-        NumberAxis rangeAxis = (NumberAxis) plot.getRangeAxis();
-        rangeAxis.setUpperMargin(0.10);
-
-        ChartUtilities.applyCurrentTheme(chart);
+        
+        renderer.getLegendItems();
+        // set the color (r,g,b) or (r,g,b,a)
+        Color color = new Color(79, 129, 189);
+ 
+        
+        // Set colors depending on agent strategies
+        for (int i = 0; i < dataset.getRowCount(); i++){
+            String s = dataset.getRowKey(i).toString(); 
+        	int agentId = Integer.parseInt(s.substring(6,7));
+        
+        	switch(agentStrategies.get(agentId-1)){
+        	
+        	case "Advanced_C": 
+            	color = new Color(248,171,38);
+            	break;
+        	
+        	case "Naive_C": 
+            	color = new Color(252,197,90);
+            	break;
+            	
+        	case "Naive_D": 
+            	color = new Color(254,251,188);
+            	break;
+            	
+        	case "Advanced_D": 
+            	color = new Color(30,104,94);
+            	break;
+            
+        	case "Advanced_E": 
+            	color = new Color(023,129,179);
+            	break;
+            
+        	}
+            renderer.getLegendItems();
+            renderer.setSeriesPaint(i, color);
+            
+        }
+        
 
         return chart;
-
+        
     }
 
     /**

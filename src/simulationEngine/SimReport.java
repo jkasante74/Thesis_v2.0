@@ -13,11 +13,13 @@ public class SimReport {
 	HistoricalInfoMgr him;
 	private final String TOURNAMENTBOARD = "TB/TB.csv";
 	private final String FILENOTFOUND = "File not found";
+	public static String agentsTournamentStatistics = "";
+
 	
 	/**Constructor to initialize
 	 * 
 	 * @param simLog : Instance of GUI_Simulation
-	 * @param him2 
+	 * @param him	 : HistoricalInfoMgr  
 	 */
 	SimReport(GUI_Simulation simLog, HistoricalInfoMgr him){
 		this.simLog = simLog;
@@ -29,6 +31,7 @@ public class SimReport {
 		
 	}
 	
+	
 	/**
 	 * printExperiment method reports on a statistics of current Experiment
 	 * index agents' payoffs, strategies and positions .
@@ -37,6 +40,7 @@ public class SimReport {
 	 *            : Current Tournament index
 	 * 
 	 */
+	
 	protected void printExperiment(int currentExperimentID) {
 
 		// Save to TB and signal HIM
@@ -48,12 +52,13 @@ public class SimReport {
 		try {
 			Files.write(Paths.get(TOURNAMENTBOARD), experimentTitle2.getBytes());
 			him.updateLog();
-		//	HIM.startExp(currentExperimentID);
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, FILENOTFOUND);
 		}
 
 	}
+	
+	
 	
 	/**
 	 * printTournamentStats method reports on a statistics of agents' payoffs,
@@ -126,7 +131,17 @@ public class SimReport {
 
 		return requestInfo;
 	}
-	
+
+/**
+ * displayAgentsExperimentStats method displays a statistic of agents performance
+ * @param currentExperimentID	: current Experiment index
+ */
+	protected void displayAgentsExperimentStats(int currentExperimentID) {
+		him.displayAgentsExperimentStats(currentExperimentID);
+		
+	}
+
+
 	
 	
 	

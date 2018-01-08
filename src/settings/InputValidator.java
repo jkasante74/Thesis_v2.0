@@ -53,6 +53,8 @@ public class InputValidator {
 	private final String FILE_NOT_FOUND = "File not found";
 	public float param;
 	
+	
+	
 	/**
 	 * Initiate method begins the parameter Configuration Manager's function
 	 * of reading and validating setup values and also notify the simulation
@@ -65,11 +67,11 @@ public class InputValidator {
 		
 		// Read and validate experiment values
 		readAndValidate();
-	//	setAgentStrategies();
-	//	setRequestLimit();
+
 	
 	}
 
+	
 	
 	/**
 	 * Read the simulation setup file and validate
@@ -357,7 +359,6 @@ public class InputValidator {
 	public int[] setRequestLimit() {
 
 		agentRequestLimit = new int[Math.round(numOfAgents)];
-		JOptionPane.showMessageDialog(null, numOfAgents);
 		// Generate random limits for agents if random option is selected
 		if (GUI.radomRequest) {
 			Random r = new Random();

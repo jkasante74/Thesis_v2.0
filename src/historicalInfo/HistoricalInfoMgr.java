@@ -21,6 +21,8 @@ import gui.LineChart;
 
 
 public class HistoricalInfoMgr {
+	
+	// Private variables
 	private String TOURNAMENT_BOARD_FILE = "TB/TB.csv";
 	private String SIMULATION_STATS_FILE = "HIR/SimStats.csv";
 	private String SIMULATION_LOG_FILE = "HIR/SimLog.csv";
@@ -39,19 +41,21 @@ public class HistoricalInfoMgr {
 	private static String FILE_NOT_FOUND = "File not found";
 	public double[] agentScores;
 	private int numOfAgents;
-	private float uncertaintyLimit;
+	private float uncertaintyLevel;
 	private String tournamentBoardInfo="";
 	private int numOfTournament;
 	private int currentExperimentID;
 	private static String [] Strategies;
 	Agent agent;
 	
-	public HistoricalInfoMgr(int numOfAgents, int[] agentRequestLimit, float uncertaintyLimit, int numOfTournament, Agent agent, float [] payOff, String[] Strategies, int currentExperimentID){
+
+	
+	public HistoricalInfoMgr(int numOfAgents, int[] agentRequestLimit, float uncertaintyLevel, int numOfTournament, Agent agent, float [] payOff, String[] Strategies, int currentExperimentID){
 		
 		this.numOfAgents = numOfAgents;
 		agentScores = new double[numOfAgents];
 		this.numOfTournament  = numOfTournament;
-		this.uncertaintyLimit = uncertaintyLimit;
+		this.uncertaintyLevel = uncertaintyLevel;
 		this.agent = agent;
 		HIR.agentActionsDbase = new char[numOfTournament][numOfAgents][numOfAgents];
 		HIR.agentActs = new String[numOfAgents];
@@ -61,9 +65,13 @@ public class HistoricalInfoMgr {
 		this.currentExperimentID = currentExperimentID;
 	}
 	
+	
+	
 	public HistoricalInfoMgr(){
 		
 	}
+	
+	
 	
 	/**
 	 * updateLog method after every match reads from the Tournament Board and
@@ -86,6 +94,8 @@ public class HistoricalInfoMgr {
 
 	}
 
+	
+	
 	/**
 	 * readTB method locates the Tournament Board and reads all information
 	 * stored on it by the simulation manager.
@@ -129,6 +139,7 @@ public class HistoricalInfoMgr {
 	 * @param agentsAction
 	 *            : Actions of both agent and opponent
 	 */
+	
 	public  void updateAgActionsInReposiory(int currentTournamentIndex,
 			int requestingAgentID, int opponentID, char[] agentsAction) {
 
@@ -171,6 +182,7 @@ public class HistoricalInfoMgr {
 	 * @param matchScores
 	 *            : Scores of both agents and opponents
 	 */
+	
 	public void updateMatchedAgentsScores(int requestingAgentID,
 			int opponentID, float[] matchScores) {
 		agentScores[requestingAgentID] += matchScores[0];
@@ -244,6 +256,8 @@ public class HistoricalInfoMgr {
 		return opponentPastInfo;
 	}
 
+	
+	
 	/**
 	 * get2ndLevelAction method returns past actions of the secondary level
 	 * opponents that were taken against current opponent.
@@ -265,10 +279,12 @@ public class HistoricalInfoMgr {
 				opponentPastInfo = opponentPastInfo
 						+ HIR.agentActionsDbase[i][opponentID][j];
 		}
-		pastInfoAfterUncertainty = applyUncertaintyLimit(opponentPastInfo);
+		pastInfoAfterUncertainty = applyuncertaintyLevel(opponentPastInfo);
 		return pastInfoAfterUncertainty;
 	}
 
+	
+	
 	/**
 	 * getOppFirstAction method returns the first action of current opponent
 	 * 
@@ -288,7 +304,7 @@ public class HistoricalInfoMgr {
 		if (HIR.agentActs[opponentID] != null) {
 			opponentPastInfo = String.valueOf(HIR.agentActs[opponentID]
 					.substring(0, 1));
-			pastInfoAfterUncertainty = applyUncertaintyLimit(opponentPastInfo);
+			pastInfoAfterUncertainty = applyuncertaintyLevel(opponentPastInfo);
 
 		}
 		return pastInfoAfterUncertainty;
@@ -312,13 +328,15 @@ public class HistoricalInfoMgr {
 		String opponentPastInfo = "", pastInfoAfterUncertainty = "";
 		if (HIR.agentActs[opponentID] != null) {
 			opponentPastInfo = HIR.agentActs[opponentID];
-			pastInfoAfterUncertainty = applyUncertaintyLimit(opponentPastInfo);
+			pastInfoAfterUncertainty = applyuncertaintyLevel(opponentPastInfo);
 		}
 
 		return pastInfoAfterUncertainty;
 
 	}
 
+	
+	
 	/**
 	 * getOpponentFirstDefection method returns the first time it defected
 	 * 
@@ -358,6 +376,7 @@ public class HistoricalInfoMgr {
 	}
 
 	
+	
 	/**
 	 * getOpponentActionsInRandomTournament method returns past actions of the
 	 * opponent from a randomly chosen tournament
@@ -387,7 +406,7 @@ public class HistoricalInfoMgr {
 						+ HIR.agentActionsDbase[randomTournamentIndex][j][opponentID];
 		}
 
-		pastInfoAfterUncertainty = applyUncertaintyLimit(opponentPastInfo);
+		pastInfoAfterUncertainty = applyuncertaintyLevel(opponentPastInfo);
 
 		return pastInfoAfterUncertainty;
 	}
@@ -396,7 +415,7 @@ public class HistoricalInfoMgr {
 	
 	
 	/**
-	 * applyUncertaintyLimit method applies the uncertainty limit on queried
+	 * applyuncertaintyLevel method applies the uncertainty limit on queried
 	 * opponent past information
 	 * 
 	 * @param opponentPastInfo
@@ -405,13 +424,14 @@ public class HistoricalInfoMgr {
 	 * @return pastInfoAfterUncertainty : Requested Information on opponent's
 	 *         past actions after uncertainty limit application
 	 */
-	private String applyUncertaintyLimit(String opponentPastInfo) {
+	private String applyuncertaintyLevel(String opponentPastInfo) {
 		String pastInfoAfterUncertainty = opponentPastInfo.substring(0,
-				(int)(Math.ceil(opponentPastInfo.length() * uncertaintyLimit)));
+				(int)(Math.ceil(opponentPastInfo.length() * uncertaintyLevel)));
 
 		return pastInfoAfterUncertainty;
 	}
 
+	
 		
 	/**
 	 * displayAgentsTournamentPerformance method performs the arrangement of the
@@ -446,7 +466,7 @@ public class HistoricalInfoMgr {
 				+ ", P = " + payOff[2] + ", S = "
 				+ payOff[3] + "\n";
 		currentExperimentResults = currentExperimentResults
-				+ "Uncertainty Level : ," + uncertaintyLimit + "\n";
+				+ "Uncertainty Level : ," + uncertaintyLevel + "\n";
 		currentExperimentResults = currentExperimentResults
 				+ "Request Limit : ," + requestLimitOptions + "\n";
 		currentExperimentResults = currentExperimentResults
@@ -489,6 +509,8 @@ public class HistoricalInfoMgr {
 		return experimentLeaderboard;
 
 	}
+	
+	
 	
 	/**
 	 * updateHistoricalRepository performs the function of saving the
@@ -749,6 +771,12 @@ public class HistoricalInfoMgr {
 		writer.close();
 		
 		
+	}
+	
+	public void displayAgentsExperimentStats(int currentExperimentID) {
+		agentsTournamentStatistics = agentsTournamentStatistics
+				+ "\nExperiment " + (currentExperimentID)
+				+ "\n=================================\n";
 	}
 	
 	

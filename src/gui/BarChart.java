@@ -44,39 +44,23 @@ package gui;
  *
  */
 
-import gui.BarChart3DDemo4.CustomBarRenderer3D;
 import historicalInfo.HistoricalInfoMgr;
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Paint;
-
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.annotations.CategoryTextAnnotation;
-import org.jfree.chart.axis.CategoryAnchor;
-import org.jfree.chart.axis.NumberAxis;
-import org.jfree.chart.labels.ItemLabelAnchor;
-import org.jfree.chart.labels.ItemLabelPosition;
-import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.title.LegendTitle;
-import org.jfree.chart.title.TextTitle;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
-import org.jfree.ui.RectangleEdge;
 import org.jfree.ui.RefineryUtilities;
-import org.jfree.ui.TextAnchor;
-
-import javax.swing.JLabel;
 import java.awt.Font;
 import java.util.ArrayList;
 
@@ -109,28 +93,7 @@ public class BarChart extends JFrame {
 		public DifferenceBarRenderer() {
 		 }
 
-		/**
-         * Returns the paint for an item.  Overrides the default behaviour
-         * inherited from AbstractSeriesRenderer.
-         *
-         * @param row  the series.
-         * @param column  the category.
-         *
-         * @return The item color.
-         */
-        public Paint getItemPaint(int row, int column) {
-        	String s = dataset.getRowKey(row).toString();
-            int agentId = Integer.parseInt(s.substring(6));
-          JOptionPane.showMessageDialog(null, agentId);
-            if (agentStrategies.get(agentId-1).equalsIgnoreCase("Advanced_C")) 
-                return Color.CYAN;
-            else if (agentStrategies.get(agentId-1).equalsIgnoreCase("Naive_C")) 
-                return Color.BLUE;
-            else if (agentStrategies.get(agentId-1).equalsIgnoreCase("Naive_D")) 
-                return Color.YELLOW;
-            else
-                return Color.RED;
-        }
+
     }
 	
 	
@@ -152,23 +115,15 @@ public class BarChart extends JFrame {
 	public BarChart(String frameTitle, String chartTitle) {
 
 		super(frameTitle);
-		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-	//	final JFreeChart chart = ChartFactory.createBarChart(chartTitle,
-	//			"Tournament", "Cummulative Pay-Off", /** Modified from original code **/
-	//			createDataset(), PlotOrientation.VERTICAL, true, true, false);
-        
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);    
 		CategoryDataset dataset = createDataset();
-
 		JFreeChart chart = createChart(dataset);
-		
 		final ChartPanel chartPanel = new ChartPanel(chart);
 		chartPanel.setPreferredSize(new Dimension(1200, 770));
 		setContentPane(chartPanel);
 		chartPanel.setLayout(null);
 
 	}
-
-	
 	
 
 	/**
@@ -213,12 +168,6 @@ public class BarChart extends JFrame {
         LegendTitle legend = chart.getLegend();
         Font labelFont = new Font("Arial", Font.BOLD, 12);
         legend.setItemFont(labelFont);
-        
-       /* 
-        TextTitle legendText = new TextTitle("\n Naive_C     Naive_D    Advanced_C   Advanced_D \n \n");
-        legendText.setPosition(RectangleEdge.BOTTOM);
-        chart.addSubtitle(legendText);
-        */
         CategoryPlot plot = chart.getCategoryPlot();
         BarRenderer renderer = (BarRenderer) plot.getRenderer();
          
@@ -247,13 +196,16 @@ public class BarChart extends JFrame {
         	case "Advanced_D": 
             	color = new Color(30,104,94);
             	break;
+            
+        	case "Advanced_E": 
+            	color = new Color(23,129,179);
+            	break;
+            
         	}
             renderer.getLegendItems();
             renderer.setSeriesPaint(i, color);
             
         }
-        
-
         return chart;
 
     }

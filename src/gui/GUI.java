@@ -66,7 +66,7 @@ public class GUI {
 	private JTextField txtAdvancedCNum;
 	private JTextField txtAdvancedExpNum;
 	private boolean startSimulation = false;
-	private static JTextArea txtLeaderBoard = new JTextArea();
+	private JTextArea txtLeaderBoard = new JTextArea();
 	private static final JTextArea txtStats = new JTextArea();
 	private JRadioButton rdbtnRandom;
 	private JSlider slider;

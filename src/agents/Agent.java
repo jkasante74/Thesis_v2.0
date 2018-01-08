@@ -10,7 +10,6 @@ import historicalInfo.HistoricalInfoMgr;
 
 public class Agent {
 	
-	
 	private String ADVANCE_COOPERATOR = "Advanced_C";
 	private String ADVANCE_DEFECTOR = "Advanced_D";
 	private String ADVANCE_EXPLOITER = "Advanced_E";
@@ -27,14 +26,23 @@ public class Agent {
 	protected float REWARD;
 	protected float PUNISH;
 	protected float SUCKER;
-
 	public double agentBeliefs[][], gameValue[][];
+	
+	
 	public Agent() {
 	
 
 	}
 
-
+	/**
+	 * Agent Constructor : sets up parameters and other variables
+	 * @param agents
+	 * @param agentStrategies
+	 * @param infoRequestOption
+	 * @param numOfAgents
+	 * @param payOff
+	 * @param him
+	 */
 	public Agent(ArrayList agents, String[] agentStrategies, int infoRequestOption, int numOfAgents, float []payOff, HistoricalInfoMgr him) {
 		
 		this.agents = agents;
@@ -42,13 +50,11 @@ public class Agent {
 		this.agentStrategies = agentStrategies;
 		this.infoRequestOption = infoRequestOption;
 		this.numOfAgents = numOfAgents;
-		setAgentsBeliefs();	
+		setBeliefs();	
 		this.TEMPT =  payOff[0];
 		this.REWARD = payOff[1];
 		this.PUNISH = payOff[2];
 		this.SUCKER = payOff[3];
-
-	//	AgentStrategies agStrategy = new AgentStrategies();
 				
 	}
 	
@@ -75,13 +81,13 @@ public class Agent {
 		Agent ags = new AgentStrategies(him, agentBeliefs);
 		char agentAction = 0;
 
-
+		
 		this.currentTournament = currentTournament;
-
+		
 		String agentStrategy = agentStrategies[requestingAgentID];
 		String opponentStrategy = agentStrategies[opponentID];
-
-		// Get action of requesting agent
+		
+		// Get action of agent based on strategy
 		if (agentStrategy.equalsIgnoreCase(NAIVE_COOPERATOR))
 			agentAction = ags.cooperateAll();
 		if (agentStrategy.equalsIgnoreCase(NAIVE_DEFECTOR))
@@ -132,7 +138,7 @@ public class Agent {
 	 *            : Number of agents in current Experiment
 	 * 
 	 */
-	protected void setAgentsBeliefs() {
+	protected void setBeliefs() {
 
 		agentBeliefs = new double[numOfAgents][numOfAgents];
 		gameValue = new double[numOfAgents][numOfAgents];
@@ -164,6 +170,7 @@ public class Agent {
 
 		// Generate Random tournament
 		Random rand = new Random();
+		
 		int randomTournamentNumber = rand.nextInt((currentTournament - 0) + 1);
 
 		return randomTournamentNumber;

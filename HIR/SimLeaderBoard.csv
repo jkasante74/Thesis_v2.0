@@ -1,28 +1,28 @@
 
-Experiment 2
+Experiment 1
 ==========================
 Agent_ID 	 Strategy 	Pay_Off    Cooperations Defections 
 
-Number of Tournament : ,30
+Number of Tournament : ,4
 Payoffs : ,T = 5.0, R = 3.0, P = 1.0, S = 0.0
 Uncertainty Level : ,1.0
 Request Limit : ,null
 
 
  Agent_ID, Strategy , Pay_Off , Cooperations , Defections 
-Agent 5,Advanced_D,505.0,89,121
+Agent 8,Advanced_C,64.0,14,14
  
-Agent 1,Advanced_D,503.0,88,122
+Agent 6,Advanced_D,63.0,11,17
  
-Agent 2,Advanced_C,452.0,119,91
+Agent 5,Advanced_D,61.0,10,18
  
-Agent 3,Advanced_C,449.0,119,91
+Agent 1,Advanced_C,58.0,15,13
  
-Agent 6,Advanced_E,334.0,0,210
+Agent 7,Advanced_E,44.0,0,28
  
-Agent 8,Naive_D,330.0,0,210
+Agent 4,Naive_D,44.0,0,28
  
-Agent 4,Advanced_E,330.0,0,210
+Agent 2,Advanced_E,44.0,0,28
  
-Agent 7,Naive_C,180.0,210,0
+Agent 3,Naive_C,24.0,28,0
  

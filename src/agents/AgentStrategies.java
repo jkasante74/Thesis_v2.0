@@ -15,8 +15,10 @@ public class AgentStrategies extends Agent {
 	// Private Variables
 	private final char COOPERATE = 'C';
 	private final char DEFECT = 'D';
-	private String opponentFirstAct;
+	private String opponentFirstAct="";
 	private double ALPHA = 0.5, BETA = 0.5,DISCOUNTFACTOR = 0.9;
+	
+	// Parameter variables
 	protected double [][] agentBeliefs;
 	
 
@@ -171,7 +173,16 @@ public class AgentStrategies extends Agent {
 		return matchAction;
 	}
 
-	
+	/**
+	 * superRationalWithDiscountFactor method defines algorithm for identifying opponent's expected cooperating ratio
+	 * in order to make a decision that maximize its expected return.
+	 * 							 
+	 * @param opponentCooperateRatio	:	Expected ratio at which opponent cooperates	
+	 * @param requestingAgentID			:	agent experiment ID
+	 * @param agentStrategy				:	opponent Strategy
+	 * @param opponentID				: 	opponent experiment ID
+	 * @return							:	agent's action
+	 */
 	private char superRationalWithDiscountFactor(double opponentCooperateRatio, int requestingAgentID,String agentStrategy, int opponentID) {
 		char matchAction; // Set default action
 
@@ -276,8 +287,7 @@ public class AgentStrategies extends Agent {
 		case 2:
 			opponentInformation = him.requestOppPastInfo(requestingAgentID,
 					opponentID, infoRequestOption);
-			
-			if ((infoAcquired)||((opponentInformation != null)&&(!opponentInformation.isEmpty()))){
+			if ((infoAcquired)&&(!opponentInformation.isEmpty())){
 				opponentCooperateRatio = calcOppRating(opponentInformation);
 				opponentFirstAct = opponentInformation.substring(0, 1);
 			}
@@ -301,6 +311,8 @@ public class AgentStrategies extends Agent {
 				opponentCooperateRatio = calcOppRating(opponentInformation);
 			break;
 		}
+		
+		
 
 		return opponentCooperateRatio;
 	}
@@ -338,12 +350,24 @@ public class AgentStrategies extends Agent {
 
 
 	
-	
+	/**
+	 * setOpponentCooperateRatio method updates cooperate ratio of opponent in agent's belief base
+	 * @param requestingAgentID		:	agent ID
+	 * @param opponentID			:	opponent ID
+	 * @param opponentCooperateRatio	: opponent Cooperating ratio
+	 */
 	protected void setOpponentCooperateRatio(int requestingAgentID, int opponentID, double opponentCooperateRatio) {
 		agentBeliefs[requestingAgentID][opponentID] = opponentCooperateRatio;		
 	}
 
-
+	
+	/**
+	 * getOpponentCooperateRatio method returns opponent current cooperating ratio
+	 * @param requestingAgentID		:	agent ID
+	 * @param opponentID			:	opponent ID
+	 * @param opponentCooperateRatio	: opponent Cooperating ratio
+	 * @return current opponent cooperating ratio
+	 */
 	protected double getOpponentCooperateRatio(int requestingAgentID, int opponentID, double opponentCooperateRatio) {
 		
 		return agentBeliefs[requestingAgentID][opponentID];
