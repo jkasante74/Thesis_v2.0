@@ -79,7 +79,7 @@ public class LineChart extends JFrame {
 	 *            Title for the tournament chart
 	 * 
 	 */
-	public LineChart(String frameTitle, String chartTitle) {
+	public LineChart(String frameTitle) {
 		super(frameTitle); // Display frame title
 
 		final JFrame frame = new JFrame(frameTitle);
@@ -110,7 +110,7 @@ public class LineChart extends JFrame {
 		dataset.clear();
 		
 		// Query HIM to submit data for bar chart display 
-		HistoricalInfoMgr.getDataset(expNum);
+		HistoricalInfoMgr.getChartDataset(expNum);
 
 
 		return dataset; // add the data point (y-value, variable, x-value)
@@ -131,7 +131,7 @@ public class LineChart extends JFrame {
 		expNum = Integer.parseInt(args[0]);
 
 		LineChart chart = new LineChart(
-				"Line Graph of Agent Pay-Off vrs Tournament", " ");
+				"Line Graph of Agent Pay-Off vrs Tournament");
 		/** Title Modified from original code **/
 		chart.pack(); // resize the window to fit the graph
 		RefineryUtilities.centerFrameOnScreen(chart); // display chart on screen											

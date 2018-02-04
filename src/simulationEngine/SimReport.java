@@ -16,11 +16,7 @@ public class SimReport {
 	public static String agentsTournamentStatistics = "";
 
 	
-	/**Constructor to initialize
-	 * 
-	 * @param simLog : Instance of GUI_Simulation
-	 * @param him	 : HistoricalInfoMgr  
-	 */
+	// Constructor
 	SimReport(GUI_Simulation simLog, HistoricalInfoMgr him){
 		this.simLog = simLog;
 		this.him = him;
@@ -32,6 +28,7 @@ public class SimReport {
 	}
 	
 	
+	
 	/**
 	 * printExperiment method reports on a statistics of current Experiment
 	 * index agents' payoffs, strategies and positions .
@@ -40,7 +37,6 @@ public class SimReport {
 	 *            : Current Tournament index
 	 * 
 	 */
-	
 	protected void printExperiment(int currentExperimentID) {
 
 		// Save to TB and signal HIM
@@ -68,12 +64,12 @@ public class SimReport {
 	 *            : Current Tournament index
 	 * 
 	 */
-	protected void printTournament(float currentTournamentIndex) {
+	protected void printTournamentResults(float currentTournamentIndex) {
 
-		String tournamentStats = "\nRound-Robin Tournament " + (currentTournamentIndex + 1) + "\n" + "===================\n";;
+		String tournamentStats = "\nRound-Robin Tournament " + (currentTournamentIndex+1) + "\n" + "===================\n";;
 		simLog.txtSim.append(tournamentStats);
 		
-		String tx =  "\nRound-Robin Tournament " + (currentTournamentIndex + 1)+ "\n";
+		String tx =  "\nRound-Robin Tournament " + (currentTournamentIndex+1)+ "\n";
 		
 		// Store current tournament title in tournament board
 		try {
@@ -102,10 +98,9 @@ public class SimReport {
 	}
 	
 	
-	
 
 	/**
-	 * getExperimentResults accepts display request from the GUI component and
+	 * printExperimentLeaderboard accepts display request from the GUI component and
 	 * based on the request returns the appropriate results stored in Historical
 	 * Information Repository
 	 * 
@@ -115,8 +110,7 @@ public class SimReport {
 	 * @return requestInfo : Response given to GUI component
 	 * 
 	 */
-
-	public String getExperimentResults(int requestOption) {
+	public String printExperimentLeaderboard(int requestOption) {
 		String requestInfo = "";
 
 		switch (requestOption) {
@@ -132,20 +126,16 @@ public class SimReport {
 		return requestInfo;
 	}
 
-/**
- * displayAgentsExperimentStats method displays a statistic of agents performance
- * @param currentExperimentID	: current Experiment index
- */
-	protected void displayAgentsExperimentStats(int currentExperimentID) {
-		him.displayAgentsExperimentStats(currentExperimentID);
+	
+	
+	/**
+	 * printExperimentStats method displays a statistic of agents performance
+	 * @param currentExperimentID	: current Experiment index
+	 */
+	protected void printExperimentStats(int currentExperimentID) {
+		him.printExperimentStats(currentExperimentID);
 		
 	}
 
-
-	
-	
-	
-	
-	
 
 }

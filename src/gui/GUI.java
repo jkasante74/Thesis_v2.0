@@ -44,6 +44,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JTextArea;
+import javax.swing.JCheckBox;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class GUI {
 
@@ -64,16 +67,19 @@ public class GUI {
 	private JTextField txtCNum;
 	private JTextField txtDNum;
 	private JTextField txtAdvancedCNum;
-	private JTextField txtAdvancedExpNum;
+	private static int numOfTournament; 
 	private boolean startSimulation = false;
 	private JTextArea txtLeaderBoard = new JTextArea();
 	private static final JTextArea txtStats = new JTextArea();
+	private static JComboBox cmbThreshold; 
+	private static JComboBox cmbEvolutionPerTournament;
 	private JRadioButton rdbtnRandom;
 	private JSlider slider;
 	private JTextField txtAdvancedDNum;
 	private JLabel lblUncertainties; 
 	private String SETUP_LOCATION = "SR/SetupFile.csv";
 	protected static GUI_Simulation simLog;
+	private static float eliminationThreshold = 0;
 
 	/**
 	 * Main method that creates Application frame,
@@ -96,7 +102,6 @@ public class GUI {
 					UIManager.setLookAndFeel(UIManager
 							.getSystemLookAndFeelClassName());
 					simLog = new GUI_Simulation();
-				//	rep = new SimReport();
 					simLog.frmSimulation.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -119,21 +124,21 @@ public class GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 500);
+		frame.setBounds(100, 100, 550, 550);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new LineBorder(new Color(192, 192, 192), 1, true));
-		panel.setBounds(16, 419, 417, 42);
+		panel.setBounds(16, 468, 516, 54);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		frame.setLocation(800, 100); // Set the frame location
 		JButton btnStart = new JButton("Start");
 		final JRadioButton rdbtnLoadSetup = new JRadioButton(
 				"Load Experiment Setup");
-		lblUncertainties = new JLabel("1.0");
 		final JRadioButton rdbtnAssign = new JRadioButton("Assign");
+		rdbtnAssign.setForeground(SystemColor.controlShadow);
 		final JComboBox<String> cmbInfoReqApproach = new JComboBox<String>();
 
 		btnStart.addActionListener(new ActionListener() {
@@ -144,7 +149,7 @@ public class GUI {
 				
 				
 				// Initialize parameters to be loaded into Setup reopsitory
-				String[] param = new String[14];
+				String[] param = new String[15];
 				
 				// Reset for next experiment
 				startSimulation = true;
@@ -177,13 +182,15 @@ public class GUI {
 					param[9] = (txtDNum.getText());
 					param[10] = (txtAdvancedCNum.getText());
 					param[11] = (txtAdvancedDNum.getText());
-					param[12] = (txtAdvancedExpNum.getText());
-					param[13] = String.valueOf((cmbInfoReqApproach.getSelectedIndex()));
+					param[12] = String.valueOf((cmbInfoReqApproach.getSelectedIndex()));
+					param[13] = String.valueOf((cmbThreshold.getSelectedIndex()));
+					param[14] = String.valueOf(cmbEvolutionPerTournament.getSelectedItem());
 
-
+					
+					
 					// Store agents SetUp array in the setup repository 
 					try {
-						String FileHeading = "T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD,AdvancedExp, infoRequestApproach";
+						String FileHeading = "T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD,AdvancedExp, infoRequestApproach, EvolutionModel,Tournaments/Evolution";
 						writeFile(SETUP_LOCATION, FileHeading, param);
 					} catch (IOException e1) {
 
@@ -227,7 +234,7 @@ public class GUI {
 				outputWriter.close();
 			}
 		});
-		btnStart.setBounds(6, 6, 99, 32);
+		btnStart.setBounds(6, 6, 99, 42);
 		panel.add(btnStart);
 
 		JButton btnStop = new JButton("Stop / Exit");
@@ -236,13 +243,13 @@ public class GUI {
 				System.exit(0);
 			}
 		});
-		btnStop.setBounds(312, 6, 99, 32);
+		btnStop.setBounds(411, 6, 99, 42);
 		panel.add(btnStop);
 		final JButton btnDefault = new JButton("Default");
-		btnDefault.setBounds(117, 8, 90, 29);
+		btnDefault.setBounds(148, 8, 90, 40);
 		panel.add(btnDefault);
 		final JButton btnClear = new JButton("Clear");
-		btnClear.setBounds(208, 8, 90, 29);
+		btnClear.setBounds(281, 8, 90, 40);
 		panel.add(btnClear);
 		
 				btnClear.addActionListener(new ActionListener() {
@@ -262,7 +269,7 @@ public class GUI {
 						txtDNum.setText("");
 						txtAdvancedCNum.setText("");
 						txtAdvancedDNum.setText("");
-						txtAdvancedExpNum.setText("");
+						
 		
 					}
 				});
@@ -284,13 +291,12 @@ public class GUI {
 						txtCNum.setText("10");
 						txtDNum.setText("10");
 						txtAdvancedCNum.setText("10");
-						txtAdvancedExpNum.setText("10");
 		
 					}
 				});
 
 		final JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
-		tabbedPane.setBounds(6, 6, 438, 411);
+		tabbedPane.setBounds(6, 6, 538, 458);
 		frame.getContentPane().add(tabbedPane);
 
 		JPanel tbAbout = new JPanel();
@@ -302,7 +308,7 @@ public class GUI {
 				"<html> \r<h3> \r<font color = red>Simulation of Iterated Round Robin Tournament </font>\r</h3>\r<br> \rBy Jonathan Asante\n<br>\n<br>\r<p align = \"justify\">\rWe consider population of agents in an Iterated Round Robin Tournament game where in each tournament every agent engages in a single prisoner's dilemma game against every other agent. \n<br>\n<br>\nFor every tournament with n agents, each agent will participate in (n - 1) matches with a total of n/2 (n - 1) number of matches play the prisoner'sdilemma game based on the action set A= {C , D}.\r</p>\r<p align = \"justify\">\rPlayer's strategy assignments  include; \r<ul>\r<li><font color = blue>Naive Cooperator</font>\r<li><font color = blue>Naive Defector</font>\n<li><font color = blue>Advanced Cooperator</font>\n<li><font color = blue>Advanced Defector</font>\n</ul>\n\r<p align = \"justify\">\rPlayers will compete in this simulation experiment against parameters; \r<ul>\r<li><font color = red>Information acquisition limits.</font>\r<li><font color = red>Different payoff Matrix.</font>\r<li><font color = red>Information acquisition uncertainties.</font>\r</ul>\r</p>\r<br>\r</html>\r");
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 12));
 
-		lblNewLabel.setBounds(6, 6, 405, 353);
+		lblNewLabel.setBounds(6, 6, 505, 390);
 		tbAbout.add(lblNewLabel);
 
 		JPanel tbSetUp = new JPanel();
@@ -312,58 +318,59 @@ public class GUI {
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
 		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_1.setBounds(19, 36, 379, 144);
+		panel_1.setBounds(19, 36, 481, 144);
 		tbSetUp.add(panel_1);
 
 		JLabel label = new JLabel("Temptation PayOff [D, C]");
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setForeground(SystemColor.controlShadow);
-		label.setBounds(6, 12, 198, 16);
+		label.setBounds(6, 9, 163, 22);
 		panel_1.add(label);
 
 		JLabel label_1 = new JLabel("Reward PayOff [C, C]");
 		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_1.setForeground(SystemColor.controlShadow);
-		label_1.setBounds(6, 46, 198, 16);
+		label_1.setBounds(23, 43, 146, 16);
 		panel_1.add(label_1);
 
 		JLabel lblSuckersPayoffc = new JLabel("Sucker's PayOff [C, D]");
 		lblSuckersPayoffc.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSuckersPayoffc.setForeground(SystemColor.controlShadow);
-		lblSuckersPayoffc.setBounds(6, 113, 198, 16);
+		lblSuckersPayoffc.setBounds(23, 111, 146, 16);
 		panel_1.add(lblSuckersPayoffc);
 
 		JLabel lblPunishmentPayoffd = new JLabel("Punishment PayOff [D, D]");
 		lblPunishmentPayoffd.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPunishmentPayoffd.setForeground(SystemColor.controlShadow);
-		lblPunishmentPayoffd.setBounds(6, 78, 198, 16);
+		lblPunishmentPayoffd.setBounds(0, 83, 171, 16);
 		panel_1.add(lblPunishmentPayoffd);
 
 		txtTemptation = new JTextField();
 		txtTemptation.setText("5");
 		txtTemptation.setColumns(10);
-		txtTemptation.setBounds(227, 6, 146, 28);
+		txtTemptation.setBounds(202, 6, 262, 28);
 		panel_1.add(txtTemptation);
 
 		txtReward = new JTextField();
 		txtReward.setText("3");
 		txtReward.setColumns(10);
-		txtReward.setBounds(227, 39, 146, 28);
+		txtReward.setBounds(202, 39, 262, 28);
 		panel_1.add(txtReward);
 
 		txtSucker = new JTextField();
 		txtSucker.setText("0");
 		txtSucker.setColumns(10);
-		txtSucker.setBounds(227, 105, 146, 28);
+		txtSucker.setBounds(202, 105, 262, 28);
 		panel_1.add(txtSucker);
 
 		txtPunishment = new JTextField();
 		txtPunishment.setText("1");
 		txtPunishment.setColumns(10);
-		txtPunishment.setBounds(227, 72, 146, 28);
+		txtPunishment.setBounds(202, 72, 262, 28);
 		panel_1.add(txtPunishment);
 
 		rdbtnRandom = new JRadioButton("Random");
+		rdbtnRandom.setForeground(SystemColor.controlShadow);
 		rdbtnRandom.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -392,7 +399,6 @@ public class GUI {
 
 			}
 		});
-		slider = new JSlider();
 
 		rdbtnLoadSetup.addActionListener(new ActionListener() {
 			@Override
@@ -413,7 +419,6 @@ public class GUI {
 					txtCNum.setEnabled(false);
 					txtDNum.setEnabled(false);
 					txtAdvancedCNum.setEnabled(false);
-					txtAdvancedExpNum.setEnabled(false);
 					txtAdvancedDNum.setEnabled(false);
 
 					cmbInfoReqApproach.setEnabled(false);
@@ -435,7 +440,6 @@ public class GUI {
 					txtDNum.setEnabled(true);
 					txtAdvancedCNum.setEnabled(true);
 					txtAdvancedDNum.setEnabled(true);
-					txtAdvancedExpNum.setEnabled(true);
 					cmbInfoReqApproach.setEnabled(true);
 
 				}
@@ -449,90 +453,115 @@ public class GUI {
 			}
 		});
 
-		slider.addChangeListener(new ChangeListener() {
-			@Override
-			public void stateChanged(ChangeEvent e) {
-				String ticker = "";
-				ticker = (String.valueOf((float) slider.getValue() / 100));
-				lblUncertainties.setText(ticker.substring(0, 3));
-			}
-		});
-
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
 		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_2.setBounds(19, 187, 379, 66);
+		panel_2.setBounds(19, 187, 481, 108);
 		tbSetUp.add(panel_2);
 
 		JLabel lblNumberOfTournaments = new JLabel("Number of Tournaments");
 		lblNumberOfTournaments.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNumberOfTournaments.setForeground(SystemColor.controlShadow);
-		lblNumberOfTournaments.setBounds(6, 12, 197, 16);
+		lblNumberOfTournaments.setBounds(0, 12, 173, 16);
 		panel_2.add(lblNumberOfTournaments);
 
 		txtTournNum = new JTextField();
 		txtTournNum.setText("4");
 		txtTournNum.setColumns(10);
-		txtTournNum.setBounds(227, 6, 146, 28);
+		txtTournNum.setBounds(200, 6, 262, 28);
 		panel_2.add(txtTournNum);
-
-		slider.setValue(100);
-		slider.setPaintTicks(true);
-		slider.setMajorTickSpacing(10);
-		slider.setBounds(218, 40, 118, 20);
-		panel_2.add(slider);
-
-		lblUncertainties.setBounds(348, 32, 25, 28);
-		panel_2.add(lblUncertainties);
-
-		JLabel label_6 = new JLabel("Uncertainty Level");
-		label_6.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_6.setForeground(SystemColor.controlShadow);
-		label_6.setBounds(6, 40, 197, 16);
-		panel_2.add(label_6);
+		
+		JLabel lblEliminationThreshold = new JLabel("Evolutionary Model");
+		lblEliminationThreshold.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblEliminationThreshold.setForeground(SystemColor.controlShadow);
+		lblEliminationThreshold.setBounds(19, 48, 154, 16);
+		panel_2.add(lblEliminationThreshold);
+		
+		cmbThreshold = new JComboBox();
+		cmbThreshold.setModel(new DefaultComboBoxModel(new String[] {"No Elimination", "Eliminate 1 with 1 Replacement", "Eliminate 2 with 2 Replacements", "Least 4 Agents Adapt Top 4 Strategies", "Eliminate without Replacements"}));
+		cmbThreshold.setSelectedIndex(3);
+		cmbThreshold.setBounds(200, 44, 262, 27);
+		panel_2.add(cmbThreshold);
+		
+		JLabel lblEvolutionaryOccurence = new JLabel("Tournaments/Evolution");
+		lblEvolutionaryOccurence.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblEvolutionaryOccurence.setForeground(SystemColor.controlShadow);
+		lblEvolutionaryOccurence.setBounds(0, 76, 173, 16);
+		panel_2.add(lblEvolutionaryOccurence);
+		
+		cmbEvolutionPerTournament = new JComboBox();
+		cmbEvolutionPerTournament.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "70", "80", "90", "100", ""}));
+		cmbEvolutionPerTournament.setBounds(200, 72, 262, 27);
+		panel_2.add(cmbEvolutionPerTournament);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
 		panel_3.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_3.setBounds(19, 265, 379, 94);
+		panel_3.setBounds(19, 301, 481, 94);
 		tbSetUp.add(panel_3);
 
 		JLabel lblInformationRequestLimit = new JLabel(
 				"Information Request Limit");
 		lblInformationRequestLimit.setHorizontalAlignment(SwingConstants.LEFT);
-		lblInformationRequestLimit.setForeground(SystemColor.controlShadow);
-		lblInformationRequestLimit.setBounds(6, 12, 176, 16);
+		lblInformationRequestLimit.setForeground(Color.RED);
+		lblInformationRequestLimit.setBounds(21, 40, 176, 16);
 		panel_3.add(lblInformationRequestLimit);
 
 		JLabel lblAdvancedc = new JLabel("Advanced_C");
 		lblAdvancedc.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAdvancedc.setForeground(SystemColor.controlShadow);
-		lblAdvancedc.setBounds(161, 40, 86, 16);
+		lblAdvancedc.setBounds(246, 40, 86, 16);
 		panel_3.add(lblAdvancedc);
 
 		JLabel lblAdvancedd = new JLabel("Advanced_D");
 		lblAdvancedd.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAdvancedd.setForeground(SystemColor.controlShadow);
-		lblAdvancedd.setBounds(277, 40, 86, 16);
+		lblAdvancedd.setBounds(389, 40, 86, 16);
 		panel_3.add(lblAdvancedd);
 
-		rdbtnAssign.setBounds(6, 40, 86, 23);
+		rdbtnAssign.setBounds(6, 62, 86, 23);
 		panel_3.add(rdbtnAssign);
 
-		rdbtnRandom.setBounds(6, 62, 86, 23);
+		rdbtnRandom.setBounds(124, 62, 86, 23);
 		panel_3.add(rdbtnRandom);
 
 		txtAdvanceCLimit = new JTextField();
-		txtAdvanceCLimit.setText("400");
+		txtAdvanceCLimit.setText("400000");
 		txtAdvanceCLimit.setColumns(10);
-		txtAdvanceCLimit.setBounds(183, 60, 45, 28);
+		txtAdvanceCLimit.setBounds(256, 60, 45, 28);
 		panel_3.add(txtAdvanceCLimit);
 
 		txtAdvancedDLimit = new JTextField();
-		txtAdvancedDLimit.setText("400");
+		txtAdvancedDLimit.setText("400000");
 		txtAdvancedDLimit.setColumns(10);
-		txtAdvancedDLimit.setBounds(287, 60, 45, 28);
+		txtAdvancedDLimit.setBounds(399, 60, 45, 28);
 		panel_3.add(txtAdvancedDLimit);
+		slider = new JSlider();
+		lblUncertainties = new JLabel("1.0");
+		slider.setBounds(200, 6, 227, 20);
+		panel_3.add(slider);
+		panel_3.add(lblUncertainties);
+		
+				slider.addChangeListener(new ChangeListener() {
+					@Override
+					public void stateChanged(ChangeEvent e) {
+						String ticker = "";
+						ticker = (String.valueOf((float) slider.getValue() / 100));
+						lblUncertainties.setText(ticker.substring(0, 3));
+					}
+				});
+				
+						slider.setValue(100);
+						slider.setPaintTicks(true);
+						slider.setMajorTickSpacing(10);
+						
+								JLabel label_6 = new JLabel("Uncertainty Level");
+								label_6.setBounds(35, 6, 137, 16);
+								panel_3.add(label_6);
+								label_6.setHorizontalAlignment(SwingConstants.RIGHT);
+								label_6.setForeground(SystemColor.controlShadow);
+								lblUncertainties.setBounds(436, 0, 25, 28);
+								
 
 		rdbtnLoadSetup.setForeground(Color.RED);
 		rdbtnLoadSetup.setBounds(19, 7, 183, 23);
@@ -545,7 +574,7 @@ public class GUI {
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
 		panel_4.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_4.setBounds(26, 19, 358, 236);
+		panel_4.setBounds(26, 19, 468, 210);
 		tbModel.add(panel_4);
 
 		JLabel lblCooperateall = new JLabel("Naive_Cooperator");
@@ -559,12 +588,6 @@ public class GUI {
 		lblDefectall.setForeground(SystemColor.controlShadow);
 		lblDefectall.setBounds(16, 89, 188, 16);
 		panel_4.add(lblDefectall);
-
-		JLabel lblAdvancedExp = new JLabel("Advanced_Exploiters");
-		lblAdvancedExp.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAdvancedExp.setForeground(SystemColor.controlShadow);
-		lblAdvancedExp.setBounds(16, 203, 188, 16);
-		panel_4.add(lblAdvancedExp);
 
 		JLabel lblAdvancedd_1 = new JLabel("Advanced_C");
 		lblAdvancedd_1.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -589,12 +612,6 @@ public class GUI {
 		txtAdvancedCNum.setColumns(10);
 		txtAdvancedCNum.setBounds(231, 117, 119, 28);
 		panel_4.add(txtAdvancedCNum);
-
-		txtAdvancedExpNum = new JTextField();
-		txtAdvancedExpNum.setText("2");
-		txtAdvancedExpNum.setColumns(10);
-		txtAdvancedExpNum.setBounds(231, 197, 119, 28);
-		panel_4.add(txtAdvancedExpNum);
 
 		JLabel lblStrategies = new JLabel("Strategies");
 		lblStrategies.setFont(new Font("Lucida Grande", Font.PLAIN, 13));
@@ -623,7 +640,7 @@ public class GUI {
 		panel_4.add(label_2);
 
 		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(26, 273, 358, 75);
+		panel_5.setBounds(26, 247, 468, 148);
 		tbModel.add(panel_5);
 		panel_5.setLayout(null);
 		panel_5.setBorder(new LineBorder(Color.LIGHT_GRAY));
@@ -631,8 +648,8 @@ public class GUI {
 		JLabel lblAgentsInfoRequest = new JLabel(
 				"Agents' Info. Request Approach");
 		lblAgentsInfoRequest.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAgentsInfoRequest.setForeground(SystemColor.controlShadow);
-		lblAgentsInfoRequest.setBounds(6, 6, 335, 16);
+		lblAgentsInfoRequest.setForeground(new Color(255, 20, 147));
+		lblAgentsInfoRequest.setBounds(6, 6, 456, 16);
 		panel_5.add(lblAgentsInfoRequest);
 
 		cmbInfoReqApproach.setModel(new DefaultComboBoxModel<String>(
@@ -642,7 +659,7 @@ public class GUI {
 						"Opponent's Past Action in Random Tournament",
 						"Past Actions of other Agents against Opponent" }));
 		cmbInfoReqApproach.setSelectedIndex(2);
-		cmbInfoReqApproach.setBounds(6, 23, 346, 27);
+		cmbInfoReqApproach.setBounds(17, 52, 434, 27);
 		panel_5.add(cmbInfoReqApproach);
 
 		JPanel tbDisplay = new JPanel();
@@ -650,7 +667,7 @@ public class GUI {
 		tbDisplay.setLayout(null);
 
 		final JTabbedPane tabbedPane_1 = new JTabbedPane(SwingConstants.TOP);
-		tabbedPane_1.setBounds(6, 6, 405, 339);
+		tabbedPane_1.setBounds(6, 6, 505, 400);
 		tbDisplay.add(tabbedPane_1);
 
 		JPanel tbnLeaderboard = new JPanel();
@@ -658,7 +675,7 @@ public class GUI {
 		tbnLeaderboard.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(6, 6, 372, 281);
+		scrollPane.setBounds(6, 6, 472, 342);
 		scrollPane
 				.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane
@@ -678,7 +695,7 @@ public class GUI {
 				.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane_1
 				.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane_1.setBounds(6, 6, 372, 281);
+		scrollPane_1.setBounds(6, 6, 472, 342);
 		tbnstats.add(scrollPane_1);
 		txtStats.setEditable(false);
 		txtStats.setForeground(new Color(105, 105, 105));
@@ -713,7 +730,7 @@ public class GUI {
 				BarChart.main(expIndex);
 			}
 		});
-		btnBarChart.setBounds(240, 111, 117, 66);
+		btnBarChart.setBounds(333, 111, 117, 66);
 		tbnGraph.add(btnBarChart);
 
 		final JButton btnAreaChart = new JButton("Area Chart");
@@ -731,7 +748,7 @@ public class GUI {
 
 		cmbExpSel = new JComboBox<Object>();
 		cmbExpSel.setEnabled(false);
-		cmbExpSel.setBounds(28, 32, 324, 27);
+		cmbExpSel.setBounds(28, 32, 435, 27);
 		tbnGraph.add(cmbExpSel);
 
 		JLabel lblSelectExperiment = new JLabel("Select Experiment :");
@@ -748,7 +765,7 @@ public class GUI {
 			}
 		});
 		btnBarChart3D.setEnabled(false);
-		btnBarChart3D.setBounds(240, 202, 117, 66);
+		btnBarChart3D.setBounds(333, 202, 117, 66);
 		tbnGraph.add(btnBarChart3D);
 
 		tabbedPane.addChangeListener(new ChangeListener() { // add the Listener

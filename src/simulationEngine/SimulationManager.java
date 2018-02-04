@@ -2,6 +2,7 @@ package simulationEngine;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JOptionPane;
 
@@ -12,29 +13,31 @@ import settings.InputValidator;
 
 public class SimulationManager {
 	
-	ArrayList<Agent> agents;
+	// Private Variables
 	private String [] agentStrategies;
-	private int numOfTournaments;
-	private int numOfAgents;
-	private int currentExperimentID;
+	private int numOfTournaments, numOfAgents, currentExperimentID,tournamentPerEvolve;
 	private float[] payOff;
 	private char[] agentsAction;
 	private final char COOPERATE = 'C';
 	private final char DEFECT = 'D';
 	private final char DUMMY = 'A';
 	private String DUMMY_STRATEGY = "Dummy";
+	private int evolutionModelIndex;
+	
+	// Parameters and Fields
+	
 	SimReport report;
 	GUI_Simulation simLog;
 	HistoricalInfoMgr him;
-	Agent agent;
-	ArrayList<Object> homeList = new ArrayList<Object>();
-	ArrayList<Object> awayList = new ArrayList<Object>();
-	
-	
-	
-	public SimulationManager(int currentExperimentID, InputValidator input,GUI_Simulation simLog, ArrayList<Agent> agents, HistoricalInfoMgr him, Agent agent) {
+	ArrayList<Agent> agents;
+	ArrayList<Integer> homeList = new ArrayList<Integer>();
+	ArrayList<Integer> awayList = new ArrayList<Integer>();
+
+	// Constructor
+	public SimulationManager(int currentExperimentID, InputValidator input,GUI_Simulation simLog, ArrayList<Agent> agents, HistoricalInfoMgr him) {
 		
 		// Initialize Parameters
+		
 		this.agents = agents;
 		this.agentStrategies = input.agentStrategies;
 		this.numOfAgents = Math.round(input.numOfAgents);
@@ -43,22 +46,22 @@ public class SimulationManager {
 		this.payOff = input.payOff;
 		this.simLog = simLog;
 		this.him = him;
-		this.agent = agent;
+		this.evolutionModelIndex = input.getEvolutionModel();
+		this.tournamentPerEvolve = input.getTournamentsPerEvolution();
 		report = new SimReport(this.simLog, this.him);
 		
-		
-	
 	}
 	
 	
+	
 	/**
-	 * scheduler method schedules the agents to begin simulation experiment
+	 * runSimulation() method schedules the agents to begin simulation experiment
 	 * 
 	 */
 	public void runSimulation(){
 		
 		report.printExperiment(currentExperimentID);
-		report.displayAgentsExperimentStats(currentExperimentID);
+		report.printExperimentStats(currentExperimentID);
 		
 		// transfer control to tournament Manager
 		tournamentManager();
@@ -69,12 +72,8 @@ public class SimulationManager {
 	
 	
 	/**
-	 * tournHandler method generates for each tournament a groups for the ageents.
-	 * 
-	 * @param homeList
-	 *            : Group of Agents that forms the first half
-	 * @param awayList
-	 *            : Group of Agents that forms the last half
+	 * tournamentManager method generates for each tournament a groups for the agents and handles their 
+	 * performance in the current tournament.
 	 * 
 	 */
 	
@@ -82,33 +81,153 @@ public class SimulationManager {
 		int matchesPerRound = 0;
 		for (int currentTournament = 0; currentTournament < numOfTournaments; currentTournament++) {
 
-			report.printTournament(currentTournament);
+			report.printTournamentResults(currentTournament);
 
 			int totalRounds = (numOfAgents - 1); 
 			 matchesPerRound = numOfAgents / 2; 
 
 			// Group players into two for fair matching
 			for (int j = 0; j < matchesPerRound; j++) {
-				homeList.add(agents.get(j));
-				awayList.add(agents.get(j));
+				homeList.add(j);
+				awayList.add(j);
 			}
 			
 			// Round Manager
 			roundMgr(currentTournament, totalRounds, matchesPerRound);
 					
 			try {
-				him.displayAgentsTournamentStats(currentTournament);
+				him.getTournamentStats(currentTournament, agents);
 			} catch (IOException e) {
 				
 				e.printStackTrace();
 			}
+			
+			// Check if evolutionModelIndex should be applied
+			
+			if((evolutionModelIndex > 0)&&(tournamentPerEvolve!=0)&&((currentTournament+1) % tournamentPerEvolve == 0)){
+				applyElimnination();
+			}
 	
-		}		
+		}
+		
+		
+		
 
 	}
 	
 	
+	/**
+	 * Applies the elimnation policy introduced by Kretz in his study
+	 */
+	private void applyElimnination() {
+
+		switch(evolutionModelIndex){
+			case 1: eliminateOneWithOneReplacement();
+			break;
+			
+			case 2: eliminateTwoWithTwoReplacements();
+			break;
+			
+			case 3: least4AdoptTop4Strategies();
+			break;
+			
+			case 4: eliminateWithoutReplacement();
+			break;
+			
+		}
+	}
+
+
+
+	private void least4AdoptTop4Strategies() {
+		// TODO Auto-generated method stub
+		String [][]tournamentResults;
+		
+		// Get Current Tournaments Results
+		tournamentResults = him.getTournamentResults();
+		
+		/*
+		for(int i = 0; i < tournamentResults.length; i++){
+			System.out.println(tournamentResults[i][0]+"\t"+tournamentResults[i][1]+"\t"+tournamentResults[i][2]);
+		}
+		System.out.println("\n");
+		*/
+		
+		int j = (tournamentResults.length - 1);
+
+		// Losing agents replace their strategies
+		for(int i = 0; i < 4; i++){
 	
+			int agentID = (Integer.parseInt(tournamentResults[i][0].substring(6)) - 1);
+			int replaceID = (Integer.parseInt(tournamentResults[j][0].substring(6)) - 1);
+			
+		//	JOptionPane.showMessageDialog(null, agentID+ "\t"+replaceID);
+			
+			agents.get(agentID).agentStrategy = agents.get(replaceID).agentStrategy;
+			j--;
+		}
+			
+		
+	}
+
+
+
+	private void eliminateWithoutReplacement() {
+		
+		
+	}
+
+
+
+	private void eliminateTwoWithTwoReplacements() {
+		
+		
+	}
+
+
+
+	private void eliminateOneWithOneReplacement() {
+				
+		// Get agents scores in current tournament
+		double []agentScores = him.getAgentScores();		
+		
+		// Get set temporal score
+		double tempScore = agentScores[0];
+		int lowestAgentID = 0, highestAgentID = 0;		
+		double maxScore = agentScores[0];
+
+		// determine least score and get agent id
+		for(int i=0; i < agentScores.length;i++){
+			if( tempScore > agentScores[i]){
+				tempScore = agentScores[i];
+				lowestAgentID = i;
+			}
+		}
+		
+		// determine maximum score and get agent id
+		for(int i=0; i < agentScores.length;i++){
+			if( maxScore < agentScores[i]){
+				maxScore = agentScores[i];
+				highestAgentID = i;
+			}
+		}
+		
+		// Change least scored agent strategy with most scored agent strategy
+		agents.get(lowestAgentID).agentStrategy = agents.get(highestAgentID).agentStrategy;
+		
+		// New agent acquires half of mother's score.
+		agentScores[lowestAgentID] = agentScores[highestAgentID] / 2;
+		agentScores[highestAgentID] = agentScores[highestAgentID] / 2;
+
+		
+		System.out.println("Lowest score : "+ tempScore +"\t"+ "Agent ID "+lowestAgentID + "Maximum score : "+ maxScore +"\t"+ "Agent ID "+highestAgentID);
+		
+		System.out.println();
+		
+	}
+
+
+
 	/**
 	 * roundMgr method initiates the function of managing all agentsTotal
 	 * activities in the current round
@@ -119,11 +238,7 @@ public class SimulationManager {
 	 *            : Total number of rounds in current Tounrament
 	 * @param matchesPerRound
 	 *            : Total number of matches to be played in every round
-	 * @param homeList
-	 *            : Group of Agents that forms the first half
-	 * @param awayList
-	 *            : Group of Agents that forms the last half
-	 * 
+	 *            
 	 */
 	
 	public void roundMgr(int currentTournament, int totalRounds, int matchesPerRound) {
@@ -143,18 +258,18 @@ public class SimulationManager {
 			}
 			
 			// Update round Information
-			String text =  "\n\nRound " + (round + 1) + "\n" + "---------------------------------\n";
-			String textx = "\nRound " + (round + 1) + "\n";
+			String roundHeader1 =  "\n\nRound " + (round + 1) + "\n" + "---------------------------------\n";
+			String roundHeader2 = "\nRound " + (round + 1) + "\n";
 			
-			report.updateExperimentLog(text, textx);
+			report.updateExperimentLog(roundHeader1, roundHeader2);
 
 			
 			
 			// For each round store the agents' IDs and strategies on Tournament Board  
 			for (int j = 0; j < matchesPerRound; j++) {
 
-				int agentID = (int) (homeList.get(j)) - 1;
-				int opponentID = (int) (awayList.get(j)) - 1;
+				int agentID = (homeList.get(j)) - 1;
+				int opponentID = (awayList.get(j)) - 1;
 
 				String agentStrategy = agentStrategies[agentID];
 				String opponentStrategy = agentStrategies[opponentID];
@@ -206,12 +321,12 @@ public class SimulationManager {
 			String opponentStrategy, int agentID, int opponentID,
 			int currentTournament, int currentRound) {
 		agentsAction = new char[2];
-		Agent ic = agents.get(agentID);
-		Agent rc = agents.get(opponentID);
 
+		// Ignore the Dummy agents
 		if(opponentStrategy!= (DUMMY_STRATEGY)){
-			agentsAction[0] = agent.getAgentAction(agentID, opponentID,currentTournament, currentRound);
-			agentsAction[1] = agent.getAgentAction(opponentID,agentID, currentTournament, currentRound);
+			
+			agentsAction[0] = agents.get(agentID).returnAction(agentID,agents.get(agentID).agentStrategy, opponentID,currentTournament, currentRound);
+			agentsAction[1] = agents.get(opponentID).returnAction(opponentID,agents.get(opponentID).agentStrategy, agentID, currentTournament, currentRound);
 	
 			// Update actions of matched agents
 			String text = agentsAction[0] + "\t \t vrs \t "+ agentsAction[1] + "\n";

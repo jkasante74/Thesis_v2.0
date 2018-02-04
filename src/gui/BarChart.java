@@ -112,7 +112,7 @@ public class BarChart extends JFrame {
 	 *            Title for the tournament chart
 	 * 
 	 */
-	public BarChart(String frameTitle, String chartTitle) {
+	public BarChart(String frameTitle) {
 
 		super(frameTitle);
 		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);    
@@ -139,7 +139,7 @@ public class BarChart extends JFrame {
 		dataset.clear();
 		
 		// Query HIM to submit data for bar chart display 
-		HistoricalInfoMgr.getDataset(expNum);
+		HistoricalInfoMgr.getChartDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}
@@ -228,7 +228,7 @@ public class BarChart extends JFrame {
 	public static void main(final String[] args) {
 		expNum = Integer.parseInt(args[0]);
 		final BarChart demo = new BarChart(
-				"Bar Chart  of Agent Pay-Off vrs Tournament", " ");
+				"Bar Chart  of Agent Pay-Off vrs Tournament");
 		demo.pack();
 		RefineryUtilities.centerFrameOnScreen(demo);
 		demo.setVisible(true);

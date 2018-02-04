@@ -44,23 +44,17 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
-
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.RefineryUtilities;
-
 import historicalInfo.HistoricalInfoMgr;
-
 import javax.swing.JLabel;
-
 import java.awt.Font;
-
 
 /**
  * AreaChart class creates and displays an area chart depending on selected
@@ -74,14 +68,12 @@ import java.awt.Font;
 
 public class AreaChart extends JFrame {
 
-	// Variables Declaration and initialization 
+	// Variables Declaration and initialization
 	private static final long serialVersionUID = 1L;
 	public static DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	private static int expNum; // requested experiment index
 	public HistoricalInfoMgr him;
-	
-	
-	
+
 	/**
 	 * AreaChart constructor. (For invocation by subclass constructors,
 	 * typically implicit.) Creates an Area chart of agents' pay-offs against
@@ -94,14 +86,13 @@ public class AreaChart extends JFrame {
 	 *            Title for the tournament chart
 	 * 
 	 */
-	
-	public AreaChart(String frameTitle, String chartTitle) {
+	public AreaChart(String frameTitle) {
 
 		super(frameTitle); // Display frame title
 		JFrame frame = new JFrame(frameTitle);
 		frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-		JFreeChart areaChart = ChartFactory.createAreaChart( "Experiment : "+ (expNum+1),
-				"Tournament", "Cummulative Pay-Off", /** Modified from original code **/
+		JFreeChart areaChart = ChartFactory.createAreaChart("Experiment : " + (expNum + 1), "Tournament",
+				"Cummulative Pay-Off", /** Modified from original code **/
 				createDataset(), PlotOrientation.VERTICAL, true, true, false); // plot
 																				// graph
 		areaChart.setBackgroundPaint(Color.white); // set background color
@@ -114,8 +105,6 @@ public class AreaChart extends JFrame {
 
 	}
 
-
-	
 	/**
 	 * createDataset method updates information about the progress of players in
 	 * a specific experiment by retrieving agents' scores for different
@@ -125,17 +114,15 @@ public class AreaChart extends JFrame {
 	 *         and tournament information.
 	 */
 	private DefaultCategoryDataset createDataset() {
-		
+
 		dataset.clear();
-		
-		// Query HIM to submit data for bar chart display 
-		HistoricalInfoMgr.getDataset(expNum);
+
+		// Query HIM to submit data for bar chart display
+		HistoricalInfoMgr.getChartDataset(expNum);
 
 		return dataset; // add the data point (y-value, variable, x-value)
 	}
 
-	
-	
 	/**
 	 * Main method that creates Application frame, centers it on the screen, and
 	 * makes the chart visible.
@@ -147,11 +134,10 @@ public class AreaChart extends JFrame {
 	 *            string passed to this method
 	 * 
 	 */
-	
+
 	public static void main(final String[] args) {
 		expNum = Integer.parseInt(args[0]);
-		AreaChart chart = new AreaChart(
-				"Area Chart of Agent Pay-Off vrs Tournament", " ");
+		AreaChart chart = new AreaChart("Area Chart of Agent Pay-Off vrs Tournament");
 		chart.pack();
 		RefineryUtilities.centerFrameOnScreen(chart);
 		chart.setVisible(true);

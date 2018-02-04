@@ -93,7 +93,7 @@ public class BarChart3DDemo4 extends JFrame {
 	   dataset.clear();
 		
 	   // Query HIM to submit data for bar chart display 
-	   HistoricalInfoMgr.getDataset(expNum);
+	   HistoricalInfoMgr.getChartDataset(expNum);
 		return dataset;
 
      }

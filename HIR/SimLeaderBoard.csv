@@ -10,19 +10,15 @@ Request Limit : ,null
 
 
  Agent_ID, Strategy , Pay_Off , Cooperations , Defections 
-Agent 8,Advanced_C,64.0,14,14
+Agent 2,Advanced_D,54.0,10,10
  
-Agent 6,Advanced_D,63.0,11,17
+Agent 4,Advanced_D,47.0,12,8
  
-Agent 5,Advanced_D,61.0,10,18
+Agent 6,Advanced_C,46.0,14,6
  
-Agent 1,Advanced_C,58.0,15,13
+Agent 1,Advanced_C,44.0,15,5
  
-Agent 7,Advanced_E,44.0,0,28
+Agent 3,Advanced_D,41.0,11,9
  
-Agent 4,Naive_D,44.0,0,28
- 
-Agent 2,Advanced_E,44.0,0,28
- 
-Agent 3,Naive_C,24.0,28,0
+Agent 5,Advanced_D,28.0,0,20
  

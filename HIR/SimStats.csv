@@ -1,77 +1,61 @@
 
-Experiment 1
-=================================
-
 
 
 Tounament 1
 -----------------------
-Agent 8	Advanced_C	19.0
-Agent 1	Advanced_C	13.0
-Agent 6	Advanced_D	12.0
-Agent 7	Advanced_E	11.0
-Agent 4	Naive_D	11.0
-Agent 2	Advanced_E	11.0
-Agent 5	Advanced_D	10.0
-Agent 3	Naive_C	6.0
+Agent 6,Advanced_C,13.0
+Agent 1,Advanced_C,11.0
+Agent 4,Advanced_D,10.0
+Agent 5,Naive_D,9.0
+Agent 3,Advanced_D,9.0
+Agent 2,Naive_C,6.0
 
-Statistics 
- Min : 6.0
-Average : 11.625
-Max : 19.0
+Statisticsts 
+ Min : ,6.0
+Average : ,9.666666666666666
+Max : ,13.0
 
 
 Tounament 2
 -----------------------
-Agent 8	Advanced_C	34.0
-Agent 6	Advanced_D	29.0
-Agent 1	Advanced_C	28.0
-Agent 5	Advanced_D	27.0
-Agent 7	Advanced_E	22.0
-Agent 4	Naive_D	22.0
-Agent 2	Advanced_E	22.0
-Agent 3	Naive_C	12.0
+Agent 4,Advanced_D,27.0
+Agent 6,Advanced_C,26.0
+Agent 1,Advanced_C,24.0
+Agent 3,Advanced_D,21.0
+Agent 5,Naive_D,18.0
+Agent 2,Naive_C,12.0
 
-Statistics 
- Min : 12.0
-Average : 24.5
-Max : 34.0
+Statisticsts 
+ Min : ,12.0
+Average : ,21.333333333333332
+Max : ,27.0
 
 
 Tounament 3
 -----------------------
-Agent 8	Advanced_C	49.0
-Agent 6	Advanced_D	46.0
-Agent 5	Advanced_D	44.0
-Agent 1	Advanced_C	43.0
-Agent 7	Advanced_E	33.0
-Agent 4	Naive_D	33.0
-Agent 2	Advanced_E	33.0
-Agent 3	Naive_C	18.0
+Agent 4,Advanced_D,37.0
+Agent 6,Advanced_C,36.0
+Agent 1,Advanced_C,34.0
+Agent 2,Advanced_D,33.0
+Agent 3,Advanced_C,31.0
+Agent 5,Advanced_C,23.0
 
-Statistics 
- Min : 18.0
-Average : 37.375
-Max : 49.0
+Statisticsts 
+ Min : ,23.0
+Average : ,32.333333333333336
+Max : ,37.0
 
 
 Tounament 4
 -----------------------
+Agent 2,Advanced_D,54.0
+Agent 4,Advanced_D,47.0
+Agent 6,Advanced_C,46.0
+Agent 1,Advanced_C,44.0
+Agent 3,Advanced_C,41.0
+Agent 5,Advanced_C,28.0
 
-
-
-Tounament 4
------------------------
-Agent 8,Advanced_C,64.0
-Agent 6,Advanced_D,63.0
-Agent 5,Advanced_D,61.0
-Agent 1,Advanced_C,58.0
-Agent 7,Advanced_E,44.0
-Agent 4,Naive_D,44.0
-Agent 2,Advanced_E,44.0
-Agent 3,Naive_C,24.0
-
-Statistics 
- Min : ,24.0
-Average : ,50.25
-Max : ,64.0
+Statisticsts 
+ Min : ,28.0
+Average : ,43.333333333333336
+Max : ,54.0

@@ -34,41 +34,36 @@ public class InputValidator {
 
 	// Private InputValidator Parameters
 	private static boolean startSim = false;
-	public float[] currentSetup;
-	public float[] payOff;
-	public String []agentStrategies; 
-	public float uncertaintyLevel;
-	public int numOfTournament;
-	public float infoRequestOption;
-	public float numOfAgents;
-	public float uncertaintyLimit;
-	public long numOfExperiment;
-	public int[] agentRequestLimit;
-	public boolean validationStatus = true; 
 	private String requestLimitOption;
 	private final String ADVANCED_COOPERATOR = "Advanced_C";
 	private final String ADVANCED_DEFECTOR = "Advanced_D";
 	private final String ADVANCED_EXPLOITER = "Advanced_E";
 	private String SETUP_LOCATION = "SR/SetupFile.csv";
 	private final String FILE_NOT_FOUND = "File not found";
+	
+	// Parameters and Fields
+	public float[] currentSetup;
+	public float[] payOff;
+	public String []agentStrategies; 
+	public float uncertaintyLevel;
+	public int numOfTournament, evolutionModelIndex, numOfTournamentPerEvolution ;
+	public float infoRequestOption;
+	public float numOfAgents;
+	public float uncertaintyLimit;
+	public long numOfExperiment;
+	public int[] agentRequestLimit;
+	public boolean validationStatus = true; 
 	public float param;
 	
 	
 	
-	/**
-	 * Initiate method begins the parameter Configuration Manager's function
-	 * of reading and validating setup values and also notify the simulation
-	 * manager to begin simulations.
-	 * @throws IOException
-	 */
+	// Constructor
 	public InputValidator() {
 		// Begin a new simulation experiment
 		numOfExperiment = 0;
 		
 		// Read and validate experiment values
-		readAndValidate();
-
-	
+		readAndValidateInputs();
 	}
 
 	
@@ -77,8 +72,7 @@ public class InputValidator {
 	 * Read the simulation setup file and validate
 	 * 
 	 */
-	
-	public void readAndValidate() {
+	public void readAndValidateInputs() {
 		
 		//Get number of experiments
 		long numberOfLines = 0;
@@ -96,7 +90,7 @@ public class InputValidator {
 		numOfExperiment = numberOfLines;
 		
 		
-		// Read setup inputs
+		// For each experiment read setup inputs
 		for(int i = 1; i < numOfExperiment; i++){
 			try {
 				lineParam = Files.readAllLines(Paths.get(SETUP_LOCATION)).get(i);
@@ -108,9 +102,9 @@ public class InputValidator {
 			
 			int count = 0;	
 			String[] setupParam = lineParam.split(",");
-			currentSetup = new float[14];
+			currentSetup = new float[16];
 
-			
+			// Validate payoff matrix for current experiment
 			for (int j = 0; j < setupParam.length; j++) {
 				try {
 					currentSetup[j] =Float.valueOf((setupParam[j]));
@@ -124,7 +118,6 @@ public class InputValidator {
 
 			}
 			
-
 			// Validate conditions for cooperation
 			if ((2 * currentSetup[1]) <= ((currentSetup[0]) + (currentSetup[3]))) {
 				JOptionPane.showMessageDialog(null,
@@ -133,7 +126,6 @@ public class InputValidator {
 
 				
 			}
-
 			
 			if (((currentSetup[0]) <= (currentSetup[1]))|| ((currentSetup[1]) <= (currentSetup[2])) || ((currentSetup[2]) <= (currentSetup[3]))) {
 				JOptionPane.showMessageDialog(null,
@@ -186,7 +178,7 @@ public class InputValidator {
 			
 			// Store current Setup as array
 			String[] setupParam = lineParam.split(",");
-			currentSetup = new float[14];
+			currentSetup = new float[15];
 	
 			for (int j = 0; j < setupParam.length; j++) {
 				try {
@@ -203,16 +195,18 @@ public class InputValidator {
 			setRequestInfoOption();
 			setAgentStrategies();
 			setRequestLimit();
+			setEvolutionModel();
+			setTournamentsPerEvolution();
 	}
 	
 
+
+
+
+
 	
-	
-	
-	
-	
-	
-	
+
+
 	/******************** Getters and Setters **********************/
 	
 	public void setnumOfTournaments(){
@@ -251,13 +245,32 @@ public class InputValidator {
 
 
 	public void setRequestInfoOption(){
-		infoRequestOption = currentSetup[13];
+		infoRequestOption = currentSetup[12];
 	}
 	
 	public float getRequestInfoOption(){
 		return uncertaintyLimit;
 	}
+	
+	
+	public void setEvolutionModel() {
+		this.evolutionModelIndex = Math.round(currentSetup[13]);
+		
+	}
+	
+	public int getEvolutionModel(){
+		return evolutionModelIndex;
+	}
+	
+	public void setTournamentsPerEvolution() {
+		this.numOfTournamentPerEvolution = (int) currentSetup[14];
+		
+	}
 
+	public int getTournamentsPerEvolution() {
+		return numOfTournamentPerEvolution;
+		
+	}
 	/**
 	 * getAgentStrategies Sets up the strategy of each competing player n the
 	 * tournament.
@@ -266,12 +279,11 @@ public class InputValidator {
 	 *            : Agents strategies in the current experiment
 	 */
 	public void setAgentStrategies() {
-		int[] strategiesNum = new int[5];
+		int[] strategiesNum = new int[4];
 		strategiesNum[0] = Math.round(currentSetup[8]);
 		strategiesNum[1] = Math.round(currentSetup[9]);
 		strategiesNum[2] = Math.round(currentSetup[10]);
 		strategiesNum[3] = Math.round(currentSetup[11]);
-		strategiesNum[4] = Math.round(currentSetup[12]);
 		
 		//Reset number of Agents
 		numOfAgents = 0;
@@ -297,7 +309,7 @@ public class InputValidator {
 		int count = 0;
 
 		// Generate agent strategies and store in array 
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 4; i++) {
 			
 			for (int j = 0; j < strategiesNum[i]; j++) {
 
@@ -318,9 +330,6 @@ public class InputValidator {
 						agentStrategies[(count)] = "Advanced_D";
 						break;
 					
-					case 4:
-						agentStrategies[(count)] = "Advanced_E";
-						break;
 				}
 				count++;
 			}
