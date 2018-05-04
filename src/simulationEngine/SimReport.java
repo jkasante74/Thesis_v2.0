@@ -13,6 +13,7 @@ public class SimReport {
 	HistoricalInfoMgr him;
 	private final String TOURNAMENTBOARD = "TB/TB.csv";
 	private final String FILENOTFOUND = "File not found";
+	private static String STRATEGY_STATS_FILE = "HIR/StrategyStats.csv";
 	public static String agentsTournamentStatistics = "";
 
 	
@@ -113,16 +114,12 @@ public class SimReport {
 	public String printExperimentLeaderboard(int requestOption) {
 		String requestInfo = "";
 
-		switch (requestOption) {
-		case 0:
+		if(requestOption== 0)
 			requestInfo = him.experimentLeaderboard;
-			break;
-
-		case 1:
+		
+		else if(requestOption== 1)	
 			requestInfo = him.agentsTournamentStatistics;
-			break;
-		}
-
+		
 		return requestInfo;
 	}
 

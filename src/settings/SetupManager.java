@@ -33,7 +33,7 @@ public class SetupManager {
 			
 			input.setCurrentExperiment(currentExperimentID);
 			
-			HistoricalInfoMgr him = new HistoricalInfoMgr(Math.round(input.numOfAgents), input.agentRequestLimit, input.getUncertaintyLimit(), input.getnumOfTournaments(), input.payOff, input.agentStrategies, currentExperimentID);
+			
 			
 			
 			// Create the required number of agents for this experiment
@@ -41,6 +41,8 @@ public class SetupManager {
 			for(int i = 0; i < input.numOfAgents; i++){		 
 				agents.add(new Agent((i+1), input.agentStrategies[i], Math.round(input.infoRequestOption)));
 			}
+			
+			HistoricalInfoMgr him = new HistoricalInfoMgr(Math.round(input.numOfAgents), input.agentRequestLimit, input.getUncertaintyLimit(), input.getnumOfTournaments(), input.payOff, input.agentStrategies, currentExperimentID, input.getCommunicationCost());
 			
 			// Advanced agents create their beliefs
 			for(int i = 0; i < input.numOfAgents; i++){		 
@@ -64,8 +66,6 @@ public class SetupManager {
 			GUI.cmbExpSel.addItem(name);
 		}
 	}
-
-
 	
 
 }

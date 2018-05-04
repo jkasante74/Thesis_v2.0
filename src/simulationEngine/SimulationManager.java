@@ -15,17 +15,19 @@ public class SimulationManager {
 	
 	// Private Variables
 	private String [] agentStrategies;
-	private int numOfTournaments, numOfAgents, currentExperimentID,tournamentPerEvolve;
+	private int numOfTournaments, numOfAgents, currentExperimentID, evolutionModelIndex;
 	private float[] payOff;
 	private char[] agentsAction;
 	private final char COOPERATE = 'C';
 	private final char DEFECT = 'D';
 	private final char DUMMY = 'A';
+	protected final String ADVANCE_COOPERATOR = "Advanced_C";
+	protected final String ADVANCE_DEFECTOR = "Advanced_D";
+	private final String NAIVE_DEFECTOR = "Naive_D";
+	private final String NAIVE_COOPERATOR = "Naive_C";
 	private String DUMMY_STRATEGY = "Dummy";
-	private int evolutionModelIndex;
 	
 	// Parameters and Fields
-	
 	SimReport report;
 	GUI_Simulation simLog;
 	HistoricalInfoMgr him;
@@ -37,7 +39,6 @@ public class SimulationManager {
 	public SimulationManager(int currentExperimentID, InputValidator input,GUI_Simulation simLog, ArrayList<Agent> agents, HistoricalInfoMgr him) {
 		
 		// Initialize Parameters
-		
 		this.agents = agents;
 		this.agentStrategies = input.agentStrategies;
 		this.numOfAgents = Math.round(input.numOfAgents);
@@ -47,8 +48,8 @@ public class SimulationManager {
 		this.simLog = simLog;
 		this.him = him;
 		this.evolutionModelIndex = input.getEvolutionModel();
-		this.tournamentPerEvolve = input.getTournamentsPerEvolution();
 		report = new SimReport(this.simLog, this.him);
+		
 		
 	}
 	
@@ -59,7 +60,6 @@ public class SimulationManager {
 	 * 
 	 */
 	public void runSimulation(){
-		
 		report.printExperiment(currentExperimentID);
 		report.printExperimentStats(currentExperimentID);
 		
@@ -102,11 +102,12 @@ public class SimulationManager {
 				e.printStackTrace();
 			}
 			
-			// Check if evolutionModelIndex should be applied
+			// Agents evolve before next tournament
+			applyEvolutionModel();
 			
-			if((evolutionModelIndex > 0)&&(tournamentPerEvolve!=0)&&((currentTournament+1) % tournamentPerEvolve == 0)){
-				applyElimnination();
-			}
+			
+			
+			
 	
 		}
 		
@@ -119,7 +120,7 @@ public class SimulationManager {
 	/**
 	 * Applies the elimnation policy introduced by Kretz in his study
 	 */
-	private void applyElimnination() {
+	private void applyEvolutionModel() {
 
 		switch(evolutionModelIndex){
 			case 1: eliminateOneWithOneReplacement();
@@ -131,58 +132,12 @@ public class SimulationManager {
 			case 3: least4AdoptTop4Strategies();
 			break;
 			
-			case 4: eliminateWithoutReplacement();
+			case 4: least4AdoptTop4SimilarNativeStrategies();
 			break;
 			
 		}
 	}
 
-
-
-	private void least4AdoptTop4Strategies() {
-		// TODO Auto-generated method stub
-		String [][]tournamentResults;
-		
-		// Get Current Tournaments Results
-		tournamentResults = him.getTournamentResults();
-		
-		/*
-		for(int i = 0; i < tournamentResults.length; i++){
-			System.out.println(tournamentResults[i][0]+"\t"+tournamentResults[i][1]+"\t"+tournamentResults[i][2]);
-		}
-		System.out.println("\n");
-		*/
-		
-		int j = (tournamentResults.length - 1);
-
-		// Losing agents replace their strategies
-		for(int i = 0; i < 4; i++){
-	
-			int agentID = (Integer.parseInt(tournamentResults[i][0].substring(6)) - 1);
-			int replaceID = (Integer.parseInt(tournamentResults[j][0].substring(6)) - 1);
-			
-		//	JOptionPane.showMessageDialog(null, agentID+ "\t"+replaceID);
-			
-			agents.get(agentID).agentStrategy = agents.get(replaceID).agentStrategy;
-			j--;
-		}
-			
-		
-	}
-
-
-
-	private void eliminateWithoutReplacement() {
-		
-		
-	}
-
-
-
-	private void eliminateTwoWithTwoReplacements() {
-		
-		
-	}
 
 
 
@@ -226,6 +181,82 @@ public class SimulationManager {
 		
 	}
 
+	
+
+	private void eliminateTwoWithTwoReplacements() {
+		
+		
+	}
+
+	
+	
+	private void least4AdoptTop4Strategies() {
+		String [][]tournamentResults;
+		
+		// Get Current Tournaments Results
+		tournamentResults = him.getTournamentResults();
+		
+		int j = (tournamentResults.length - 1);
+
+		// Losing agents replace their strategies with winning ones
+		for(int i = 0; i < 4; i++){
+	
+			int agentID = (Integer.parseInt(tournamentResults[i][0].substring(6)) - 1);
+			int replaceID = (Integer.parseInt(tournamentResults[j][0].substring(6)) - 1);
+			
+			
+			agents.get(agentID).agentStrategy = agents.get(replaceID).agentStrategy;
+			System.out.println("Agent : "+ (agentID+1)+" chooses \t Agent : "+(replaceID+1));
+			j--;
+		}
+		
+		//Update historical information strategies
+		for(int k = 0; k < numOfAgents; k++){
+			HistoricalInfoMgr.Strategies[k] = agents.get(k).agentStrategy;
+		}		
+		
+	}
+	
+	
+
+	private void least4AdoptTop4SimilarNativeStrategies() {
+		
+		String [][]tournamentResults;
+		
+		// Get Current Tournaments Results
+		tournamentResults = him.getTournamentResults();
+		
+		
+
+		// Losing agents replace their strategies with winning ones but of similar native strategies
+		for(int i = 0; i < 4; i++){
+	
+			int agentID = (Integer.parseInt(tournamentResults[i][0].substring(6)) - 1);
+			int limit = (tournamentResults.length - 5);
+			for(int j = (tournamentResults.length - 1); j > limit; j--){
+				int replaceID = (Integer.parseInt(tournamentResults[j][0].substring(6)) - 1);
+				
+				if(((agents.get(agentID).agentStrategy.equalsIgnoreCase(NAIVE_COOPERATOR))||(agents.get(agentID).agentStrategy.equalsIgnoreCase(ADVANCE_COOPERATOR)))&&((agents.get(replaceID).agentStrategy.equalsIgnoreCase(NAIVE_COOPERATOR))||(agents.get(replaceID).agentStrategy.equalsIgnoreCase(ADVANCE_COOPERATOR)))){
+					agents.get(agentID).agentStrategy = agents.get(replaceID).agentStrategy;
+				}
+				
+				
+				else if(((agents.get(agentID).agentStrategy.equalsIgnoreCase(NAIVE_DEFECTOR))||(agents.get(agentID).agentStrategy.equalsIgnoreCase(ADVANCE_DEFECTOR)))&&((agents.get(replaceID).agentStrategy.equalsIgnoreCase(NAIVE_DEFECTOR))||(agents.get(replaceID).agentStrategy.equalsIgnoreCase(ADVANCE_DEFECTOR)))){
+						agents.get(agentID).agentStrategy = agents.get(replaceID).agentStrategy;
+				}
+				
+			}
+		}
+		
+		//Update historical information strategies
+		for(int k = 0; k < numOfAgents; k++){
+			HistoricalInfoMgr.Strategies[k] = agents.get(k).agentStrategy;
+		}		
+	}
+
+
+
+	
 
 
 	/**
@@ -270,10 +301,16 @@ public class SimulationManager {
 
 				int agentID = (homeList.get(j)) - 1;
 				int opponentID = (awayList.get(j)) - 1;
-
-				String agentStrategy = agentStrategies[agentID];
-				String opponentStrategy = agentStrategies[opponentID];
-					
+				
+				/*
+					String agentStrategy = agentStrategies[agentID];
+					String opponentStrategy = agentStrategies[opponentID];
+				*/
+				
+				String agentStrategy = agents.get(agentID).agentStrategy;
+				String opponentStrategy = agents.get(opponentID).agentStrategy;
+				
+				
 				if(!opponentStrategy.equalsIgnoreCase(DUMMY_STRATEGY))
 				{	
 
@@ -325,8 +362,8 @@ public class SimulationManager {
 		// Ignore the Dummy agents
 		if(opponentStrategy!= (DUMMY_STRATEGY)){
 			
-			agentsAction[0] = agents.get(agentID).returnAction(agentID,agents.get(agentID).agentStrategy, opponentID,currentTournament, currentRound);
-			agentsAction[1] = agents.get(opponentID).returnAction(opponentID,agents.get(opponentID).agentStrategy, agentID, currentTournament, currentRound);
+			agentsAction[0] = agents.get(agentID).returnAction(agentID,agents.get(agentID).agentStrategy, opponentID,agents.get(opponentID).agentStrategy,currentTournament, currentRound);
+			agentsAction[1] = agents.get(opponentID).returnAction(opponentID,agents.get(opponentID).agentStrategy, agentID, agents.get(agentID).agentStrategy,currentTournament, currentRound);
 	
 			// Update actions of matched agents
 			String text = agentsAction[0] + "\t \t vrs \t "+ agentsAction[1] + "\n";

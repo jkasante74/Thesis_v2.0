@@ -3,59 +3,489 @@
 
 Tounament 1
 -----------------------
-Agent 6,Advanced_C,13.0
-Agent 1,Advanced_C,11.0
-Agent 4,Advanced_D,10.0
-Agent 5,Naive_D,9.0
-Agent 3,Advanced_D,9.0
-Agent 2,Naive_C,6.0
+Agent 32,Advanced_C,250.0
+Agent 31,Advanced_C,250.0
+Agent 28,Advanced_C,250.0
+Agent 25,Advanced_C,250.0
+Agent 24,Advanced_C,250.0
+Agent 17,Advanced_C,250.0
+Agent 13,Advanced_C,250.0
+Agent 10,Advanced_C,250.0
+Agent 34,Advanced_C,249.0
+Agent 12,Advanced_C,249.0
+Agent 39,Naive_C,190.0
+Agent 36,Naive_C,190.0
+Agent 33,Naive_C,190.0
+Agent 23,Naive_C,190.0
+Agent 22,Naive_C,190.0
+Agent 16,Naive_C,190.0
+Agent 15,Naive_C,190.0
+Agent 9,Naive_C,190.0
+Agent 6,Naive_C,190.0
+Agent 2,Naive_C,190.0
+Agent 26,Advanced_D,150.0
+Agent 18,Advanced_D,150.0
+Agent 14,Advanced_D,150.0
+Agent 21,Advanced_D,141.0
+Agent 20,Advanced_D,141.0
+Agent 1,Advanced_D,141.0
+Agent 37,Advanced_D,132.0
+Agent 40,Advanced_D,123.0
+Agent 8,Advanced_D,123.0
+Agent 4,Advanced_D,123.0
+Agent 29,Naive_D,83.0
+Agent 7,Naive_D,83.0
+Agent 38,Naive_D,79.0
+Agent 35,Naive_D,79.0
+Agent 30,Naive_D,79.0
+Agent 27,Naive_D,79.0
+Agent 19,Naive_D,79.0
+Agent 11,Naive_D,79.0
+Agent 5,Naive_D,79.0
+Agent 3,Naive_D,79.0
 
 Statisticsts 
- Min : ,6.0
-Average : ,9.666666666666666
-Max : ,13.0
+ Min : ,79.0
+Average : ,164.25
+Max : ,250.0
 
 
 Tounament 2
 -----------------------
-Agent 4,Advanced_D,27.0
-Agent 6,Advanced_C,26.0
-Agent 1,Advanced_C,24.0
-Agent 3,Advanced_D,21.0
-Agent 5,Naive_D,18.0
-Agent 2,Naive_C,12.0
+Agent 32,Advanced_C,536.0
+Agent 31,Advanced_C,536.0
+Agent 28,Advanced_C,536.0
+Agent 25,Advanced_C,536.0
+Agent 24,Advanced_C,536.0
+Agent 17,Advanced_C,536.0
+Agent 13,Advanced_C,536.0
+Agent 10,Advanced_C,536.0
+Agent 34,Advanced_C,535.0
+Agent 12,Advanced_C,535.0
+Agent 39,Naive_C,420.0
+Agent 36,Naive_C,420.0
+Agent 33,Naive_C,420.0
+Agent 23,Naive_C,420.0
+Agent 22,Naive_C,420.0
+Agent 16,Naive_C,420.0
+Agent 15,Naive_C,420.0
+Agent 9,Naive_C,420.0
+Agent 6,Naive_C,420.0
+Agent 2,Naive_C,420.0
+Agent 19,Advanced_C,361.0
+Agent 11,Advanced_C,357.0
+Agent 5,Advanced_C,357.0
+Agent 3,Advanced_C,357.0
+Agent 26,Advanced_D,297.0
+Agent 18,Advanced_D,296.0
+Agent 14,Advanced_D,296.0
+Agent 1,Advanced_D,290.0
+Agent 21,Advanced_D,287.0
+Agent 20,Advanced_D,287.0
+Agent 37,Advanced_D,278.0
+Agent 40,Advanced_D,272.0
+Agent 8,Advanced_D,269.0
+Agent 4,Advanced_D,269.0
+Agent 29,Naive_D,162.0
+Agent 7,Naive_D,162.0
+Agent 38,Naive_D,158.0
+Agent 35,Naive_D,158.0
+Agent 30,Naive_D,158.0
+Agent 27,Naive_D,158.0
 
 Statisticsts 
- Min : ,12.0
-Average : ,21.333333333333332
-Max : ,27.0
+ Min : ,158.0
+Average : ,369.675
+Max : ,536.0
 
 
 Tounament 3
 -----------------------
-Agent 4,Advanced_D,37.0
-Agent 6,Advanced_C,36.0
-Agent 1,Advanced_C,34.0
-Agent 2,Advanced_D,33.0
-Agent 3,Advanced_C,31.0
-Agent 5,Advanced_C,23.0
+Agent 32,Advanced_C,858.0
+Agent 31,Advanced_C,858.0
+Agent 28,Advanced_C,858.0
+Agent 25,Advanced_C,858.0
+Agent 24,Advanced_C,858.0
+Agent 17,Advanced_C,858.0
+Agent 13,Advanced_C,858.0
+Agent 10,Advanced_C,858.0
+Agent 34,Advanced_C,857.0
+Agent 12,Advanced_C,857.0
+Agent 39,Naive_C,690.0
+Agent 36,Naive_C,690.0
+Agent 33,Naive_C,690.0
+Agent 23,Naive_C,690.0
+Agent 22,Naive_C,690.0
+Agent 16,Naive_C,690.0
+Agent 15,Naive_C,690.0
+Agent 9,Naive_C,690.0
+Agent 6,Naive_C,690.0
+Agent 2,Naive_C,690.0
+Agent 19,Advanced_C,683.0
+Agent 11,Advanced_C,679.0
+Agent 5,Advanced_C,679.0
+Agent 3,Advanced_C,679.0
+Agent 38,Advanced_C,476.0
+Agent 30,Advanced_C,472.0
+Agent 35,Advanced_C,460.0
+Agent 27,Advanced_C,460.0
+Agent 26,Advanced_D,441.0
+Agent 18,Advanced_D,440.0
+Agent 14,Advanced_D,440.0
+Agent 1,Advanced_D,433.0
+Agent 21,Advanced_D,431.0
+Agent 20,Advanced_D,431.0
+Agent 37,Advanced_D,421.0
+Agent 40,Advanced_D,414.0
+Agent 8,Advanced_D,412.0
+Agent 4,Advanced_D,411.0
+Agent 29,Naive_D,241.0
+Agent 7,Naive_D,241.0
 
 Statisticsts 
- Min : ,23.0
-Average : ,32.333333333333336
-Max : ,37.0
+ Min : ,241.0
+Average : ,620.55
+Max : ,858.0
 
 
 Tounament 4
 -----------------------
-Agent 2,Advanced_D,54.0
-Agent 4,Advanced_D,47.0
-Agent 6,Advanced_C,46.0
-Agent 1,Advanced_C,44.0
-Agent 3,Advanced_C,41.0
-Agent 5,Advanced_C,28.0
+Agent 32,Advanced_C,1208.0
+Agent 31,Advanced_C,1208.0
+Agent 28,Advanced_C,1208.0
+Agent 25,Advanced_C,1208.0
+Agent 24,Advanced_C,1208.0
+Agent 17,Advanced_C,1208.0
+Agent 13,Advanced_C,1208.0
+Agent 10,Advanced_C,1208.0
+Agent 34,Advanced_C,1207.0
+Agent 12,Advanced_C,1207.0
+Agent 19,Advanced_C,1033.0
+Agent 11,Advanced_C,1029.0
+Agent 5,Advanced_C,1029.0
+Agent 3,Advanced_C,1029.0
+Agent 39,Naive_C,1000.0
+Agent 36,Naive_C,1000.0
+Agent 33,Naive_C,1000.0
+Agent 23,Naive_C,1000.0
+Agent 22,Naive_C,1000.0
+Agent 16,Naive_C,1000.0
+Agent 15,Naive_C,1000.0
+Agent 9,Naive_C,1000.0
+Agent 6,Naive_C,1000.0
+Agent 2,Naive_C,1000.0
+Agent 38,Advanced_C,826.0
+Agent 30,Advanced_C,822.0
+Agent 35,Advanced_C,810.0
+Agent 27,Advanced_C,810.0
+Agent 8,Advanced_C,762.0
+Agent 4,Advanced_C,761.0
+Agent 7,Advanced_C,579.0
+Agent 29,Advanced_C,571.0
+Agent 26,Advanced_D,562.0
+Agent 18,Advanced_D,561.0
+Agent 14,Advanced_D,561.0
+Agent 1,Advanced_D,555.0
+Agent 21,Advanced_D,552.0
+Agent 20,Advanced_D,552.0
+Agent 37,Advanced_D,541.0
+Agent 40,Advanced_D,535.0
 
 Statisticsts 
- Min : ,28.0
-Average : ,43.333333333333336
-Max : ,54.0
+ Min : ,535.0
+Average : ,913.95
+Max : ,1208.0
+
+
+Tounament 5
+-----------------------
+Agent 32,Advanced_C,1578.0
+Agent 31,Advanced_C,1578.0
+Agent 28,Advanced_C,1578.0
+Agent 25,Advanced_C,1578.0
+Agent 24,Advanced_C,1578.0
+Agent 17,Advanced_C,1578.0
+Agent 13,Advanced_C,1578.0
+Agent 10,Advanced_C,1578.0
+Agent 34,Advanced_C,1577.0
+Agent 12,Advanced_C,1577.0
+Agent 19,Advanced_C,1403.0
+Agent 11,Advanced_C,1399.0
+Agent 5,Advanced_C,1399.0
+Agent 3,Advanced_C,1399.0
+Agent 39,Naive_C,1350.0
+Agent 36,Naive_C,1350.0
+Agent 33,Naive_C,1350.0
+Agent 23,Naive_C,1350.0
+Agent 22,Naive_C,1350.0
+Agent 16,Naive_C,1350.0
+Agent 15,Naive_C,1350.0
+Agent 9,Naive_C,1350.0
+Agent 6,Naive_C,1350.0
+Agent 2,Naive_C,1350.0
+Agent 38,Advanced_C,1196.0
+Agent 30,Advanced_C,1192.0
+Agent 35,Advanced_C,1180.0
+Agent 27,Advanced_C,1180.0
+Agent 8,Advanced_C,1132.0
+Agent 4,Advanced_C,1131.0
+Agent 7,Advanced_C,949.0
+Agent 29,Advanced_C,941.0
+Agent 21,Advanced_C,922.0
+Agent 20,Advanced_C,922.0
+Agent 37,Advanced_C,911.0
+Agent 40,Advanced_C,905.0
+Agent 26,Advanced_D,642.0
+Agent 18,Advanced_D,641.0
+Agent 14,Advanced_D,641.0
+Agent 1,Advanced_D,635.0
+
+Statisticsts 
+ Min : ,635.0
+Average : ,1249.95
+Max : ,1578.0
+
+
+Tounament 6
+-----------------------
+Agent 32,Advanced_C,1968.0
+Agent 31,Advanced_C,1968.0
+Agent 28,Advanced_C,1968.0
+Agent 25,Advanced_C,1968.0
+Agent 24,Advanced_C,1968.0
+Agent 17,Advanced_C,1968.0
+Agent 13,Advanced_C,1968.0
+Agent 10,Advanced_C,1968.0
+Agent 34,Advanced_C,1967.0
+Agent 12,Advanced_C,1967.0
+Agent 19,Advanced_C,1793.0
+Agent 11,Advanced_C,1789.0
+Agent 5,Advanced_C,1789.0
+Agent 3,Advanced_C,1789.0
+Agent 39,Naive_C,1740.0
+Agent 36,Naive_C,1740.0
+Agent 33,Naive_C,1740.0
+Agent 23,Naive_C,1740.0
+Agent 22,Naive_C,1740.0
+Agent 16,Naive_C,1740.0
+Agent 15,Naive_C,1740.0
+Agent 9,Naive_C,1740.0
+Agent 6,Naive_C,1740.0
+Agent 2,Naive_C,1740.0
+Agent 38,Advanced_C,1586.0
+Agent 30,Advanced_C,1582.0
+Agent 35,Advanced_C,1570.0
+Agent 27,Advanced_C,1570.0
+Agent 8,Advanced_C,1522.0
+Agent 4,Advanced_C,1521.0
+Agent 7,Advanced_C,1339.0
+Agent 29,Advanced_C,1331.0
+Agent 21,Advanced_C,1312.0
+Agent 20,Advanced_C,1312.0
+Agent 37,Advanced_C,1301.0
+Agent 40,Advanced_C,1295.0
+Agent 26,Advanced_C,1032.0
+Agent 18,Advanced_C,1031.0
+Agent 14,Advanced_C,1031.0
+Agent 1,Advanced_C,1025.0
+
+Statisticsts 
+ Min : ,1025.0
+Average : ,1639.95
+Max : ,1968.0
+
+
+Tounament 7
+-----------------------
+Agent 32,Advanced_C,2358.0
+Agent 31,Advanced_C,2358.0
+Agent 28,Advanced_C,2358.0
+Agent 25,Advanced_C,2358.0
+Agent 24,Advanced_C,2358.0
+Agent 17,Advanced_C,2358.0
+Agent 13,Advanced_C,2358.0
+Agent 10,Advanced_C,2358.0
+Agent 34,Advanced_C,2357.0
+Agent 12,Advanced_C,2357.0
+Agent 19,Advanced_C,2183.0
+Agent 11,Advanced_C,2179.0
+Agent 5,Advanced_C,2179.0
+Agent 3,Advanced_C,2179.0
+Agent 39,Naive_C,2130.0
+Agent 36,Naive_C,2130.0
+Agent 33,Naive_C,2130.0
+Agent 23,Naive_C,2130.0
+Agent 22,Naive_C,2130.0
+Agent 16,Naive_C,2130.0
+Agent 15,Naive_C,2130.0
+Agent 9,Naive_C,2130.0
+Agent 6,Naive_C,2130.0
+Agent 2,Naive_C,2130.0
+Agent 38,Advanced_C,1976.0
+Agent 30,Advanced_C,1972.0
+Agent 35,Advanced_C,1960.0
+Agent 27,Advanced_C,1960.0
+Agent 8,Advanced_C,1912.0
+Agent 4,Advanced_C,1911.0
+Agent 7,Advanced_C,1729.0
+Agent 29,Advanced_C,1721.0
+Agent 21,Advanced_C,1702.0
+Agent 20,Advanced_C,1702.0
+Agent 37,Advanced_C,1691.0
+Agent 40,Advanced_C,1685.0
+Agent 26,Advanced_C,1422.0
+Agent 18,Advanced_C,1421.0
+Agent 14,Advanced_C,1421.0
+Agent 1,Advanced_C,1415.0
+
+Statisticsts 
+ Min : ,1415.0
+Average : ,2029.95
+Max : ,2358.0
+
+
+Tounament 8
+-----------------------
+Agent 32,Advanced_C,2748.0
+Agent 31,Advanced_C,2748.0
+Agent 28,Advanced_C,2748.0
+Agent 25,Advanced_C,2748.0
+Agent 24,Advanced_C,2748.0
+Agent 17,Advanced_C,2748.0
+Agent 13,Advanced_C,2748.0
+Agent 10,Advanced_C,2748.0
+Agent 34,Advanced_C,2747.0
+Agent 12,Advanced_C,2747.0
+Agent 19,Advanced_C,2573.0
+Agent 11,Advanced_C,2569.0
+Agent 5,Advanced_C,2569.0
+Agent 3,Advanced_C,2569.0
+Agent 39,Naive_C,2520.0
+Agent 36,Naive_C,2520.0
+Agent 33,Naive_C,2520.0
+Agent 23,Naive_C,2520.0
+Agent 22,Naive_C,2520.0
+Agent 16,Naive_C,2520.0
+Agent 15,Naive_C,2520.0
+Agent 9,Naive_C,2520.0
+Agent 6,Naive_C,2520.0
+Agent 2,Naive_C,2520.0
+Agent 38,Advanced_C,2366.0
+Agent 30,Advanced_C,2362.0
+Agent 35,Advanced_C,2350.0
+Agent 27,Advanced_C,2350.0
+Agent 8,Advanced_C,2302.0
+Agent 4,Advanced_C,2301.0
+Agent 7,Advanced_C,2119.0
+Agent 29,Advanced_C,2111.0
+Agent 21,Advanced_C,2092.0
+Agent 20,Advanced_C,2092.0
+Agent 37,Advanced_C,2081.0
+Agent 40,Advanced_C,2075.0
+Agent 26,Advanced_C,1812.0
+Agent 18,Advanced_C,1811.0
+Agent 14,Advanced_C,1811.0
+Agent 1,Advanced_C,1805.0
+
+Statisticsts 
+ Min : ,1805.0
+Average : ,2419.95
+Max : ,2748.0
+
+
+Tounament 9
+-----------------------
+Agent 32,Advanced_C,3138.0
+Agent 31,Advanced_C,3138.0
+Agent 28,Advanced_C,3138.0
+Agent 25,Advanced_C,3138.0
+Agent 24,Advanced_C,3138.0
+Agent 17,Advanced_C,3138.0
+Agent 13,Advanced_C,3138.0
+Agent 10,Advanced_C,3138.0
+Agent 34,Advanced_C,3137.0
+Agent 12,Advanced_C,3137.0
+Agent 19,Advanced_C,2963.0
+Agent 11,Advanced_C,2959.0
+Agent 5,Advanced_C,2959.0
+Agent 3,Advanced_C,2959.0
+Agent 39,Naive_C,2910.0
+Agent 36,Naive_C,2910.0
+Agent 33,Naive_C,2910.0
+Agent 23,Naive_C,2910.0
+Agent 22,Naive_C,2910.0
+Agent 16,Naive_C,2910.0
+Agent 15,Naive_C,2910.0
+Agent 9,Naive_C,2910.0
+Agent 6,Naive_C,2910.0
+Agent 2,Naive_C,2910.0
+Agent 38,Advanced_C,2756.0
+Agent 30,Advanced_C,2752.0
+Agent 35,Advanced_C,2740.0
+Agent 27,Advanced_C,2740.0
+Agent 8,Advanced_C,2692.0
+Agent 4,Advanced_C,2691.0
+Agent 7,Advanced_C,2509.0
+Agent 29,Advanced_C,2501.0
+Agent 21,Advanced_C,2482.0
+Agent 20,Advanced_C,2482.0
+Agent 37,Advanced_C,2471.0
+Agent 40,Advanced_C,2465.0
+Agent 26,Advanced_C,2202.0
+Agent 18,Advanced_C,2201.0
+Agent 14,Advanced_C,2201.0
+Agent 1,Advanced_C,2195.0
+
+Statisticsts 
+ Min : ,2195.0
+Average : ,2809.95
+Max : ,3138.0
+
+
+Tounament 10
+-----------------------
+Agent 32,Advanced_C,3528.0
+Agent 31,Advanced_C,3528.0
+Agent 28,Advanced_C,3528.0
+Agent 25,Advanced_C,3528.0
+Agent 24,Advanced_C,3528.0
+Agent 17,Advanced_C,3528.0
+Agent 13,Advanced_C,3528.0
+Agent 10,Advanced_C,3528.0
+Agent 34,Advanced_C,3527.0
+Agent 12,Advanced_C,3527.0
+Agent 19,Advanced_C,3353.0
+Agent 11,Advanced_C,3349.0
+Agent 5,Advanced_C,3349.0
+Agent 3,Advanced_C,3349.0
+Agent 39,Naive_C,3300.0
+Agent 36,Naive_C,3300.0
+Agent 33,Naive_C,3300.0
+Agent 23,Naive_C,3300.0
+Agent 22,Naive_C,3300.0
+Agent 16,Naive_C,3300.0
+Agent 15,Naive_C,3300.0
+Agent 9,Naive_C,3300.0
+Agent 6,Naive_C,3300.0
+Agent 2,Naive_C,3300.0
+Agent 38,Advanced_C,3146.0
+Agent 30,Advanced_C,3142.0
+Agent 35,Advanced_C,3130.0
+Agent 27,Advanced_C,3130.0
+Agent 8,Advanced_C,3082.0
+Agent 4,Advanced_C,3081.0
+Agent 7,Advanced_C,2899.0
+Agent 29,Advanced_C,2891.0
+Agent 21,Advanced_C,2872.0
+Agent 20,Advanced_C,2872.0
+Agent 37,Advanced_C,2861.0
+Agent 40,Advanced_C,2855.0
+Agent 26,Advanced_C,2592.0
+Agent 18,Advanced_C,2591.0
+Agent 14,Advanced_C,2591.0
+Agent 1,Advanced_C,2585.0
+
+Statisticsts 
+ Min : ,2585.0
+Average : ,3199.95
+Max : ,3528.0

@@ -1,24 +1,92 @@
 
-Experiment 1
+Experiment 11
 ==========================
 Agent_ID 	 Strategy 	Pay_Off    Cooperations Defections 
 
-Number of Tournament : ,4
-Payoffs : ,T = 5.0, R = 3.0, P = 1.0, S = 0.0
+Number of Tournament : ,10
+Payoffs : ,T = 5.0, R = 10.0, P = 1.0, S = 0.0
 Uncertainty Level : ,1.0
 Request Limit : ,null
 
 
  Agent_ID, Strategy , Pay_Off , Cooperations , Defections 
-Agent 2,Advanced_D,54.0,10,10
+Agent 32,Advanced_C,3528.0,330,60
  
-Agent 4,Advanced_D,47.0,12,8
+Agent 31,Advanced_C,3528.0,330,60
  
-Agent 6,Advanced_C,46.0,14,6
+Agent 28,Advanced_C,3528.0,330,60
  
-Agent 1,Advanced_C,44.0,15,5
+Agent 25,Advanced_C,3528.0,330,60
  
-Agent 3,Advanced_D,41.0,11,9
+Agent 24,Advanced_C,3528.0,330,60
  
-Agent 5,Advanced_D,28.0,0,20
+Agent 17,Advanced_C,3528.0,330,60
+ 
+Agent 13,Advanced_C,3528.0,330,60
+ 
+Agent 10,Advanced_C,3528.0,330,60
+ 
+Agent 34,Advanced_C,3527.0,331,59
+ 
+Agent 12,Advanced_C,3527.0,331,59
+ 
+Agent 19,Advanced_C,3353.0,311,79
+ 
+Agent 11,Advanced_C,3349.0,311,79
+ 
+Agent 5,Advanced_C,3349.0,311,79
+ 
+Agent 3,Advanced_C,3349.0,311,79
+ 
+Agent 39,Naive_C,3300.0,390,0
+ 
+Agent 36,Naive_C,3300.0,390,0
+ 
+Agent 33,Naive_C,3300.0,390,0
+ 
+Agent 23,Naive_C,3300.0,390,0
+ 
+Agent 22,Naive_C,3300.0,390,0
+ 
+Agent 16,Naive_C,3300.0,390,0
+ 
+Agent 15,Naive_C,3300.0,390,0
+ 
+Agent 9,Naive_C,3300.0,390,0
+ 
+Agent 6,Naive_C,3300.0,390,0
+ 
+Agent 2,Naive_C,3300.0,390,0
+ 
+Agent 38,Advanced_C,3146.0,288,102
+ 
+Agent 30,Advanced_C,3142.0,288,102
+ 
+Agent 35,Advanced_C,3130.0,288,102
+ 
+Agent 27,Advanced_C,3130.0,288,102
+ 
+Agent 8,Advanced_C,3082.0,326,64
+ 
+Agent 4,Advanced_C,3081.0,327,63
+ 
+Agent 7,Advanced_C,2899.0,261,129
+ 
+Agent 29,Advanced_C,2891.0,261,129
+ 
+Agent 21,Advanced_C,2872.0,324,66
+ 
+Agent 20,Advanced_C,2872.0,324,66
+ 
+Agent 37,Advanced_C,2861.0,325,65
+ 
+Agent 40,Advanced_C,2855.0,321,69
+ 
+Agent 26,Advanced_C,2592.0,318,72
+ 
+Agent 18,Advanced_C,2591.0,319,71
+ 
+Agent 14,Advanced_C,2591.0,319,71
+ 
+Agent 1,Advanced_C,2585.0,315,75
  

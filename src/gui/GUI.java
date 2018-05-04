@@ -72,7 +72,6 @@ public class GUI {
 	private JTextArea txtLeaderBoard = new JTextArea();
 	private static final JTextArea txtStats = new JTextArea();
 	private static JComboBox cmbThreshold; 
-	private static JComboBox cmbEvolutionPerTournament;
 	private JRadioButton rdbtnRandom;
 	private JSlider slider;
 	private JTextField txtAdvancedDNum;
@@ -80,6 +79,7 @@ public class GUI {
 	private String SETUP_LOCATION = "SR/SetupFile.csv";
 	protected static GUI_Simulation simLog;
 	private static float eliminationThreshold = 0;
+	private JTextField txtCommunicationCost;
 
 	/**
 	 * Main method that creates Application frame,
@@ -184,13 +184,13 @@ public class GUI {
 					param[11] = (txtAdvancedDNum.getText());
 					param[12] = String.valueOf((cmbInfoReqApproach.getSelectedIndex()));
 					param[13] = String.valueOf((cmbThreshold.getSelectedIndex()));
-					param[14] = String.valueOf(cmbEvolutionPerTournament.getSelectedItem());
+					param[14] = txtCommunicationCost.getText();
 
 					
 					
 					// Store agents SetUp array in the setup repository 
 					try {
-						String FileHeading = "T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD,AdvancedExp, infoRequestApproach, EvolutionModel,Tournaments/Evolution";
+						String FileHeading = "T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD, infoRequestApproach, EvolutionModel, CommunicationCost";
 						writeFile(SETUP_LOCATION, FileHeading, param);
 					} catch (IOException e1) {
 
@@ -269,7 +269,10 @@ public class GUI {
 						txtDNum.setText("");
 						txtAdvancedCNum.setText("");
 						txtAdvancedDNum.setText("");
-						
+						txtLeaderBoard.setText("");
+						txtStats.setText("");
+						btnDefault.setEnabled(true);
+						btnStart.setEnabled(false);
 		
 					}
 				});
@@ -291,6 +294,8 @@ public class GUI {
 						txtCNum.setText("10");
 						txtDNum.setText("10");
 						txtAdvancedCNum.setText("10");
+						txtAdvancedDNum.setText("10");
+						btnStart.setEnabled(true);
 		
 					}
 				});
@@ -348,25 +353,25 @@ public class GUI {
 		txtTemptation = new JTextField();
 		txtTemptation.setText("5");
 		txtTemptation.setColumns(10);
-		txtTemptation.setBounds(202, 6, 262, 28);
+		txtTemptation.setBounds(202, 6, 273, 28);
 		panel_1.add(txtTemptation);
 
 		txtReward = new JTextField();
 		txtReward.setText("3");
 		txtReward.setColumns(10);
-		txtReward.setBounds(202, 39, 262, 28);
+		txtReward.setBounds(202, 39, 273, 28);
 		panel_1.add(txtReward);
 
 		txtSucker = new JTextField();
 		txtSucker.setText("0");
 		txtSucker.setColumns(10);
-		txtSucker.setBounds(202, 105, 262, 28);
+		txtSucker.setBounds(202, 105, 273, 28);
 		panel_1.add(txtSucker);
 
 		txtPunishment = new JTextField();
 		txtPunishment.setText("1");
 		txtPunishment.setColumns(10);
-		txtPunishment.setBounds(202, 72, 262, 28);
+		txtPunishment.setBounds(202, 72, 273, 28);
 		panel_1.add(txtPunishment);
 
 		rdbtnRandom = new JRadioButton("Random");
@@ -456,7 +461,7 @@ public class GUI {
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
 		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_2.setBounds(19, 187, 481, 108);
+		panel_2.setBounds(19, 187, 481, 115);
 		tbSetUp.add(panel_2);
 
 		JLabel lblNumberOfTournaments = new JLabel("Number of Tournaments");
@@ -466,9 +471,10 @@ public class GUI {
 		panel_2.add(lblNumberOfTournaments);
 
 		txtTournNum = new JTextField();
+		txtTournNum.setHorizontalAlignment(SwingConstants.LEFT);
 		txtTournNum.setText("4");
 		txtTournNum.setColumns(10);
-		txtTournNum.setBounds(200, 6, 262, 28);
+		txtTournNum.setBounds(201, 6, 274, 28);
 		panel_2.add(txtTournNum);
 		
 		JLabel lblEliminationThreshold = new JLabel("Evolutionary Model");
@@ -478,26 +484,28 @@ public class GUI {
 		panel_2.add(lblEliminationThreshold);
 		
 		cmbThreshold = new JComboBox();
-		cmbThreshold.setModel(new DefaultComboBoxModel(new String[] {"No Elimination", "Eliminate 1 with 1 Replacement", "Eliminate 2 with 2 Replacements", "Least 4 Agents Adapt Top 4 Strategies", "Eliminate without Replacements"}));
+		cmbThreshold.setModel(new DefaultComboBoxModel(new String[] {"No Elimination", "Eliminate 1 with 1 Replacement", "Eliminate 2 with 2 Replacements", "Least 4 Agents Adapt Top 4 Strategies", "Least 4 Agents Adapt Similar Native Strategies Top 4 "}));
 		cmbThreshold.setSelectedIndex(3);
-		cmbThreshold.setBounds(200, 44, 262, 27);
+		cmbThreshold.setBounds(201, 44, 274, 27);
 		panel_2.add(cmbThreshold);
 		
-		JLabel lblEvolutionaryOccurence = new JLabel("Tournaments/Evolution");
-		lblEvolutionaryOccurence.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblEvolutionaryOccurence.setForeground(SystemColor.controlShadow);
-		lblEvolutionaryOccurence.setBounds(0, 76, 173, 16);
-		panel_2.add(lblEvolutionaryOccurence);
+		JLabel lblCommunicationCost = new JLabel("Communication Cost");
+		lblCommunicationCost.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCommunicationCost.setForeground(SystemColor.controlShadow);
+		lblCommunicationCost.setBounds(35, 76, 138, 16);
+		panel_2.add(lblCommunicationCost);
 		
-		cmbEvolutionPerTournament = new JComboBox();
-		cmbEvolutionPerTournament.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "30", "40", "50", "60", "70", "80", "90", "100", ""}));
-		cmbEvolutionPerTournament.setBounds(200, 72, 262, 27);
-		panel_2.add(cmbEvolutionPerTournament);
+		txtCommunicationCost = new JTextField();
+		txtCommunicationCost.setHorizontalAlignment(SwingConstants.LEFT);
+		txtCommunicationCost.setText("0");
+		txtCommunicationCost.setColumns(10);
+		txtCommunicationCost.setBounds(201, 70, 274, 28);
+		panel_2.add(txtCommunicationCost);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
 		panel_3.setBorder(new LineBorder(Color.LIGHT_GRAY));
-		panel_3.setBounds(19, 301, 481, 94);
+		panel_3.setBounds(19, 312, 481, 94);
 		tbSetUp.add(panel_3);
 
 		JLabel lblInformationRequestLimit = new JLabel(
@@ -652,13 +660,8 @@ public class GUI {
 		lblAgentsInfoRequest.setBounds(6, 6, 456, 16);
 		panel_5.add(lblAgentsInfoRequest);
 
-		cmbInfoReqApproach.setModel(new DefaultComboBoxModel<String>(
-				new String[] { "Opponent's First Action",
-						"First Time Opponent Defected",
-						"All Opponent's Past Actions",
-						"Opponent's Past Action in Random Tournament",
-						"Past Actions of other Agents against Opponent" }));
-		cmbInfoReqApproach.setSelectedIndex(2);
+		cmbInfoReqApproach.setModel(new DefaultComboBoxModel(new String[] {"Opponent's First Action", "First Time Opponent Defected", "All Opponent's Past Actions", "Opponent's Past Action in Random Tournament", "Past Actions of other Agents against Opponent", "Opponent's Strategy"}));
+		cmbInfoReqApproach.setSelectedIndex(5);
 		cmbInfoReqApproach.setBounds(17, 52, 434, 27);
 		panel_5.add(cmbInfoReqApproach);
 

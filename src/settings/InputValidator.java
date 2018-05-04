@@ -32,28 +32,24 @@ import javax.swing.JOptionPane;
  */
 public class InputValidator {
 
-	// Private InputValidator Parameters
+	// InputValidator Constants
 	private static boolean startSim = false;
 	private String requestLimitOption;
 	private final String ADVANCED_COOPERATOR = "Advanced_C";
 	private final String ADVANCED_DEFECTOR = "Advanced_D";
-	private final String ADVANCED_EXPLOITER = "Advanced_E";
+	private final String NAIVE_COOPERATOR = "Naive_C";
+	private final String NAIVE_DEFECTOR = "Naive_D";
 	private String SETUP_LOCATION = "SR/SetupFile.csv";
 	private final String FILE_NOT_FOUND = "File not found";
 	
 	// Parameters and Fields
-	public float[] currentSetup;
-	public float[] payOff;
-	public String []agentStrategies; 
-	public float uncertaintyLevel;
+	public float[] currentSetup, payOff;
+	public String[] agentStrategies; 
+	public float uncertaintyLevel, infoRequestOption, numOfAgents, uncertaintyLimit, param, communicationCost, communicationTournament;
 	public int numOfTournament, evolutionModelIndex, numOfTournamentPerEvolution ;
-	public float infoRequestOption;
-	public float numOfAgents;
-	public float uncertaintyLimit;
 	public long numOfExperiment;
 	public int[] agentRequestLimit;
 	public boolean validationStatus = true; 
-	public float param;
 	
 	
 	
@@ -102,7 +98,7 @@ public class InputValidator {
 			
 			int count = 0;	
 			String[] setupParam = lineParam.split(",");
-			currentSetup = new float[16];
+			currentSetup = new float[15];
 
 			// Validate payoff matrix for current experiment
 			for (int j = 0; j < setupParam.length; j++) {
@@ -112,27 +108,10 @@ public class InputValidator {
 					JOptionPane.showMessageDialog(null,
 							"PayOff inputs must be Integer ."+ count);
 			    	validationStatus = false;
-
-					
 				}
 
 			}
 			
-			// Validate conditions for cooperation
-			if ((2 * currentSetup[1]) <= ((currentSetup[0]) + (currentSetup[3]))) {
-				JOptionPane.showMessageDialog(null,
-						"PayOff inputs must follow (2 * R) > (T + S)");
-		    	validationStatus = false;
-
-				
-			}
-			
-			if (((currentSetup[0]) <= (currentSetup[1]))|| ((currentSetup[1]) <= (currentSetup[2])) || ((currentSetup[2]) <= (currentSetup[3]))) {
-				JOptionPane.showMessageDialog(null,
-						"PayOff inputs must follow T > R > P > S");
-		    	validationStatus = false;
-
-			}
 
 			// Validate Number of tournaments input and info. request limit
 			try {
@@ -196,8 +175,14 @@ public class InputValidator {
 			setAgentStrategies();
 			setRequestLimit();
 			setEvolutionModel();
-			setTournamentsPerEvolution();
+			setCommunicationCost();
 	}
+	
+
+
+
+
+
 	
 
 
@@ -262,15 +247,19 @@ public class InputValidator {
 		return evolutionModelIndex;
 	}
 	
-	public void setTournamentsPerEvolution() {
-		this.numOfTournamentPerEvolution = (int) currentSetup[14];
-		
-	}
+	
 
-	public int getTournamentsPerEvolution() {
-		return numOfTournamentPerEvolution;
+	private void setCommunicationCost() {
+		this.communicationCost = currentSetup[14];
 		
 	}
+	
+	public float getCommunicationCost(){
+		return communicationCost;
+	}
+	
+	
+	
 	/**
 	 * getAgentStrategies Sets up the strategy of each competing player n the
 	 * tournament.
@@ -383,21 +372,14 @@ public class InputValidator {
 			requestLimitOption = "Assigned";
 
 			for (int i = 0; i < agentRequestLimit.length; i++) {
-				if (agentStrategies[i].equalsIgnoreCase(ADVANCED_COOPERATOR)) {
+				if ((agentStrategies[i].equalsIgnoreCase(ADVANCED_COOPERATOR))||(agentStrategies[i].equalsIgnoreCase(NAIVE_COOPERATOR))) {
 					agentRequestLimit[i] = Math.round(currentSetup[6]);
 				}
 
-				else if (agentStrategies[i].equalsIgnoreCase(ADVANCED_DEFECTOR)) {
+				else if ((agentStrategies[i].equalsIgnoreCase(ADVANCED_DEFECTOR))||(agentStrategies[i].equalsIgnoreCase(NAIVE_DEFECTOR))) {
 					agentRequestLimit[i] = (int) currentSetup[7];
 				}
 				
-				else if (agentStrategies[i].equalsIgnoreCase(ADVANCED_EXPLOITER)) {
-					agentRequestLimit[i] = (int) currentSetup[7];
-				}
-
-				else {
-					agentRequestLimit[i] = 0;
-				}
 			}
 
 		}

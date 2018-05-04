@@ -24,27 +24,34 @@ public class HistoricalInfoMgr {
 	// Private variables
 	private static String TOURNAMENT_BOARD_FILE = "TB/TB.csv";
 	private static String SIMULATION_STATS_FILE = "HIR/SimStats.csv";
+	private static String STRATEGY_STATS_FILE = "HIR/StrategyStats.csv";
+	private static String STRATEGY_NUM_GRAPH_FILE = "HIR/StrategyNumGraph.txt";
+	private static String PAYOFF_GRAPH_FILE = "HIR/PayOffGraph.txt";
+	private static String COOPERATIONS_GRAPH_FILE = "HIR/CooperationsGraph.csv";
 	private static String SIMULATION_LOG_FILE = "HIR/SimLog.csv";
 	private static String SIMULATION_LEADERBOARD_FILE = "HIR/SimLeaderBoard.csv";
 	private static String CHARTS_FILE = "HIR/chartInfo.csv";
+	private static char DEFECT_ACTION = 'D';
 	private static String FILE_NOT_FOUND = "File not found";
 	private String requestLimitOptions;
 	private float[] experimentPayOff;
-	private String opponentPastInfo, chartsInfo = "", agentTournamentStat = "", tournamentBoardInfo = "",
+	private double []strategyPayOff = new double[4];
+
+	private String chartsInfo = "", agentTournamentStat = "", tournamentBoardInfo = "",
 			currentExperimentResults = "", DUMMY = "Dummy";
 	private double sum = 0, min = 0, max = 0;
 	private int numOfAgents, numOfTournament, currentExperimentID;
-	private float uncertaintyLevel;
-	private static String[] Strategies;
+	private float uncertaintyLevel, communicationCost;
+	public static String[] Strategies;
 
 	// Public Fields
-	public static String agentsTournamentStatistics = "";
-	public static String experimentLeaderboard = "";
+	public static String agentsTournamentStatistics = "", experimentLeaderboard = "", strategyStats="",
+						 strategyNumGraphs="", payoffGraphs="", cooperationsGraphs="";
 	public double[] agentScores;
 	Agent agent;
 
 	// Constructor
-	public HistoricalInfoMgr(int numOfAgents, int[] agentRequestLimit, float uncertaintyLevel, int numOfTournament, float[] experimentPayOff, String[] Strategies, int currentExperimentID) {
+	public HistoricalInfoMgr(int numOfAgents, int[] agentRequestLimit, float uncertaintyLevel, int numOfTournament, float[] experimentPayOff, String[] Strategies, int currentExperimentID, float communicationCost) {
 
 		this.numOfAgents = numOfAgents;
 		agentScores = new double[numOfAgents];
@@ -56,6 +63,7 @@ public class HistoricalInfoMgr {
 		this.experimentPayOff = experimentPayOff;
 		HistoricalInfoMgr.Strategies = Strategies;
 		this.currentExperimentID = currentExperimentID;
+		this.communicationCost = communicationCost;
 	}
 
 	public HistoricalInfoMgr() {
@@ -64,10 +72,8 @@ public class HistoricalInfoMgr {
 
 	/**
 	 * updateLog method after every match reads from the Tournament Board and
-	 * updates the SimLog data structure in HIR
+	 * updates the SimLog data file with agents simulation actions in HIR
 	 * 
-	 * @param tournamentBoardInfo
-	 *            : Current information stored on TB by the Simulation Manager
 	 * 
 	 * @throws IOException
 	 *             : Throw an input output exception when SimLog file is not
@@ -196,23 +202,34 @@ public class HistoricalInfoMgr {
 
 			case 0:
 				opponentPastInfo = getOppFirstAction(requestingAgentID, opponentID);
+				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
 				break;
 
 			case 1:
 				opponentPastInfo = getOpponentFirstDefection(requestingAgentID, opponentID);
+				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+
 				break;
 
 			case 2:
 				opponentPastInfo = getOpponentInfo(requestingAgentID, opponentID);
-
+				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
 				break;
 
 			case 3:
 				opponentPastInfo = getOpponentActionsInRandomTournament(requestingAgentID, opponentID);
+				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
 				break;
 
 			case 4:
 				opponentPastInfo = get2ndLevelAction(requestingAgentID, opponentID);
+				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+				break;
+			
+
+			case 5:
+				opponentPastInfo = getOpponentStrategy(requestingAgentID, opponentID);
+				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
 				break;
 			}
 
@@ -221,6 +238,8 @@ public class HistoricalInfoMgr {
 
 		return opponentPastInfo;
 	}
+
+	
 
 	/**
 	 * get2ndLevelAction method returns past actions of the secondary level
@@ -312,7 +331,7 @@ public class HistoricalInfoMgr {
 		// Determine the first time opponent defected
 		for (int i = 0; i < oppActions.length(); i++) {
 
-			if (oppActions.charAt(i) == 'D') {
+			if (oppActions.charAt(i) == DEFECT_ACTION) {
 				opponentPastInfo = String.valueOf(i);
 				break;
 			}
@@ -362,6 +381,18 @@ public class HistoricalInfoMgr {
 	}
 
 	/**
+	 * getOpponentStrategy method returns strategy of the current opponent 
+	 * @param requestingAgentID
+	 * @param opponentID
+	 * @return
+	 */
+	private String getOpponentStrategy(int requestingAgentID, int opponentID) {
+		//JOptionPane.showMessageDialog(null, Strategies[opponentID]);
+		
+		return Strategies[opponentID];
+	}
+	
+	/**
 	 * applyuncertaintyLevel method applies the uncertainty limit on queried
 	 * opponent past information
 	 * 
@@ -408,7 +439,7 @@ public class HistoricalInfoMgr {
 		currentExperimentResults = currentExperimentResults + "Request Limit : ," + requestLimitOptions + "\n";
 		currentExperimentResults = currentExperimentResults + "\n\n Agent_ID, Strategy , Pay_Off , Cooperations , "
 				+ "Defections \n";
-
+		
 		HIR.data = new String[HIR.agentsRequestLimit.length][3];
 
 		for (int i = 0; i < (Strategies.length); i++) {
@@ -458,6 +489,10 @@ public class HistoricalInfoMgr {
 	private void updateHistoricalRepository(String currentExperimentResults) throws IOException {
 
 		Files.write(Paths.get(SIMULATION_LEADERBOARD_FILE), currentExperimentResults.getBytes());
+		Files.write(Paths.get(STRATEGY_NUM_GRAPH_FILE), strategyNumGraphs.getBytes()); 
+		Files.write(Paths.get(PAYOFF_GRAPH_FILE), payoffGraphs.getBytes()); 
+
+		
 	}
 
 	/**
@@ -476,10 +511,8 @@ public class HistoricalInfoMgr {
 		// Acquire past opponent action
 		String agentPastInformation = HIR.agentActs[(agentID - 1)];
 
-		// JOptionPane.showMessageDialog(null, agentName + " :
-		// "+agentPastInformation);
 		for (int i = 0; i < agentPastInformation.length(); i++) {
-			if (agentPastInformation.charAt(i) == 'D')
+			if (agentPastInformation.charAt(i) == DEFECT_ACTION)
 				numOfDefections++;
 			else if (agentPastInformation.charAt(i) == 'C')
 				numOfCooperations++;
@@ -527,6 +560,8 @@ public class HistoricalInfoMgr {
 			// store parameters in chart for later display
 			getChartDataset(currentTournamentIndex, i, HIR.data);
 		}
+		
+		setStrategyStats(HIR.data, currentTournamentIndex + 1, agentScores);
 
 		// Arrange performance based on total Experiment/Tournament scores
 		Arrays.sort(HIR.data, new Comparator<String[]>() {
@@ -560,10 +595,64 @@ public class HistoricalInfoMgr {
 
 		// save Stats
 		Files.write(Paths.get(SIMULATION_STATS_FILE), agentTournamentStat.getBytes());
+		Files.write(Paths.get(STRATEGY_STATS_FILE), strategyStats.getBytes());
+		
 	}
 
 	
 
+	private void setStrategyStats(String[][] data, int currentTournamentIndex, double []agentScores) {
+		
+		strategyStats = strategyStats + "Tournament "+currentTournamentIndex+"\n------------------------";
+		int []totalStrategyNum = new int[4];
+		
+		for(int i = 0; i < HIR.data.length; i++){
+			
+			switch(HIR.data[i][1]){
+				case "Advanced_C":
+					totalStrategyNum[0]++;
+					strategyPayOff[0] = strategyPayOff[0] +  agentScores[i];
+					break;
+					
+				case "Advanced_D":
+					totalStrategyNum[1]++;
+					strategyPayOff[1] = strategyPayOff[1] +  agentScores[i];
+					break;
+					
+					
+				case "Naive_C":
+					totalStrategyNum[2] ++;
+					strategyPayOff[2] = strategyPayOff[2] +  agentScores[i];
+					break;
+					
+				case "Naive_D":
+					totalStrategyNum[3] ++;
+					strategyPayOff[3] = strategyPayOff[3] +  agentScores[i];
+					break;
+				
+			}
+			
+		}
+		
+		// Store information
+		strategyStats = strategyStats + "\n" + "Advanced_C,"+ totalStrategyNum[0]+","+strategyPayOff[0]+"\n"+
+				"Advanced_D,"+ totalStrategyNum[1]+","+strategyPayOff[1]+"\n"+
+				"Naive_C,"+ totalStrategyNum[2]+","+strategyPayOff[2]+"\n"+
+				"Naive_D,"+ totalStrategyNum[3]+","+strategyPayOff[3]+"\n \n";
+		
+		if(currentTournamentIndex==numOfTournament){
+			//JOptionPane.showMessageDialog(null, experimentPayOff[1]+","+ experimentPayOff[3]);
+			strategyNumGraphs = strategyNumGraphs + "\n" + experimentPayOff[0]+","+ experimentPayOff[2]+","+totalStrategyNum[0]+","+ totalStrategyNum[1]+","+totalStrategyNum[2]+","+totalStrategyNum[3];
+			payoffGraphs = payoffGraphs + "\n" + experimentPayOff[0]+","+ experimentPayOff[2]+","+strategyPayOff[0]+","+ strategyPayOff[1]+","+strategyPayOff[2]+","+strategyPayOff[3];
+
+		}
+		
+		
+	}
+
+	
+	
+	
 	/**
 	 * getChartDataset stores chart dataset to file for later use in making
 	 * different charts
@@ -669,6 +758,9 @@ public class HistoricalInfoMgr {
 
 	public void printExperimentStats(int currentExperimentID) {
 		agentsTournamentStatistics = agentsTournamentStatistics + "\nExperiment " + (currentExperimentID)
+				+ "\n=================================\n";
+		
+		strategyStats = strategyStats + "\nExperiment " + (currentExperimentID)
 				+ "\n=================================\n";
 	}
 	
