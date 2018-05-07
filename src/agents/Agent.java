@@ -390,6 +390,57 @@ public class Agent {
 	}
 
 
+	
+	/**
+	 * superRationalWithDiscountFactor method defines algorithm for identifying
+	 * opponent's expected cooperating ratio in order to make a decision that
+	 * maximize its expected return.
+	 * 
+	 * @param opponentCooperateRatio
+	 *            : Expected ratio at which opponent cooperates
+	 * @param requestingAgentID
+	 *            : agent experiment ID
+	 * @param agentStrategy
+	 *            : opponent Strategy
+	 * @param opponentID
+	 *            : opponent experiment ID
+	 * @return : agent's action
+	 */
+	private char subjectedExpectedUtility(double opponentCooperateProb, int requestingAgentID,
+			String agentStrategy, int opponentID) {
+		
+		char matchAction; // Set default action
+	
+		// Find opponentDefectProb 
+		double opponentDefectProb = 1.0 - opponentCooperateProb;
+		
+		// Calculate weighted payoffs.
+		
+		
+		// calculate
+		
+		
+		// Calculate opponent cooperate expected function
+		double opponentCooperateExpectation = (REWARD * opponentCooperateProb) + (SUCKER * opponentDefectProb);
+				
+		// Calculate opponent defect expected function
+		double opponentDefectExpectation = (TEMPT * opponentCooperateProb) + (PUNISH * opponentDefectProb);
+
+		// Make decision based on opponent Expectations
+		if (opponentCooperateExpectation >= opponentDefectExpectation)
+			matchAction = COOPERATE;
+		else
+			matchAction = DEFECT;
+
+		return matchAction;
+	}
+
+	
+	
+	
+	
+	
+	
 	/**
 	 * getOpponentPastInfo request for past opponent action from the HIM and
 	 * calculate the cooperating level of opponent which is stored in the
