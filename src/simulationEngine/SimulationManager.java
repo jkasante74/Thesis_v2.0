@@ -2,10 +2,7 @@ package simulationEngine;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
-
-import javax.swing.JOptionPane;
-
+//import java.util.Random;
 import agents.Agent;
 import gui.GUI_Simulation;
 import historicalInfo.HistoricalInfoMgr;
@@ -78,13 +75,12 @@ public class SimulationManager {
 	 */
 	
 	protected void tournamentManager() {
-		int matchesPerRound = 0;
 		for (int currentTournament = 0; currentTournament < numOfTournaments; currentTournament++) {
 
 			report.printTournamentResults(currentTournament);
 
 			int totalRounds = (numOfAgents - 1); 
-			 matchesPerRound = numOfAgents / 2; 
+			int matchesPerRound = numOfAgents / 2; 
 
 			// Group players into two for fair matching
 			for (int j = 0; j < matchesPerRound; j++) {
@@ -151,21 +147,19 @@ public class SimulationManager {
 		int lowestAgentID = 0, highestAgentID = 0;		
 		double maxScore = agentScores[0];
 
-		// determine least score and get agent id
+		// To determine max and least score and get agents ids
 		for(int i=0; i < agentScores.length;i++){
 			if( tempScore > agentScores[i]){
 				tempScore = agentScores[i];
 				lowestAgentID = i;
 			}
-		}
-		
-		// determine maximum score and get agent id
-		for(int i=0; i < agentScores.length;i++){
+			
 			if( maxScore < agentScores[i]){
 				maxScore = agentScores[i];
 				highestAgentID = i;
 			}
 		}
+		
 		
 		// Change least scored agent strategy with most scored agent strategy
 		agents.get(lowestAgentID).agentStrategy = agents.get(highestAgentID).agentStrategy;
@@ -181,14 +175,12 @@ public class SimulationManager {
 		
 	}
 
-	
 
 	private void eliminateTwoWithTwoReplacements() {
 		
-		
+		// Left blank intentionally
 	}
 
-	
 	
 	private void least4AdoptTop4Strategies() {
 		String [][]tournamentResults;
@@ -203,8 +195,6 @@ public class SimulationManager {
 	
 			int agentID = (Integer.parseInt(tournamentResults[i][0].substring(6)) - 1);
 			int replaceID = (Integer.parseInt(tournamentResults[j][0].substring(6)) - 1);
-			
-			
 			agents.get(agentID).agentStrategy = agents.get(replaceID).agentStrategy;
 			System.out.println("Agent : "+ (agentID+1)+" chooses \t Agent : "+(replaceID+1));
 			j--;
@@ -400,17 +390,17 @@ public class SimulationManager {
 			opponentScore = payOff[1];
 		}
 
-		if ((agentsActions[0] == COOPERATE) && (agentsActions[1] == DEFECT)) {
+		else if ((agentsActions[0] == COOPERATE) && (agentsActions[1] == DEFECT)) {
 			agentScore = payOff[3];
 			opponentScore = payOff[0];
 		}
 
-		if ((agentsActions[0] == DEFECT) && (agentsActions[1] == COOPERATE)) {
+		else if ((agentsActions[0] == DEFECT) && (agentsActions[1] == COOPERATE)) {
 			agentScore = payOff[0];
 			opponentScore = payOff[3];
 		}
 
-		if ((agentsActions[0] == DEFECT) && (agentsActions[1] == DEFECT)) {
+		else if ((agentsActions[0] == DEFECT) && (agentsActions[1] == DEFECT)) {
 			agentScore = payOff[2];
 			opponentScore = payOff[2];
 		}

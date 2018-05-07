@@ -32,6 +32,7 @@ public class HistoricalInfoMgr {
 	private static String SIMULATION_LEADERBOARD_FILE = "HIR/SimLeaderBoard.csv";
 	private static String CHARTS_FILE = "HIR/chartInfo.csv";
 	private static char DEFECT_ACTION = 'D';
+	private static char COOPERATE_ACTION = 'C';
 	private static String FILE_NOT_FOUND = "File not found";
 	private String requestLimitOptions;
 	private float[] experimentPayOff;
@@ -39,7 +40,7 @@ public class HistoricalInfoMgr {
 
 	private String chartsInfo = "", agentTournamentStat = "", tournamentBoardInfo = "",
 			currentExperimentResults = "", DUMMY = "Dummy";
-	private double sum = 0, min = 0, max = 0;
+	private double sum = 0.0, min = 0.0, max = 0.0;
 	private int numOfAgents, numOfTournament, currentExperimentID;
 	private float uncertaintyLevel, communicationCost;
 	public static String[] Strategies;
@@ -201,41 +202,36 @@ public class HistoricalInfoMgr {
 			switch (requestOption) {
 
 			case 0:
-				opponentPastInfo = getOppFirstAction(requestingAgentID, opponentID);
-				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+				opponentPastInfo = getOppFirstAction(opponentID);
 				break;
 
 			case 1:
 				opponentPastInfo = getOpponentFirstDefection(requestingAgentID, opponentID);
-				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
-
 				break;
 
 			case 2:
-				opponentPastInfo = getOpponentInfo(requestingAgentID, opponentID);
-				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+				opponentPastInfo = getOpponentInfo(opponentID);
 				break;
 
 			case 3:
-				opponentPastInfo = getOpponentActionsInRandomTournament(requestingAgentID, opponentID);
-				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+				opponentPastInfo = getOpponentActionsInRandomTournament(opponentID);
 				break;
 
 			case 4:
-				opponentPastInfo = get2ndLevelAction(requestingAgentID, opponentID);
-				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+				opponentPastInfo = get2ndLevelAction(opponentID);
 				break;
 			
 
 			case 5:
-				opponentPastInfo = getOpponentStrategy(requestingAgentID, opponentID);
-				agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
+				opponentPastInfo = getOpponentStrategy(opponentID);
+				
 				break;
 			}
-
+			
+			agentScores[requestingAgentID] = agentScores[requestingAgentID] - communicationCost;
 			HIR.agentsRequestLimit[requestingAgentID] -= 1;
 		}
-
+		
 		return opponentPastInfo;
 	}
 
@@ -252,7 +248,7 @@ public class HistoricalInfoMgr {
 	 * @return pastInfoAfterUncertainty : past actions of all previous opponents
 	 *         against current opponent after uncertainty limit has been applied
 	 */
-	private String get2ndLevelAction(int requestingAgentID, int opponentID) {
+	private String get2ndLevelAction(int opponentID) {
 
 		String opponentPastInfo = "", pastInfoAfterUncertainty = "";
 
@@ -275,7 +271,7 @@ public class HistoricalInfoMgr {
 	 * @return pastInfoAfterUncertainty : opponent past actions after
 	 *         uncertainty limit has been applied
 	 */
-	private String getOppFirstAction(int requestingAgentID, int opponentID) {
+	private String getOppFirstAction(int opponentID) {
 
 		String opponentPastInfo = "", pastInfoAfterUncertainty = "";
 
@@ -299,7 +295,7 @@ public class HistoricalInfoMgr {
 	 * @return pastInfoAfterUncertainty : opponent past actions after
 	 *         uncertainty limit has been applied
 	 */
-	private String getOpponentInfo(int requestingAgentID, int opponentID) {
+	private String getOpponentInfo(int opponentID) {
 		String opponentPastInfo = "", pastInfoAfterUncertainty = "";
 		if (HIR.agentActs[opponentID] != null) {
 			opponentPastInfo = HIR.agentActs[opponentID];
@@ -358,7 +354,7 @@ public class HistoricalInfoMgr {
 	 * @return pastInfoAfterUncertainty opponent past actions after uncertainty
 	 *         limit has been applied
 	 */
-	private String getOpponentActionsInRandomTournament(int requestingAgentID, int opponentID) {
+	private String getOpponentActionsInRandomTournament(int opponentID) {
 		String opponentPastInfo = "", pastInfoAfterUncertainty = "";
 		
 		// Generate Random tournament
@@ -369,10 +365,7 @@ public class HistoricalInfoMgr {
 
 		// Get past action of opponent in tournament
 		for (int j = 0; j < numOfAgents; j++) {
-			if (opponentPastInfo == null)
-				opponentPastInfo = String.valueOf(HIR.agentActionsDbase[randomTournamentIndex][j][opponentID]);
-			else
-				opponentPastInfo = opponentPastInfo + HIR.agentActionsDbase[randomTournamentIndex][j][opponentID];
+				opponentPastInfo = opponentPastInfo.concat(String.valueOf(HIR.agentActionsDbase[randomTournamentIndex][j][opponentID]));
 		}
 
 		pastInfoAfterUncertainty = applyuncertaintyLevel(opponentPastInfo);
@@ -386,9 +379,7 @@ public class HistoricalInfoMgr {
 	 * @param opponentID
 	 * @return
 	 */
-	private String getOpponentStrategy(int requestingAgentID, int opponentID) {
-		//JOptionPane.showMessageDialog(null, Strategies[opponentID]);
-		
+	private String getOpponentStrategy(int opponentID) {
 		return Strategies[opponentID];
 	}
 	
@@ -503,8 +494,12 @@ public class HistoricalInfoMgr {
 	 * @return
 	 */
 	private int numOfPastActions(String agentName, int option) { // Not in class diagram
-		int numOfDefections = 0, numOfCooperations = 0;
-
+		int return_value = 0;
+		char action = DEFECT_ACTION;
+		
+		if (option == 1)
+			action = COOPERATE_ACTION;
+			
 		// Get Opponent Id
 		int agentID = Integer.parseInt(agentName.substring(6));
 
@@ -512,18 +507,11 @@ public class HistoricalInfoMgr {
 		String agentPastInformation = HIR.agentActs[(agentID - 1)];
 
 		for (int i = 0; i < agentPastInformation.length(); i++) {
-			if (agentPastInformation.charAt(i) == DEFECT_ACTION)
-				numOfDefections++;
-			else if (agentPastInformation.charAt(i) == 'C')
-				numOfCooperations++;
-
+			if (agentPastInformation.charAt(i) == action)
+				return_value++;
 		}
 
-		// Return total number of actions based on request type
-		if (option == 1)
-			return numOfCooperations;
-		else
-			return numOfDefections;
+		return return_value;
 	}
 
 	/**
@@ -554,7 +542,6 @@ public class HistoricalInfoMgr {
 		for (int i = 0; i < agents.size(); i++) {
 			HIR.data[i][0] = "Agent " + (i + 1);
 			HIR.data[i][1] = agents.get(i).agentStrategy;
-		//	Strategies[i] = agents.get(i).agentStrategy;
 			HIR.data[i][2] = String.valueOf((agentScores[i]));
 
 			// store parameters in chart for later display

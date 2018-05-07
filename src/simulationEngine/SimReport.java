@@ -24,10 +24,6 @@ public class SimReport {
 	}
 	
 	
-	public SimReport(){
-		
-	}
-	
 	
 	
 	/**
