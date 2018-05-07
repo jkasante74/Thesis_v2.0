@@ -1,2 +1,12 @@
-T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD,AdvancedExp, infoRequestApproach
-5,3,1,0,4,1.0,400,400,1,1,2,2,2,2,
+T,R,P,S,NumOfTournament,Uncertainty,AdvancedCLimit,AdvancedDLimit,NaiveC,NaiveD,AdvancedC,AdvancedD, infoRequestApproach, EvolutionModel, CommunicationCost
+5,0,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,1,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,2,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,3,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,4,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,5,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,6,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,7,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,8,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,9,1,0,10,1,400000,400000,10,10,10,10,5,3,0
+5,10,1,0,10,1,400000,400000,10,10,10,10,5,3,0

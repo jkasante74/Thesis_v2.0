@@ -13,16 +13,17 @@ public class SimReport {
 	HistoricalInfoMgr him;
 	private final String TOURNAMENTBOARD = "TB/TB.csv";
 	private final String FILENOTFOUND = "File not found";
+	private static String STRATEGY_STATS_FILE = "HIR/StrategyStats.csv";
+	public static String agentsTournamentStatistics = "";
+
 	
-	/**Constructor to initialize
-	 * 
-	 * @param simLog : Instance of GUI_Simulation
-	 * @param him2 
-	 */
+	// Constructor
 	SimReport(GUI_Simulation simLog, HistoricalInfoMgr him){
 		this.simLog = simLog;
 		this.him = him;
 	}
+	
+	
 	
 	
 	/**
@@ -43,13 +44,14 @@ public class SimReport {
 
 		try {
 			Files.write(Paths.get(TOURNAMENTBOARD), experimentTitle2.getBytes());
-			him.updateLog(experimentTitle2);
-		//	HIM.startExp(currentExperimentID);
+			him.updateLog();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, FILENOTFOUND);
 		}
 
 	}
+	
+	
 	
 	/**
 	 * printTournamentStats method reports on a statistics of agents' payoffs,
@@ -59,17 +61,17 @@ public class SimReport {
 	 *            : Current Tournament index
 	 * 
 	 */
-	protected void printTournament(float currentTournamentIndex) {
+	protected void printTournamentResults(float currentTournamentIndex) {
 
-		String tournamentStats = "\nRound-Robin Tournament " + (currentTournamentIndex + 1) + "\n" + "===================\n";;
+		String tournamentStats = "\nRound-Robin Tournament " + (currentTournamentIndex+1) + "\n" + "===================\n";;
 		simLog.txtSim.append(tournamentStats);
 		
-		String tx =  "\nRound-Robin Tournament " + (currentTournamentIndex + 1)+ "\n";
+		String tx =  "\nRound-Robin Tournament " + (currentTournamentIndex+1)+ "\n";
 		
 		// Store current tournament title in tournament board
 		try {
 			Files.write(Paths.get(TOURNAMENTBOARD), tx.getBytes());
-			him.updateLog(tournamentStats);
+			him.updateLog();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, FILENOTFOUND);
 		}
@@ -78,6 +80,55 @@ public class SimReport {
 	
 	
 	
+	protected void updateExperimentLog(String windowLog, String logMsg) {
+
+		simLog.txtSim.append(windowLog);
+		
+		// Store current tournament title in tournament board
+		try {
+			Files.write(Paths.get(TOURNAMENTBOARD), logMsg.getBytes());
+			him.updateLog();
+		} catch (IOException e) {
+			JOptionPane.showMessageDialog(null, FILENOTFOUND);
+		}
+
+	}
 	
+	
+
+	/**
+	 * printExperimentLeaderboard accepts display request from the GUI component and
+	 * based on the request returns the appropriate results stored in Historical
+	 * Information Repository
+	 * 
+	 * @param requestOption
+	 *            : Query from GUI component
+	 * 
+	 * @return requestInfo : Response given to GUI component
+	 * 
+	 */
+	public String printExperimentLeaderboard(int requestOption) {
+		String requestInfo = "";
+
+		if(requestOption== 0)
+			requestInfo = him.experimentLeaderboard;
+		
+		else if(requestOption== 1)	
+			requestInfo = him.agentsTournamentStatistics;
+		
+		return requestInfo;
+	}
+
+	
+	
+	/**
+	 * printExperimentStats method displays a statistic of agents performance
+	 * @param currentExperimentID	: current Experiment index
+	 */
+	protected void printExperimentStats(int currentExperimentID) {
+		him.printExperimentStats(currentExperimentID);
+		
+	}
+
 
 }
